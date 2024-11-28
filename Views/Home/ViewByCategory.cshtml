@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "ViewByCategory";
+    var movies = Model as List<MovieManagementProject.Models.Movie>;
+    var categoryName = ViewBag.CategoryName;
+}
+
+<h2>Movies in @categoryName</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/Content/custom.css">
+</head>
+<body>    
+    <div class="container mt-5">
+        <div class="row">
+            @foreach (var movie in movies)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="movie-card">
+                        <img src="" alt="@movie.Title" class="img-fluid movie-img">
+                        <div class="movie-card-body">
+                            <h5 class="movie-title">@movie.Title</h5>
+                            <p class="movie-category"><strong>Kategori:</strong> @movie.Category.Name</p>
+                            <p class="movie-description">@*@movie.Description.Substring(0, 100)...*@</p>
+                            <a href="@Url.Action("UserDetails", "Home", new { id = movie.Id })" class="btn btn-primary">See Details</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- Sayfalandırma -->
+        <div class="pagination-container">
+            @if (ViewBag.TotalPages > 1)
+            {
+                <ul class="pagination">
+                    @for (var i = 1; i <= Model.TotalPages; i++)
+                    {
+                        <li class="page-item @(Model.CurrentPage == i ? "active" : "")">
+                            <a class="page-link" href="@Url.Action("Index", "Movies", new { page = i })">@i</a>
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+</body>
+</html>

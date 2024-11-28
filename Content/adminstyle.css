@@ -1,0 +1,109 @@
+﻿/* Admin Panel Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #343a40;
+    color: #fff;
+    padding: 15px;
+}
+
+    .sidebar h4 {
+        font-size: 20px;
+        margin-bottom: 15px;
+        text-align: center;
+        color: #f8f9fa;
+    }
+
+    .sidebar hr {
+        border: 0;
+        height: 1px;
+        background-color: #6c757d;
+    }
+
+    .sidebar .nav-link {
+        color: #adb5bd;
+        font-size: 16px;
+        margin: 5px 0;
+        display: block;
+        padding: 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+        .sidebar .nav-link:hover {
+            background-color: #495057;
+            color: #fff;
+        }
+
+        .sidebar .nav-link i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    font-weight: bold;
+    background-color: #343a40;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Başlık Alanı */
+.page-header {
+    background-color: #343a40; /* Koyu gri arka plan */
+    color: #fff; /* Beyaz yazı rengi */
+    padding: 30px; /* İçerik etrafında boşluk */
+    border-radius: 8px; /* Yuvarlatılmış köşeler */
+    margin-bottom: 30px; /* Alt boşluk */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    text-align: center;
+}
+
+    .page-header h1 {
+        font-size: 32px; /* Başlık font büyüklüğü */
+        font-weight: 700; /* Kalın yazı */
+    }
+
+    .page-header p {
+        font-size: 18px; /* Alt açıklama font büyüklüğü */
+        font-weight: 300; /* İnce yazı */
+    }
+
+    /* Başlıkta ikon ve metin arasındaki boşluğu ayarlama */
+    .page-header h1 i {
+        margin-right: 10px; /* İkon ile metin arasındaki mesafe */
+    }
+
+    /* Başlık arka planında renk değişikliği */
+    .page-header:hover {
+        background-color: #495057; /* Koyu gri tıklama efekti */
+        cursor: pointer;
+    }
