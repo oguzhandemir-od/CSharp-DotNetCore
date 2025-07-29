@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<MvcOnlineTicariOtomasyon.Models.Siniflar.Kategori>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -8,6 +8,16 @@
     <tr>
         <th>ID</th>
         <th>Kategori Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
     </tr>
+    @foreach(var k in Model){
+        <tr>
+            <td>@k.Kategoriid</td>
+            <td>@k.KategoriAd</td>
+            <td><a href="/Kategoris/KategoriSil/@k.Kategoriid" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Kategoris/KategoriGetir/@k.Kategoriid" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
 </table>
-<button class="btn btn-primary">Yeni Kategori</button>
+<a href="/Kategoris/KategoriEkle" class="btn btn-primary">Kategori Ekle</a>
