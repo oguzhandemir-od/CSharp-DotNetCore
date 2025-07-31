@@ -21,6 +21,7 @@ Eğer projelerim hakkında geri bildirimde bulunmak veya katkıda bulunmak ister
 
 ## İletişim
 
-- **E-posta**: oguzhan@odimensional.com
-- **E-posta**: oguzhandemir.od@protonmail.com
+- **Website**: [ODimension](https://odimensional.com)
+- **E-posta 1**: oguzhan@odimensional.com
+- **E-posta 2**: oguzhandemir.od@protonmail.com
 
