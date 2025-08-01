@@ -1,0 +1,20 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Departman
+@{
+    ViewData["Title"] = "DepartmanGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h1>Departman Güncelleme</h1>
+<br />
+
+<form asp-action="DepartmanGuncelle" method="post">
+    <div class="form-group">
+        <input type="hidden" asp-for="Departmanid" />
+
+        <label asp-for="DepartmanAd" class="form-label">Kategori Adı</label>
+        <input asp-for="DepartmanAd" class="form-control" />
+    </div>
+    <button class="btn btn-warning">Güncelle</button>
+</form>
+

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MvcOnlineTicariOtomasyon.Data;
 
@@ -11,9 +12,11 @@ using MvcOnlineTicariOtomasyon.Data;
 namespace MvcOnlineTicariOtomasyon.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250730072507_SalesRelation")]
+    partial class SalesRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -77,9 +80,6 @@ namespace MvcOnlineTicariOtomasyon.Migrations
                         .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("Varchar");
-
-                    b.Property<bool>("Durum")
-                        .HasColumnType("bit");
 
                     b.HasKey("Cariid");
 

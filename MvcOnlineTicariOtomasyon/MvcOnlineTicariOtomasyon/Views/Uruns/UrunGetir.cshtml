@@ -1,13 +1,15 @@
 ﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
 @model MvcOnlineTicariOtomasyon.Models.Siniflar.Urun
 @{
-    ViewData["Title"] = "YeniUrun";
+    ViewData["Title"] = "UrunGetir";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
-<h1>Yeni Ürün Sayfası</h1>
+<h1>Ürün Güncelleme Sayfası</h1>
 <br />
-<form class="form-group" method="post">
+<form asp-action="UrunGuncelle" class="form-group" method="post">
+    <input type="hidden" asp-for="Urunid" />
+
     <label asp-for="UrunAd" class="form-label">Ürün Adı</label>
     <input asp-for="UrunAd" class="form-control" />
     <br />
@@ -27,7 +29,7 @@
     <br />
     <select asp-for="Kategoriid" class="form-control">
         <option value="">Lütfen bir kategori seçin</option>
-        @foreach(var k in ViewBag.Kategoriler as List<Kategori>)
+        @foreach (var k in ViewBag.Kategoriler as List<Kategori>)
         {
             <option value="@k.Kategoriid">@k.KategoriAd</option>
         }

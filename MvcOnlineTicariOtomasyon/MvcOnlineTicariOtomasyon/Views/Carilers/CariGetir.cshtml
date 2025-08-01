@@ -1,0 +1,37 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Cariler
+@{
+    ViewData["Title"] = "CariGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h1>Cari Güncelleme</h1>
+<br />
+
+<form asp-action="DepartmanGuncelle" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+    <div class="form-group">
+        <input type="hidden" asp-for="Cariid" />
+
+        <label asp-for="CariAd" class="form-label">Cari Adı</label>
+        <input asp-for="CariAd" class="form-control" />
+        <br />
+        <label asp-for="CariSoyad" class="form-label">Cari soyadı</label>
+        <input asp-for="CariSoyad" class="form-control" />
+        <span asp-validation-for="CariSoyad" class="text-danger small"></span>
+        <br />
+        <label asp-for="CariSehir" class="form-label">Şehir</label>
+        <input asp-for="CariSehir" class="form-control" />
+        <br />
+        <label asp-for="CariMail" class="form-label">Mail Adresi</label>
+        <input asp-for="CariMail" class="form-control" />
+    </div>
+    <button class="btn btn-warning">Güncelle</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

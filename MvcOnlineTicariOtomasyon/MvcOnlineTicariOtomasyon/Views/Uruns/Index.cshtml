@@ -14,6 +14,8 @@
 		<th>SATIŞ FİYATI</th>
 		<th>KATEGORİ</th>
 		<th>GÖRSEL</th>
+		<th>SİL</th>
+		<th>GÜNCELLE</th>
 	</tr>
 	@foreach(var u in Model)
 	{
@@ -25,7 +27,9 @@
 			<td>@u.AlisFiyat</td>
 			<td>@u.SatisFiyat</td>
 			<td>@u.Kategori.KategoriAd</td>
-			<td>@u.UrunGorsel</td>	
+			<td>@u.UrunGorsel</td>
+			<td><a href="/Uruns/UrunSil/@u.Urunid" class="btn btn-danger">Sil</a></td>
+			<td><a href="/Uruns/UrunGetir/@u.Urunid" class="btn btn-success">Güncelle</a></td>
 		</tr>
 	}
 </table>

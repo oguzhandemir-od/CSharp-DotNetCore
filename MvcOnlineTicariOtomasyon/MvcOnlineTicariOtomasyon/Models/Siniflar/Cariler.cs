@@ -14,6 +14,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
 
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
+        [Required(ErrorMessage ="Bu alan boş bırakılamaz!")]
         public string CariSoyad { get; set; }
 
         [Column(TypeName = "Varchar")]
@@ -23,6 +24,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         [Column(TypeName = "Varchar")]
         [StringLength(50)]
         public string CariMail { get; set; }
+        public bool Durum { get; set; }
 
         public ICollection<SatisHareket> SatisHarekets { get; set; }
     }

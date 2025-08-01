@@ -1,0 +1,25 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Cariler
+@{
+    ViewData["Title"] = "CariEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Cari Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    <label asp-for="CariAd" class="form-label">Cari Adı</label>
+    <input asp-for="CariAd" class="form-control" />
+    <br />
+    <label asp-for="CariSoyad" class="form-label">Cari Soyadı</label>
+    <input asp-for="CariSoyad" class="form-control" />
+    <br />
+    <label asp-for="CariSehir" class="form-label">Şehir</label>
+    <input asp-for="CariSehir" class="form-control" />
+    <br />
+    <label asp-for="CariMail" class="form-label">Mail Adresi</label>
+    <input asp-for="CariMail" class="form-control" />
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+
