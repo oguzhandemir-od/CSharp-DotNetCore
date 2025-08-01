@@ -1,0 +1,42 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model MvcOnlineTicariOtomasyon.Models.Siniflar.Personel
+@{
+    ViewData["Title"] = "PersonelGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h1>Personel Güncelleme</h1>
+<br />
+
+<form asp-action="PersonelGuncelle" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+    <div class="form-group">
+        <input type="hidden" asp-for="Personelid" />
+
+        <label asp-for="PersonelAd" class="form-label">Personel Adı</label>
+        <input asp-for="PersonelAd" class="form-control" />
+        <br />
+        <label asp-for="PersonelSoyad" class="form-label">Personel Soyadı</label>
+        <input asp-for="PersonelSoyad" class="form-control" />
+        <br />
+        <label asp-for="PersonelGorsel" class="form-label">Görsel</label>
+        <input asp-for="PersonelGorsel" class="form-control" />
+        <br />
+        <label asp-for="Departmanid" class="form-label">Departman</label>
+        <select asp-for="Departmanid" class="form-control">
+            <option value="">Lütfen bir departman seçin</option>
+            @foreach (var d in ViewBag.Departmanlar as List<Departman>)
+            {
+                <option value="@d.Departmanid">@d.DepartmanAd</option>
+            }
+        </select>
+    </div>
+    <button class="btn btn-warning">Güncelle</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

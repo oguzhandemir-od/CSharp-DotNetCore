@@ -33,7 +33,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             _context.Add(p);
             _context.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> UrunSil(int id)

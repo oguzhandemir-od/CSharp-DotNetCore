@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcOnlineTicariOtomasyon.Models.Siniflar
 {
@@ -19,6 +20,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         public int Personelid { get; set; }
 
         public Urun Urun { get; set; }
+        [ForeignKey("Cariid")]
         public Cariler Cariler { get; set; }
         public Personel Personel { get; set; }
     }

@@ -1,0 +1,55 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model MvcOnlineTicariOtomasyon.Models.Siniflar.SatisHareket
+@{
+    ViewData["Title"] = "SatisGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h1>Satış İşlemi Güncelleme Sayfası</h1>
+<br />
+<form asp-action="SatisGuncelle" class="form-group" method="post">
+    <input type="hidden" asp-for="Satishareketid" />
+
+    <select asp-for="Urunid" class="form-control">
+        <option value="">Lütfen bir ürün seçin</option>
+        @foreach (var u in ViewBag.Urunler as List<Urun>)
+        {
+            <option value="@u.Urunid">@u.UrunAd</option>
+        }
+    </select>
+    <br />
+    <label asp-for="Cariid" class="form-label">Cari</label>
+    <br />
+    <select asp-for="Cariid" class="form-control">
+        <option value="">Lütfen bir cari seçin</option>
+        @foreach (var c in ViewBag.Cariler as List<Cariler>)
+        {
+            <option value="@c.Cariid">@c.CariAd @c.CariSoyad</option>
+        }
+    </select>
+    <br />
+    <label asp-for="Personelid" class="form-label">Personel</label>
+    <br />
+    <select asp-for="Personelid" class="form-control">
+        <option value="">Lütfen bir personel seçin</option>
+        @foreach (var p in ViewBag.Personeller as List<Personel>)
+        {
+            <option value="@p.Personelid">@p.PersonelAd @p.PersonelSoyad</option>
+        }
+    </select>
+    <br />
+    <label asp-for="Adet" class="form-label">Adet</label>
+    <input asp-for="Adet" class="form-control" />
+    <br />
+    <label asp-for="Fiyat" class="form-label">Fiyat</label>
+    <input asp-for="Fiyat" class="form-control" />
+    <br />
+    <label asp-for="ToplamTutar" class="form-label">Toplam Tutar</label>
+    <input asp-for="ToplamTutar" class="form-control" />
+    <br />
+    <label asp-for="Tarih" class="form-label">Tarih</label>
+    <input asp-for="Tarih" class="form-control" />
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+
