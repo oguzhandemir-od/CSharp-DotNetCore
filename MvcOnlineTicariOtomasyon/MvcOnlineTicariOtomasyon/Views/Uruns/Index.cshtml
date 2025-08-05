@@ -16,6 +16,7 @@
 		<th>GÖRSEL</th>
 		<th>SİL</th>
 		<th>GÜNCELLE</th>
+		<th>DETAYLAR</th>
 	</tr>
 	@foreach(var u in Model)
 	{
@@ -30,6 +31,7 @@
 			<td>@u.UrunGorsel</td>
 			<td><a href="/Uruns/UrunSil/@u.Urunid" class="btn btn-danger">Sil</a></td>
 			<td><a href="/Uruns/UrunGetir/@u.Urunid" class="btn btn-success">Güncelle</a></td>
+			<td><a href="/Uruns/UrunDetay/@u.Urunid" class="btn btn-info">Detaylar</a></td>
 		</tr>
 	}
 </table>

@@ -66,5 +66,19 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+
+        public async Task<IActionResult> UrunListesi()
+        {
+            var urunler = _context.Uruns
+                .Include(k=>k.Kategori)
+                .ToList();
+            return View(urunler);
+        }
+
+        public async Task<IActionResult> UrunDetay(int id)
+        {
+            var urun = await _context.Uruns.FindAsync(id);
+            return View(urun);
+        }
     }
 }
