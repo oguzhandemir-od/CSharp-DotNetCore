@@ -1,0 +1,38 @@
+﻿@model IEnumerable<MvcOnlineTicariOtomasyon.Models.Siniflar.Faturalar>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered mt-2">
+    <tr>
+        <th>ID</th>
+        <th>Seri No</th>
+        <th>Sıra No</th>
+        <th>Vergi Dairesi</th>
+        <th>Tarih</th>
+        <th>Saat</th>
+        <th>Teslim Eden</th>
+        <th>Teslim Alan</th>
+        <th>Toplam</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var f in Model)
+    {
+        <tr>
+            <td>@f.Faturalarid</td>
+            <td>@f.FaturaSeriNo</td>
+            <td>@f.FaturaSiraNo</td>
+            <td>@f.VergiDairesi</td>
+            <td>@f.Tarih.ToString("dd.MM.yyyy")</td>
+            <td>@f.Tarih.ToString("HH:mm")</td>
+            <td>@f.TeslimEden</td>
+            <td>@f.TeslimAlan</td>
+            <td>@f.Toplam</td>
+            <td><a href="/Faturalars/FaturaGetir/@f.Faturalarid" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Faturalars/FaturaDetay/@f.Faturalarid" class="btn btn-info">Detaylar</a></td>
+        </tr>
+    }
+</table>
+<a href="/Faturalars/FaturaEkle" class="btn btn-primary">Yeni Fatura</a>

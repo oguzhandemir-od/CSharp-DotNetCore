@@ -1,0 +1,25 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model MvcOnlineTicariOtomasyon.Models.Siniflar.FaturaKalem
+@{
+    ViewData["Title"] = "YeniKalem";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h1>Yeni Kalem Girişi</h1>
+<br />
+<form class="form-group" method="post">
+
+    <label asp-for="Aciklama" class="form-label">Açıklama</label>
+    <input asp-for="Aciklama" class="form-control" />
+    <br />
+    <label asp-for="Miktar" class="form-label">Miktar</label>
+    <input asp-for="Miktar" class="form-control" />
+    <br />
+    <label asp-for="BirimFiyat" class="form-label">Birim Fiyat</label>
+    <input asp-for="BirimFiyat" class="form-control" />
+    <br />
+    <label asp-for="Tutar" class="form-label">Tutar</label>
+    <input asp-for="Tutar" class="form-control" />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+
