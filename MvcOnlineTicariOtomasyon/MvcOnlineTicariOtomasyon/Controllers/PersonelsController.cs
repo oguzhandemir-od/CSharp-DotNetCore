@@ -54,5 +54,13 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        public async Task<IActionResult> PersonelListe()
+        {
+            var personeller = _context.Personels
+                .Include(d=>d.Departman)
+                .ToList();
+            return View(personeller);
+        }
     }
 }
