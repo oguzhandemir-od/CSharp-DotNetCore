@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MvcOnlineTicariOtomasyon.Models.DTO.DepartmanPersonelDto>
+
+<div class="card">
+	<div class="card-header">
+		<h3 class="card-title">Departman Sayıları</h3>
+	</div>
+	<!-- /.card-header -->
+	<div class="card-body p-0">
+		<table class="table table-sm">
+			<thead>
+				<tr>
+					<th style="width: 10px">#</th>
+					<th>Departman</th>
+					<th>Gösterge</th>
+					<th style="width: 40px">Sayı</th>
+				</tr>
+			</thead>
+			<tbody>
+				@{
+					int sirano = 0;
+				}
+				@foreach (var s in Model)
+				{
+					<tr>
+						<td>
+							@{
+								sirano++;
+							} @sirano
+						</td>
+						<td>@s.Departman</td>
+						<td>
+							<div class="progress progress-xs">
+								<div class="progress-bar progress-bar-danger" style="width: @(s.Sayi * 100 / ViewBag.ToplamDep)%"></div>
+							</div>
+						</td>
+						<td><span class="badge bg-danger">@s.Sayi</span></td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+	<!-- /.card-body -->
+</div>
+<!-- /.card -->

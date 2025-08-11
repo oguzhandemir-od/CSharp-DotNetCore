@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MvcOnlineTicariOtomasyon.Data;
+using MvcOnlineTicariOtomasyon.Models.DTO;
 using MvcOnlineTicariOtomasyon.Models.Siniflar;
 
 
@@ -45,10 +46,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var maxMarka = _context.Uruns.GroupBy(m => m.Marka).OrderByDescending(m => m.Count()).Select(m => m.Key).FirstOrDefault();
             ViewBag.MaxMarka = maxMarka;
 
-            var enCokSatan = _context.Uruns.Where(u=>u.Urunid==
+            var enCokSatan = _context.Uruns.Where(u => u.Urunid ==
             (_context.SatisHarekets.GroupBy(s => s.Urunid).OrderByDescending(s => s.Count()).Select(s => s.Key).FirstOrDefault()))
-                .Select(u=>u.UrunAd).FirstOrDefault();
-            ViewBag.EnCokSatan= enCokSatan;
+                .Select(u => u.UrunAd).FirstOrDefault();
+            ViewBag.EnCokSatan = enCokSatan;
 
             var BuzdSayi = _context.Uruns.Count(u => u.UrunAd == "Buzdolabi").ToString();
             ViewBag.BuzdSayi = BuzdSayi;
@@ -63,8 +64,26 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.BugunSatis = bugunSatis;
 
             var bugunKasa = _context.SatisHarekets.Where(s => s.Tarih == DateTime.Today).Sum(s => s.ToplamTutar).ToString();
-            ViewBag.BugunKasa= bugunKasa;
+            ViewBag.BugunKasa = bugunKasa;
+            
             return View();
         }
+
+        public async Task<IActionResult> SimpleTables()
+        {
+            var sehirler = _context.Carilers.GroupBy(c => c.CariSehir).Select(g => new { Sehir = g.Key, Count = g.Count() })
+                .OrderByDescending(g => g.Count)
+                .ToList();
+            ViewBag.Sehirler = sehirler;
+
+            var toplamsehir = _context.Carilers.Count();
+            ViewBag.ToplamSehir = toplamsehir;
+
+            return View();
+        }
+
+        
+
+        
     }
 }
