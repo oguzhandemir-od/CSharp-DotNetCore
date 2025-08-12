@@ -20,5 +20,6 @@ namespace MvcOnlineTicariOtomasyon.Data
         public DbSet<Personel> Personels { get; set; }
         public DbSet<SatisHareket> SatisHarekets { get; set; }
         public DbSet<Urun> Uruns { get; set; }
+        public DbSet<Yapilacak> Yapilacaks { get; set; }
     }
 }

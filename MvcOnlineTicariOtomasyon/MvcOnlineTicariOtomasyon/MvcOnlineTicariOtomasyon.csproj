@@ -79,6 +79,7 @@
     <None Include="wwwroot\js\bootstrap-datepicker.min.js" />
     <None Include="wwwroot\js\Chart1.js" />
     <None Include="wwwroot\js\clndr.js" />
+    <None Include="wwwroot\js\dashboard.js" />
     <None Include="wwwroot\js\demo.js" />
     <None Include="wwwroot\js\easyResponsiveTabs.js" />
     <None Include="wwwroot\js\jquery-3.3.1.min.js" />
