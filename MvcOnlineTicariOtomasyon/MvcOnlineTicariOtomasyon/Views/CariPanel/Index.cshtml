@@ -1,0 +1,28 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Cariler
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+
+<h2>MVC Online Ticari Otomasyon Cari Bilgi Paneli</h2>
+
+<table class="table table bordered">
+    <tr>
+        <td>
+            Mail Adresi: @User.Identity.Name
+        </td>
+    </tr>
+    <tr>
+        <td>@Model.CariAd</td>
+    </tr>
+    <tr>
+        <td>@Model.CariSoyad</td>
+    </tr>
+    <tr>
+        <td>@Model.CariSehir</td>
+    </tr>
+    <tr>
+        <td>@Model.CariSifre</td>
+    </tr>
+</table>
+<button class="btn btn-warning">Bilgilerimi Güncelle</button>
