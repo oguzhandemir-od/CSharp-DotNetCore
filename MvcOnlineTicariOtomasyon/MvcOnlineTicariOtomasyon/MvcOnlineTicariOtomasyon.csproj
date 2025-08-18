@@ -19,12 +19,19 @@
     <None Include="wwwroot\css\aos.css" />
     <None Include="wwwroot\css\bootstrap-datepicker.css" />
     <None Include="wwwroot\css\bootstrap.css" />
+    <None Include="wwwroot\css\cari-bootstrap.css" />
+    <None Include="wwwroot\css\cari-bootstrap.css.map" />
+    <None Include="wwwroot\css\cari-bootstrap.min.css" />
+    <None Include="wwwroot\css\cari-bootstrap.min.css.map" />
     <None Include="wwwroot\css\clndr.css" />
     <None Include="wwwroot\css\fancybox.min.css" />
     <None Include="wwwroot\css\gallerystyle.css" />
     <None Include="wwwroot\css\jquery-ui.css" />
     <None Include="wwwroot\css\jquery.scrollbar.css" />
     <None Include="wwwroot\css\jqvmap.css" />
+    <None Include="wwwroot\css\login-font-awesome.css" />
+    <None Include="wwwroot\css\login-popup-box.css" />
+    <None Include="wwwroot\css\login-style.css" />
     <None Include="wwwroot\css\lte-fa-all.css" />
     <None Include="wwwroot\css\lte-fa-all.min.css" />
     <None Include="wwwroot\css\magnific-popup.css" />
@@ -32,6 +39,7 @@
     <None Include="wwwroot\css\nav.css" />
     <None Include="wwwroot\css\owl.carousel.min.css" />
     <None Include="wwwroot\css\owl.theme.default.min.css" />
+    <None Include="wwwroot\css\simple-sidebar.css" />
     <None Include="wwwroot\css\style.css" />
     <None Include="wwwroot\css\styles.css" />
     <None Include="wwwroot\css\swiper.min.css" />
@@ -47,6 +55,12 @@
     <None Include="wwwroot\fonts\flaticon\font\_flaticon.css" />
     <None Include="wwwroot\fonts\flaticon\font\_flaticon.scss" />
     <None Include="wwwroot\fonts\flaticon\license\license.pdf" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.eot" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.ttf" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.woff" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\fonts\FontAwesome.otf" />
     <None Include="wwwroot\fonts\icomoon\demo-files\demo.css" />
     <None Include="wwwroot\fonts\icomoon\demo-files\demo.js" />
     <None Include="wwwroot\fonts\icomoon\demo.html" />
@@ -56,6 +70,7 @@
     <None Include="wwwroot\fonts\icomoon\fonts\icomoon.woff" />
     <None Include="wwwroot\fonts\icomoon\Read Me.txt" />
     <None Include="wwwroot\fonts\icomoon\style.css" />
+    <None Include="wwwroot\images\bg.jpg" />
     <None Include="wwwroot\images\img_1.jpg" />
     <None Include="wwwroot\images\img_10.jpg" />
     <None Include="wwwroot\images\img_2.jpg" />
@@ -77,11 +92,26 @@
     <None Include="wwwroot\js\adminlte.min.js.map" />
     <None Include="wwwroot\js\aos.js" />
     <None Include="wwwroot\js\bootstrap-datepicker.min.js" />
+    <None Include="wwwroot\js\cari-bootstrap.bundle.js" />
+    <None Include="wwwroot\js\cari-bootstrap.bundle.js.map" />
+    <None Include="wwwroot\js\cari-bootstrap.bundle.min.js" />
+    <None Include="wwwroot\js\cari-bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\js\cari-bootstrap.js" />
+    <None Include="wwwroot\js\cari-bootstrap.js.map" />
+    <None Include="wwwroot\js\cari-bootstrap.min.js" />
+    <None Include="wwwroot\js\cari-bootstrap.min.js.map" />
+    <None Include="wwwroot\js\cari-jquery.js" />
+    <None Include="wwwroot\js\cari-jquery.min.js" />
+    <None Include="wwwroot\js\cari-jquery.min.map" />
+    <None Include="wwwroot\js\cari-jquery.slim.js" />
+    <None Include="wwwroot\js\cari-jquery.slim.min.js" />
+    <None Include="wwwroot\js\cari-jquery.slim.min.map" />
     <None Include="wwwroot\js\Chart1.js" />
     <None Include="wwwroot\js\clndr.js" />
     <None Include="wwwroot\js\dashboard.js" />
     <None Include="wwwroot\js\demo.js" />
     <None Include="wwwroot\js\easyResponsiveTabs.js" />
+    <None Include="wwwroot\js\jquery-2.1.4.min.js" />
     <None Include="wwwroot\js\jquery-3.3.1.min.js" />
     <None Include="wwwroot\js\jquery-migrate-3.0.1.min.js" />
     <None Include="wwwroot\js\jquery-ui.js" />
@@ -96,6 +126,7 @@
     <None Include="wwwroot\js\jquery.vmap.js" />
     <None Include="wwwroot\js\jquery.vmap.sampledata.js" />
     <None Include="wwwroot\js\jquery.vmap.world.js" />
+    <None Include="wwwroot\js\login-jquery.magnific-popup.js" />
     <None Include="wwwroot\js\lte-bootstrap.bundle.js" />
     <None Include="wwwroot\js\lte-bootstrap.bundle.js.map" />
     <None Include="wwwroot\js\lte-bootstrap.bundle.min.js" />
@@ -127,6 +158,9 @@
 
   <ItemGroup>
     <PackageReference Include="jquery.datatables" Version="1.10.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Core" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.3.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.7">
       <PrivateAssets>all</PrivateAssets>
@@ -145,6 +179,13 @@
     <Folder Include="thumber\js\" />
     <Folder Include="web2\css\" />
     <Folder Include="web2\js\" />
+    <Folder Include="weblogin\css\" />
+    <Folder Include="weblogin\fonts\" />
+    <Folder Include="weblogin\images\" />
+    <Folder Include="weblogin\js\" />
+    <Folder Include="webpanel\css\" />
+    <Folder Include="webpanel\vendor\bootstrap\js\" />
+    <Folder Include="webpanel\vendor\jquery\" />
   </ItemGroup>
 
 </Project>

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using MvcOnlineTicariOtomasyon.Data;
 
@@ -9,6 +10,17 @@ builder.Services.AddControllersWithViews();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+        .AddCookie(options =>
+        {
+            options.LoginPath = "/Login/Index"; // Giriþ sayfasý
+            options.AccessDeniedPath = "/Home/AccessDenied"; // Eriþim reddedildi sayfasý
+        });
+
+builder.Services.AddMvc()
+        .AddSessionStateTempDataProvider();
+builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -25,7 +37,10 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+app.UseSession();
+
 
 app.MapControllerRoute(
     name: "default",
