@@ -68,5 +68,35 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ModelState.AddModelError("", "Geçersiz kullanıcı adı veya şifre."); // Hata mesajı ekle
             return View("Index", model); // Hataları göster
         }
+
+        public IActionResult AdminLogin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AdminLogin(AdminLoginViewModel p)
+        {
+            var bilgiler= _context.Admins.FirstOrDefault(x=>x.KullaniciAd== p.KullaniciAd && x.Sifre==p.Sifre);
+            if (bilgiler != null)
+            {
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, bilgiler.KullaniciAd) // Kullanıcı mailini claim olarak ekle
+                };
+
+                var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+
+                // Cookie ile kimlik doğrulama
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal);
+
+                // Session kullanımı
+                HttpContext.Session.SetString("KullaniciAd", bilgiler.KullaniciAd.ToString());
+
+                return RedirectToAction("Index", "Kategoris");
+            }
+            ModelState.AddModelError("", "Geçersiz kullanıcı adı veya şifre."); // Hata mesajı ekle
+            return View("Index", p); // Hataları göster
+        }
     }
 }
