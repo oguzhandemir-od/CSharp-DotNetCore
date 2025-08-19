@@ -3,17 +3,22 @@
 	ViewData["Title"] = "Index";
 	Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<br>
+<form asp-action="Index" asp-controller="Uruns" method="get">
+	<p>
+		Ürün Adı: <input type="text" name="search" placeholder="Ara..." />
+		<button type="submit">Ara</button>
+	</p>
+</form>
 <br />
 <table class="table table-bordered">
 	<tr>
-		<th>ID</th>
 		<th>ÜRÜN</th>
 		<th>MARKA</th>
 		<th>STOK</th>
 		<th>ALIŞ FİYATI</th>
 		<th>SATIŞ FİYATI</th>
 		<th>KATEGORİ</th>
-		<th>GÖRSEL</th>
 		<th>SİL</th>
 		<th>GÜNCELLE</th>
 		<th>DETAYLAR</th>
@@ -21,14 +26,12 @@
 	@foreach(var u in Model)
 	{
 		<tr>
-			<td>@u.Urunid</td>
 			<td>@u.UrunAd</td>
 			<td>@u.Marka</td>
 			<td>@u.Stok</td>
-			<td>@u.AlisFiyat</td>
-			<td>@u.SatisFiyat</td>
+			<td>@u.AlisFiyat ₺</td>
+			<td>@u.SatisFiyat ₺</td>
 			<td>@u.Kategori.KategoriAd</td>
-			<td>@u.UrunGorsel</td>
 			<td><a href="/Uruns/UrunSil/@u.Urunid" class="btn btn-danger">Sil</a></td>
 			<td><a href="/Uruns/UrunGetir/@u.Urunid" class="btn btn-success">Güncelle</a></td>
 			<td><a href="/Uruns/UrunDetay/@u.Urunid" class="btn btn-info">Detaylar</a></td>

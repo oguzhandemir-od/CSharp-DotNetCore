@@ -1,4 +1,7 @@
-﻿@model IEnumerable<MvcOnlineTicariOtomasyon.Models.Siniflar.Kategori>
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model X.PagedList.IPagedList<Kategori>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -6,18 +9,19 @@
 
 <table class="table table-bordered mt-2">
     <tr>
-        <th>ID</th>
         <th>Kategori Adı</th>
         <th>Sil</th>
         <th>Güncelle</th>
     </tr>
     @foreach(var k in Model){
         <tr>
-            <td>@k.Kategoriid</td>
             <td>@k.KategoriAd</td>
             <td><a href="/Kategoris/KategoriSil/@k.Kategoriid" class="btn btn-danger">Sil</a></td>
             <td><a href="/Kategoris/KategoriGetir/@k.Kategoriid" class="btn btn-success">Güncelle</a></td>
         </tr>
     }
 </table>
+
+@Html.PagedListPager((IPagedList)Model,sayfa=>Url.Action("Index",new {sayfa}))
+
 <a href="/Kategoris/KategoriEkle" class="btn btn-primary">Kategori Ekle</a>

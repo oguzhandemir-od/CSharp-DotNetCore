@@ -13,12 +13,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+        public IActionResult Index(string search)
         {
-            var urunler = _context.Uruns
-                .Include(u=>u.Kategori)
-                .Where(x=>x.Durum==true)
-                .ToList();
+            var urunSorgu = _context.Uruns.AsQueryable();
+            if(!string.IsNullOrEmpty(search))
+            {
+                urunSorgu = urunSorgu.Where(u => u.UrunAd.Contains(search));
+            }
+            var urunler = urunSorgu.Include(k => k.Kategori).ToList();
             return View(urunler);
         }
 

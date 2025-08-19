@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MvcOnlineTicariOtomasyon.Data;
 using MvcOnlineTicariOtomasyon.Models.Siniflar;
+using X.PagedList;
+using X.PagedList.Extensions;
+using X.PagedList.Mvc;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
@@ -12,9 +15,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int sayfa=1)
         {
-            var degerler = _context.Kategoris.ToList();
+            var degerler = _context.Kategoris.ToList()
+                .ToPagedList(sayfa,10);
             return View(degerler);
         }
 
