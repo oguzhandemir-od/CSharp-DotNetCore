@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MvcOnlineTicariOtomasyon.Data;
 using MvcOnlineTicariOtomasyon.Models.Siniflar;
 
@@ -60,8 +61,8 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return View(faturakalemleri);
         }
 
-        public IActionResult YeniKalem(int id)
-        {
+        public IActionResult YeniKalem()
+        {            
             return View();
         }
 
@@ -70,6 +71,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             _context.Add(f);
             _context.SaveChanges();
+
+            var fatura = await _context.Faturalars.FirstOrDefaultAsync(x => x.Faturalarid == f.Faturalarid);
+            if (fatura != null)
+            {
+                fatura.Toplam += f.Tutar;
+                await _context.SaveChangesAsync();
+            }
+
             return RedirectToAction(nameof(Index));
         }
 

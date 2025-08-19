@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Security.Cryptography;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MvcOnlineTicariOtomasyon.Data;
 using MvcOnlineTicariOtomasyon.Models.Siniflar;
@@ -29,8 +30,20 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PersonelEkle(Personel p)
+        public async Task<IActionResult> PersonelEkle(Personel p,IFormFile resim)
         {
+            if(resim != null && resim.Length > 0)
+            {
+                string dosyaAdi = Path.GetFileName(resim.FileName);
+                string yol=Path.Combine(Directory.GetCurrentDirectory(),"wwwroot/images", dosyaAdi);
+
+                using (var stream = new FileStream(yol, FileMode.Create))
+                {
+                    await resim.CopyToAsync(stream);
+                }
+
+                p.PersonelGorsel = "/images/"+dosyaAdi;
+            }
             _context.Add(p);
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));
@@ -44,14 +57,28 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return View(personel);
         }
 
-        public async Task<IActionResult> PersonelGuncelle(Personel p)
+        public async Task<IActionResult> PersonelGuncelle(Personel p, IFormFile resim)
         {
+            
             var personel = await _context.Personels.FindAsync(p.Personelid);
             personel.PersonelAd = p.PersonelAd;
             personel.PersonelSoyad = p.PersonelSoyad;
-            personel.PersonelGorsel = p.PersonelGorsel;
             personel.Departmanid = p.Departmanid;
-            _context.SaveChangesAsync();
+
+            if (resim != null && resim.Length > 0)
+            {
+                string dosyaAdi = Path.GetFileName(resim.FileName);
+                string yol = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", dosyaAdi);
+
+                using (var stream = new FileStream(yol, FileMode.Create))
+                {
+                    await resim.CopyToAsync(stream);
+                }
+
+                personel.PersonelGorsel = "/images/" + dosyaAdi;
+            }            
+
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 

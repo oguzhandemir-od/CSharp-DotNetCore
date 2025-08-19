@@ -1,5 +1,5 @@
 ﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
-@model IEnumerable<FaturaKalem>
+@model MvcOnlineTicariOtomasyon.Models.ViewModels.FaturaDetayViewModel
 @{
     ViewData["Title"] = "FaturaDetay";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -22,7 +22,7 @@
         <th>Birim Fiyat</th>
         <th>Tutar</th>
     </tr>
-    @foreach (var f in Model)
+    @foreach (var f in Model.FaturaKalems)
     {
         <tr>
             <td>@f.Faturakalemid</td>

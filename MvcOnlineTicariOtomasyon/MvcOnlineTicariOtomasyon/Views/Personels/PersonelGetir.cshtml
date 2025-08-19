@@ -8,7 +8,7 @@
 <h1>Personel Güncelleme</h1>
 <br />
 
-<form asp-action="PersonelGuncelle" method="post">
+<form asp-action="PersonelGuncelle" method="post" enctype="multipart/form-data">
     <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
     <div class="form-group">
         <input type="hidden" asp-for="Personelid" />
@@ -20,7 +20,11 @@
         <input asp-for="PersonelSoyad" class="form-control" />
         <br />
         <label asp-for="PersonelGorsel" class="form-label">Görsel</label>
-        <input asp-for="PersonelGorsel" class="form-control" />
+        <img src="@Model.PersonelGorsel" style="height:100px;width:auto;"/>
+        <br />
+        <label asp-for="PersonelGorsel" class="form-label">Yeni Görsel</label>
+        <br />
+        <input type="file" name="resim" />
         <br />
         <label asp-for="Departmanid" class="form-label">Departman</label>
         <select asp-for="Departmanid" class="form-control">

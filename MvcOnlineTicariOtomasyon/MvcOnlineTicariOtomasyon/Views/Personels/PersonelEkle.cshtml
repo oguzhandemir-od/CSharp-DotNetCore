@@ -8,7 +8,7 @@
 <br />
 <h1>Yeni Personel Sayfası</h1>
 <br />
-<form class="form-group" method="post">
+<form class="form-group" method="post" enctype="multipart/form-data">
     <label asp-for="PersonelAd" class="form-label">Personel Adı</label>
     <input asp-for="PersonelAd" class="form-control" />
     <br />
@@ -16,7 +16,8 @@
     <input asp-for="PersonelSoyad" class="form-control" />
     <br />
     <label asp-for="PersonelGorsel" class="form-label">Görsel</label>
-    <input asp-for="PersonelGorsel" class="form-control" />
+    <br />
+    <input type="file" name="resim" />
     <br />
     <label asp-for="Departmanid" class="form-label">Departman</label>
     <br />

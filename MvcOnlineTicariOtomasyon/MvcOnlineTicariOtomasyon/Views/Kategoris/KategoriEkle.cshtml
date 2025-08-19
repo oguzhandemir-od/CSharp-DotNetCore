@@ -11,6 +11,13 @@
     <label asp-for="KategoriAd" class="form-label">Kategori Adı</label>
     <input asp-for="KategoriAd" class="form-control" />
     <br />
-    <button class="btn btn-info">Kaydet</button>
+    <button class="btn btn-info" id="confirm">Kaydet</button>
 </form>
+
+<script src="/js/jquery.min.js"></script>">
+<script>
+    $('#confirm').click(function () {
+        alert("Kategori başarılı bir şekilde eklendi.");
+    });
+</script>
 
