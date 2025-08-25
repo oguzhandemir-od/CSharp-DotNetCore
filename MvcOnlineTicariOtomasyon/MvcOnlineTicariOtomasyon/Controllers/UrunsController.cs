@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcOnlineTicariOtomasyon.Data;
 using MvcOnlineTicariOtomasyon.Models.Siniflar;
+using MvcOnlineTicariOtomasyon.Models.ViewModels;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
@@ -81,6 +82,42 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             var urun = await _context.Uruns.FindAsync(id);
             return View(urun);
+        }
+
+        public IActionResult SatisYap(int id)
+        {
+            var urun = _context.Uruns.Find(id);
+            if (urun == null)
+            {
+                return NotFound(); // Ürün bulunamazsa hata dönsün
+            }
+
+            var model = new UrunSatisViewModel
+            {
+                UrunId = urun.Urunid,
+                UrunAd = urun.UrunAd,
+                UrunMarka = urun.Marka,
+                UrunFiyat = urun.SatisFiyat,
+                Personeller = _context.Personels.ToList(),
+                Satis = new SatisHareket()
+            };
+
+            // Satış modeli içindeki Urunid ve Fiyatı önceden doldurun.
+            model.Satis.Urunid = model.UrunId;
+            model.Satis.Fiyat = model.UrunFiyat;
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SatisYap(UrunSatisViewModel model)
+        {
+            var satis = model.Satis;
+
+            satis.Tarih = DateTime.Now;
+
+            _context.SatisHarekets.Add(satis);
+            _context.SaveChanges();
+            return RedirectToAction("Index","SatisHarekets");
         }
     }
 }

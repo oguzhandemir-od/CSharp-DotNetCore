@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MvcOnlineTicariOtomasyon.Data;
 
@@ -11,9 +12,11 @@ using MvcOnlineTicariOtomasyon.Data;
 namespace MvcOnlineTicariOtomasyon.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250822081733_CargoModule")]
+    partial class CargoModule
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -213,62 +216,6 @@ namespace MvcOnlineTicariOtomasyon.Migrations
                     b.HasKey("Giderid");
 
                     b.ToTable("Giders");
-                });
-
-            modelBuilder.Entity("MvcOnlineTicariOtomasyon.Models.Siniflar.KargoDetay", b =>
-                {
-                    b.Property<int>("KargoDetayid")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("KargoDetayid"));
-
-                    b.Property<string>("Aciklama")
-                        .IsRequired()
-                        .HasColumnType("Varchar(300)");
-
-                    b.Property<string>("Alici")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Personel")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TakipKodu")
-                        .IsRequired()
-                        .HasColumnType("Varchar(10)");
-
-                    b.Property<DateTime>("Tarih")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("KargoDetayid");
-
-                    b.ToTable("KargoDetays");
-                });
-
-            modelBuilder.Entity("MvcOnlineTicariOtomasyon.Models.Siniflar.KargoTakip", b =>
-                {
-                    b.Property<int>("KargoTakipid")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("KargoTakipid"));
-
-                    b.Property<string>("Aciklama")
-                        .IsRequired()
-                        .HasColumnType("Varchar(100)");
-
-                    b.Property<string>("TakipKodu")
-                        .IsRequired()
-                        .HasColumnType("Varchar(10)");
-
-                    b.Property<DateTime>("Tarih")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("KargoTakipid");
-
-                    b.ToTable("KargoTakips");
                 });
 
             modelBuilder.Entity("MvcOnlineTicariOtomasyon.Models.Siniflar.Kategori", b =>
