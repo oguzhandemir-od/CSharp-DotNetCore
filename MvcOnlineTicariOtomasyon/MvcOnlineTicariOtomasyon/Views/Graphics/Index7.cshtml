@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewData["Title"] = "Index7";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title>Result Visualization</title>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $.ajax({
+
+                type: "POST",
+
+                dataType: "json",
+
+                contentType: "application/json",
+
+                url: '@Url.Action("VisualizeProductResult2", "Graphics")',
+
+                success: function (result) {
+
+                    google.charts.load('current', {
+
+                        'packages': ['corechart']
+
+                    });
+
+                    google.charts.setOnLoadCallback(function () {
+
+                        drawLineChart(result);
+
+                    });
+
+                }
+
+            });
+
+        });
+
+
+                function drawLineChart(result) {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Ürün Adı');
+            data.addColumn('number', 'Stok Miktarı');
+            var dataArray = [];
+
+            $.each(result, function (i, obj) {
+                dataArray.push([obj.urunAdi, obj.stok]);
+            });
+            data.addRows(dataArray);
+
+            var lineChartOptions = {
+                title: "Ürün Stok Trendi", 
+                width: 1000,
+                height: 400,
+                curveType: 'function', 
+                pointSize: 5, 
+                legend: { position: 'bottom' } 
+            };
+
+            var lineChart = new google.visualization.LineChart(document
+                .getElementById('linechart_div'));
+
+            lineChart.draw(data, lineChartOptions);
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="linechart_div"></div>
+
+    <a href="@Url.Action("PieChart")" class="btn btn-danger">Pie Chart</a>
+
+    <a href="@Url.Action("ColumnChart")" class="active btn btn-primary">Column Chart</a>
+
+    <a href="@Url.Action("LineChart")" class="btn btn-warning">Line Chart</a>
+
+</body>
+
+</html>
+

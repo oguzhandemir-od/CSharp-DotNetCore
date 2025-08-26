@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Index2";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<h1>Index2</h1>
+
+<div class="text-center">
+    <h1 class="display-4">Kategoriler ve Ürün Sayıları</h1>
+    <div class="graphic-wrapper" style="width: 400px;
+    height: 400px;">
+        <canvas id="myChart"></canvas>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        const labels = @Html.Raw(Json.Serialize(ViewBag.Kategoriler));
+        const dataValues = @Html.Raw(Json.Serialize(ViewBag.Satislar));
+
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Satışlar',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: dataValues,
+            }]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {}
+        };
+
+        var myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+    </script>
+}
