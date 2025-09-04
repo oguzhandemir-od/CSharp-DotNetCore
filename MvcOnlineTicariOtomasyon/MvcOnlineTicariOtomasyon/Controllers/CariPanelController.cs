@@ -7,6 +7,7 @@ using MvcOnlineTicariOtomasyon.Models.ViewModels;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    [Authorize]
     public class CariPanelController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -14,13 +15,24 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             _context = context;
         }
-
-        [Authorize]
+                
         public IActionResult Index()
         {
             var carimail = HttpContext.Session.GetString("CariMail");
             var cari = _context.Carilers.FirstOrDefault(x => x.CariMail == carimail);
             ViewBag.m = carimail;
+
+            var siparis = _context.SatisHarekets.Where(x => x.Cariid == cari.Cariid).Count();
+            ViewBag.ToplamSiparis= siparis;
+
+            var toplamTutar = _context.SatisHarekets.Where(x => x.Cariid == cari.Cariid).Sum(y => y.ToplamTutar);
+            ViewBag.ToplamTutar= toplamTutar;
+
+            var toplamUrun = _context.SatisHarekets.Where(x => x.Cariid == cari.Cariid).Sum(y => y.Adet);
+            ViewBag.ToplamUrun= toplamUrun;
+
+            var mesajlar = _context.Mesajlars.Where(x => x.Alici == carimail).ToList();
+            ViewBag.Mesajlar= mesajlar;
             return View(cari);
         }
 
@@ -145,6 +157,35 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             kargoSorgu = kargoSorgu.Where(k => k.TakipKodu.Contains(search));
             var kargolar = kargoSorgu.ToList();
             return View(kargolar);
+        }
+
+        [Route("CariPanel/CariKargoDetay/{kod}")]
+        public IActionResult CariKargoDetay(string kod)
+        {
+            var kargo = _context.KargoTakips.Where(x => x.TakipKodu == kod).ToList();
+            return View(kargo);
+        }
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+
+            return RedirectToAction("Index", "Login");
+        }
+
+        public async Task<IActionResult> CariBilgiGuncelle(Cariler c)
+        {
+            var carimail = HttpContext.Session.GetString("CariMail");
+            var id = _context.Carilers.Where(x => x.CariMail == carimail).Select(y => y.Cariid).FirstOrDefault();
+
+            var cari = await _context.Carilers.FindAsync(id);
+            cari.CariAd = c.CariAd;
+            cari.CariSoyad= c.CariSoyad;
+            cari.CariMail = c.CariMail;
+            cari.CariSehir=c.CariSehir;
+            cari.CariSifre= c.CariSifre;
+            _context.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
 
 
