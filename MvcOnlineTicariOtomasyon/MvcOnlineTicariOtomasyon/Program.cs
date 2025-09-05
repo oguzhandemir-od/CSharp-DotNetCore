@@ -28,6 +28,15 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
             options.AccessDeniedPath = "/Home/AccessDenied"; // Eriþim reddedildi sayfasý
         });
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("CanCreate", policy =>
+        policy.RequireClaim("Role", "A"));
+
+    options.AddPolicy("CanDelete", policy =>
+        policy.RequireClaim("Role", "A"));
+});
+
 builder.Services.AddMvc()
         .AddSessionStateTempDataProvider();
 builder.Services.AddSession();

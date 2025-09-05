@@ -22,6 +22,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return View(degerler);
         }
 
+        [Authorize(Policy = "CanCreate")]
         public IActionResult DepartmanEkle()
         {
             return View();

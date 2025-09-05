@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "AccessDenied";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<header>
+    <h1 class="text-danger">Erişim Engellendi.</h1>
+    <p class="text-danger">Bu sayfaya erişim yetkiniz bulunmamaktadır.</p>
+</header>
+<div class="row">
+    <div class="col-md-8">
+        <p>
+            <strong>Bu sayfaya erişim yetkiniz yeterli değil.</strong>
+            Lütfen, bu erişim hatasıyla ilgili yetkili birimle (sistem yöneticiniz) iletişime geçin.
+        </p>
+        <p>
+            Eğer bu sayfaya yanlışlıkla yönlendirildiyseniz,
+            lütfen <a asp-controller="Kategoris" asp-action="Index">ana sayfaya</a> geri dönün.
+        </p>
+    </div>
+</div>
+

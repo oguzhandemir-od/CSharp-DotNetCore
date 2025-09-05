@@ -10,5 +10,7 @@ namespace MvcOnlineTicariOtomasyon.Models.ViewModels
 
         [Required(ErrorMessage = "Şifre gereklidir.")]
         public string Sifre { get; set; }
+
+        public string Yetki {  get; set; }
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MvcOnlineTicariOtomasyon.Data;
 using MvcOnlineTicariOtomasyon.Models.Siniflar;
 using MvcOnlineTicariOtomasyon.Models.ViewModels;
@@ -79,12 +80,17 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public async Task<IActionResult> AdminLogin(AdminLoginViewModel p)
         {
             var bilgiler= _context.Admins.FirstOrDefault(x=>x.KullaniciAd== p.KullaniciAd && x.Sifre==p.Sifre);
+            var role = bilgiler.Yetki.ToString();
+
+            
             if (bilgiler != null)
             {
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, bilgiler.KullaniciAd) // Kullanıcı mailini claim olarak ekle
+                    new Claim(ClaimTypes.Name, bilgiler.KullaniciAd), // Kullanıcı mailini claim olarak ekle
+                    new Claim("Role", role)
                 };
+
 
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
