@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Authentication.Cookies;
+﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
-using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MvcOnlineTicariOtomasyon.Data;
 using MvcOnlineTicariOtomasyon.Models.Siniflar;
@@ -8,6 +9,7 @@ using MvcOnlineTicariOtomasyon.Models.ViewModels;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         private readonly ApplicationDbContext _context;
