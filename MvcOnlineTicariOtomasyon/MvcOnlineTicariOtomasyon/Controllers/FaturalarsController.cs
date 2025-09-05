@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MvcOnlineTicariOtomasyon.Data;
 using MvcOnlineTicariOtomasyon.Models.Siniflar;
+using MvcOnlineTicariOtomasyon.Models.ViewModels;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
@@ -80,6 +82,42 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             }
 
             return RedirectToAction(nameof(Index));
+        }
+
+        public ActionResult Dinamik()
+        {
+            FaturaDetayViewModel model = new FaturaDetayViewModel();
+            model.Faturas = _context.Faturalars.ToList();
+            model.FaturaKalems = _context.FaturaKalems.ToList();
+            return View(model);
+        }
+
+        public async Task<IActionResult> FaturaKaydet(string FaturaSeriNo, string FaturaSiraNo,DateTime Tarih,
+            string VergiDairesi, DateTime saat, string TeslimEden, string TeslimAlan,string Toplam,
+            FaturaKalem[] kalemler)
+        {
+            Faturalar f = new Faturalar();
+            f.FaturaSeriNo = FaturaSeriNo;
+            f.FaturaSiraNo = FaturaSiraNo;
+            f.Tarih=Tarih;
+            f.VergiDairesi = VergiDairesi;
+            f.Saat = saat;
+            f.TeslimEden = TeslimEden;
+            f.TeslimAlan = TeslimAlan;
+            f.Toplam = decimal.Parse(Toplam);
+            _context.Faturalars.Add(f);
+            foreach(var x in kalemler)
+            {
+                FaturaKalem k=new FaturaKalem();
+                k.Aciklama=x.Aciklama;
+                k.BirimFiyat=x.BirimFiyat;
+                k.Faturalarid = x.Faturakalemid;
+                k.Miktar=x.Miktar;
+                k.Tutar=x.Tutar;
+                _context.FaturaKalems.Add(k);
+            }
+            _context.SaveChanges();
+            return Json("İşlem başarılı");
         }
 
     }
