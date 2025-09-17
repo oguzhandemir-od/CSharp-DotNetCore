@@ -6,6 +6,8 @@ Bu depo, Udemy üzerinden aldığım kursların uygulama projelerini içermekted
 
 1. [**ASP.NET MVC 5 ile Ticari Otomasyon**](https://github.com/oguzhandemir-od/Udemy/tree/main/MvcOnlineTicariOtomasyon)
    - Murat Yücedağ tarafından yayınlanan kurs projesidir.
+   - Kurstaki uygulamalar, .NET yerine .NET Core ile yapılmıştır.
+   - Ürün, fiyat, satış, fatura, kargo takibi, grafikler, istatistikler, personel & cari yönetimi ve mesajlaşma gibi modülleri bulundurur.
 
 2. [**JavaScript 30 Projects, HTML, and CSS Complete 30 Projects in 30 Days**](https://github.com/oguzhandemir-od/Udemy/tree/main/30_Projects_JS_CSS_HTML)
    - Bu kurs, JavaScript, HTML ve CSS kullanarak 30 farklı proje geliştirmeyi hedeflemektedir.
