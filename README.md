@@ -13,7 +13,7 @@ Bu depo, Udemy üzerinden aldığım kursların uygulama projelerini içermekted
    - Bu kurs, JavaScript, HTML ve CSS kullanarak 30 farklı proje geliştirmeyi hedeflemektedir.
    - Vijay Kumar tarafından yayınlanmıştır.
 
-3.[**Sıfırdan JavaScript Programlamaya Giriş**](https://github.com/oguzhandemir-od/Udemy/tree/main/JavaScript_-_S%C4%B1f%C4%B1rdan_%20JavaScript_%20Programlamaya_Giri%C5%9F)
+3. [**Sıfırdan JavaScript Programlamaya Giriş**](https://github.com/oguzhandemir-od/Udemy/tree/main/JavaScript_-_S%C4%B1f%C4%B1rdan_%20JavaScript_%20Programlamaya_Giri%C5%9F)
 - JavaScript'e sıfırdan başlayan kurs projeleri.
 - Can Gökçeaslan tarafından yayınlanmıştır.
   
