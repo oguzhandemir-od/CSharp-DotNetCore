@@ -1,0 +1,35 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="navbar-nav navbar-right">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="myListsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    My Lists
+                </a>
+                <div class="dropdown-menu" aria-labelledby="myListsDropdown">
+                    <a class="dropdown-item" href="@Url.Action("Watched", "Lists")">Watched</a>
+                    <a class="dropdown-item" href="@Url.Action("Watchlist", "Lists")">Watchlist</a>
+                    <a class="dropdown-item" href="@Url.Action("Favorites", "Lists")">Favorites</a>
+                </div>
+            </li>
+            <li>
+                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })
+            </li>
+            <li><a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Oturumu kapat</a></li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="navbar-nav navbar-right">
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "nav-link" })</li>
+        <li>@Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link" })</li>
+    </ul>
+}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>

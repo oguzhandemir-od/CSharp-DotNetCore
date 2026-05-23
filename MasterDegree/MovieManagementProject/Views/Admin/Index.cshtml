@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Admin Dashboard";
+    Layout = "~/Views/Shared/_AdminMenu.cshtml";
+}
+
+<div class="container-fluid mt-4">
+    <div class="page-header">
+        <h1>
+            <i class="bi bi-speedometer"></i> Dashboard
+        </h1>
+        @*<p class="lead">Admin panelinize hoş geldiniz. Buradan yönetim işlemlerinizi yapabilirsiniz.</p>*@
+    </div>
+
+    <!-- Cards Section -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.MovieCount Movies</h5>
+                    <p class="card-text">Manage the movies in your database.</p>
+                    <a href="@Url.Action("Index", "Movies")" class="btn btn-light">Go to Movies</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.CategoryCount Categories</h5>
+                    <p class="card-text">Manage the categories for movies.</p>
+                    <a href="@Url.Action("Index", "Categories")" class="btn btn-light">Go to Categories</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-warning mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.UserCount Users</h5>
+                    <p class="card-text">Manage the users of your system.</p>
+                    <a href="@Url.Action("Index", "Users")" class="btn btn-light">Go to Users</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts Section -->
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-header">Distribution of Movies by Category</div>
+                <div class="card-body">
+                    <canvas id="categoryChart" width="400" height="200"></canvas> <!-- Dinamik grafik için -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">Quick Actions</div>
+                <div class="card-body">
+                    <a href="@Url.Action("Create", "Movies")" class="btn btn-primary btn-block mb-2">Add A New Movie</a>
+                    <a href="@Url.Action("Create", "Categories")" class="btn btn-success btn-block mb-2">Add A New Category</a>
+                    <a href="@Url.Action("Create", "Users")" class="btn btn-warning btn-block">Add A New User</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Latest Movies Section -->
+    <h3 class="mt-5">Latest Movies</h3>
+    <div class="row">
+        @foreach (var movie in ViewBag.LatestMovies)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="" class="card-img-top" alt="@movie.Title">
+                    <div class="card-body">
+                        <h5 class="card-title">@movie.Title</h5>
+                        <p class="card-text">@movie.Director</p>
+                        <p class="card-text">Year: @movie.Year</p>
+                        <a href="@Url.Action("Details", "Movies", new { id = movie.Id })" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('categoryChart').getContext('2d');
+        var categoryChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Kategori 1', 'Kategori 2', 'Kategori 3'], // Dinamik kategoriler
+                datasets: [{
+                    data: [10, 15, 20], // Dinamik film sayıları
+                    backgroundColor: ['#007bff', '#28a745', '#ffc107']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+}

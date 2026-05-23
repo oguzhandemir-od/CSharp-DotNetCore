@@ -1,0 +1,275 @@
+﻿/* Genel Koyu Tema */
+body {
+    background-color: #121212; /* Koyu arka plan rengi */
+    color: #fff; /* Beyaz metin rengi */
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+/* Hero Bölümü */
+.hero-section {
+    background: url('path_to_your_image_or_video') no-repeat center center;
+    background-size: cover;
+    padding: 120px 0;
+    color: white;
+}
+
+    .hero-section h1 {
+        font-size: 50px;
+        font-weight: bold;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-section p {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .hero-section .btn {
+        background-color: #00bcd4; /* Açık mavi buton rengi */
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 18px;
+        border-radius: 5px;
+    }
+
+/* Film Kategorileri */
+.categories-section {
+    padding: 50px 0;
+    background-color: #1c1c1c; /* Koyu gri arka plan */
+}
+
+    .categories-section .category-card {
+        background-color: #333; /* Koyu gri kartlar */
+        padding: 30px;
+        border-radius: 8px;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+        .categories-section .category-card h4 {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .categories-section .category-card a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 25px;
+            background-color: #00bcd4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+            .categories-section .category-card a:hover {
+                background-color: #0097a7;
+            }
+
+/* Popüler Filmler */
+.popular-movies-section {
+    padding: 50px 0;
+    background-color: #1c1c1c; /* Koyu gri arka plan */
+}
+
+    .popular-movies-section .movie-card {
+        background-color: #333;
+        margin: 20px 0;
+        padding: 20px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+        .popular-movies-section .movie-card h5 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .popular-movies-section .movie-card img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .popular-movies-section .movie-card .btn {
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+            .popular-movies-section .movie-card .btn:hover {
+                background-color: #0097a7;
+            }
+
+/* Hakkımızda */
+.about-section {
+    background-color: #121212; /* Koyu arka plan */
+    padding: 50px 0;
+}
+
+    .about-section h2 {
+        font-size: 35px;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    .about-section p {
+        font-size: 18px;
+        color: #ddd;
+        line-height: 1.6;
+    }
+
+    .about-section .btn {
+        margin-top: 20px;
+        background-color: #00bcd4;
+        color: white;
+        padding: 10px 30px;
+        border-radius: 5px;
+    }
+
+/* Film Kartları */
+.movie-card {
+    background-color: #2c3e50;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .movie-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .movie-card .movie-img {
+        max-width: 100%;
+        border-bottom: 4px solid #00bcd4;
+    }
+
+.movie-card-body {
+    padding: 15px;
+    color: white;
+    background-color: #34495e;
+}
+
+.movie-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.movie-category {
+    font-size: 14px;
+    color: #00bcd4;
+}
+
+.movie-description {
+    font-size: 14px;
+    color: #ecf0f1;
+    margin-bottom: 15px;
+}
+
+/* Sayfalandırma */
+.pagination-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.pagination {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+}
+
+.page-item {
+    display: inline;
+    margin-right: 10px;
+}
+
+.page-link {
+    padding: 8px 12px;
+    background-color: #00bcd4;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    .page-link:hover {
+        background-color: #0097a7;
+    }
+
+.page-item.active .page-link {
+    background-color: #1abc9c;
+}
+
+/* Film Detay Sayfası */
+.movie-details-section {
+    background-color: #121212; /* Koyu arka plan */
+    padding: 50px 0;
+    color: #fff;
+}
+
+    .movie-details-section .movie-poster {
+        margin-bottom: 20px;
+    }
+
+        .movie-details-section .movie-poster img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+    .movie-details-section .movie-info {
+        padding: 20px;
+        background-color: #1e1e1e;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+        .movie-details-section .movie-info h2 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .movie-details-section .movie-info p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .movie-details-section .movie-info .director,
+        .movie-details-section .movie-info .release-year,
+        .movie-details-section .movie-info .category {
+            color: #00bcd4; /* Mavi renkli başlıklar */
+            font-weight: bold;
+        }
+
+        .movie-details-section .movie-info .description {
+            font-size: 16px;
+            color: #ddd; /* Açık gri metin */
+            line-height: 1.6;
+        }
+
+        .movie-details-section .movie-info .btn {
+            margin-top: 20px;
+            background-color: #00bcd4;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+            .movie-details-section .movie-info .btn:hover {
+                background-color: #0097a7;
+            }
