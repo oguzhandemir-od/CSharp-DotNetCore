@@ -23,6 +23,15 @@ Kütüphane içerisindeki klasörlere dair bilgi:
 * [TechCareer](/TechCareer) - Techcareer bünyesinde katıldığım, sektörel standartlarda .NET Core backend mimarileri geliştirdiğimiz yoğunlaştırılmış bootcamp/eğitim projeleri.
 
 * [Udemy](/Udemy) - Udemy üzerindeki eğitmenlerden aldığım C# / .NET mimari, tasarım desenleri ve pratik odaklı kurs projeleri.
+
+## 🛠️ Kullanılan Teknolojiler & Yetkinlikler
+
+Bu kütüphane genelinde aşağıdaki teknolojiler ve yaklaşımlar üzerine pratikler yer almaktadır:
+
+*   **Dil & Çatı:** C#, .NET Core
+*   **Mimari Yaklaşımlar:** Layered Architecture (Katmanlı Mimari), Clean Architecture, RESTful Web API Geliştirme
+*   **Veritabanı & ORM:** Entity Framework Core, LINQ, MS SQL Server, PostgreSQL
+*   **Tasarım İlkeleri:** SOLID Prensipleri, Design Patterns (Tasarım Desenleri)
   
 ## 📧 İletişim
 Bu kütüphane ve çalışmalarım hakkında geri bildirimleriniz ve ayrıca katkıda bulunmak için benimle iletişime geçebilirsiniz.
