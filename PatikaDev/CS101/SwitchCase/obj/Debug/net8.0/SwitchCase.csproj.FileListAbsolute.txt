@@ -1,0 +1,15 @@
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\SwitchCase\bin\Debug\net8.0\SwitchCase.exe
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\SwitchCase\bin\Debug\net8.0\SwitchCase.deps.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\SwitchCase\bin\Debug\net8.0\SwitchCase.runtimeconfig.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\SwitchCase\bin\Debug\net8.0\SwitchCase.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\SwitchCase\bin\Debug\net8.0\SwitchCase.pdb
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\SwitchCase\obj\Debug\net8.0\SwitchCase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\SwitchCase\obj\Debug\net8.0\SwitchCase.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\SwitchCase\obj\Debug\net8.0\SwitchCase.AssemblyInfo.cs
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\SwitchCase\obj\Debug\net8.0\SwitchCase.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\SwitchCase\obj\Debug\net8.0\SwitchCase.sourcelink.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\SwitchCase\obj\Debug\net8.0\SwitchCase.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\SwitchCase\obj\Debug\net8.0\refint\SwitchCase.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\SwitchCase\obj\Debug\net8.0\SwitchCase.pdb
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\SwitchCase\obj\Debug\net8.0\SwitchCase.genruntimeconfig.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\SwitchCase\obj\Debug\net8.0\ref\SwitchCase.dll

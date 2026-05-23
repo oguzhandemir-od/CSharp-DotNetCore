@@ -1,0 +1,15 @@
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\DaireCizme\bin\Debug\net8.0\DaireCizme.exe
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\DaireCizme\bin\Debug\net8.0\DaireCizme.deps.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\DaireCizme\bin\Debug\net8.0\DaireCizme.runtimeconfig.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\DaireCizme\bin\Debug\net8.0\DaireCizme.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\DaireCizme\bin\Debug\net8.0\DaireCizme.pdb
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\DaireCizme\obj\Debug\net8.0\DaireCizme.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\DaireCizme\obj\Debug\net8.0\DaireCizme.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\DaireCizme\obj\Debug\net8.0\DaireCizme.AssemblyInfo.cs
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\DaireCizme\obj\Debug\net8.0\DaireCizme.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\DaireCizme\obj\Debug\net8.0\DaireCizme.sourcelink.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\DaireCizme\obj\Debug\net8.0\DaireCizme.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\DaireCizme\obj\Debug\net8.0\refint\DaireCizme.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\DaireCizme\obj\Debug\net8.0\DaireCizme.pdb
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\DaireCizme\obj\Debug\net8.0\DaireCizme.genruntimeconfig.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\DaireCizme\obj\Debug\net8.0\ref\DaireCizme.dll

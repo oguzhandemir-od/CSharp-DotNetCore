@@ -1,0 +1,15 @@
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\StatikSiniflar\bin\Debug\net8.0\StatikSiniflar.exe
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\StatikSiniflar\bin\Debug\net8.0\StatikSiniflar.deps.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\StatikSiniflar\bin\Debug\net8.0\StatikSiniflar.runtimeconfig.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\StatikSiniflar\bin\Debug\net8.0\StatikSiniflar.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\StatikSiniflar\bin\Debug\net8.0\StatikSiniflar.pdb
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\StatikSiniflar\obj\Debug\net8.0\StatikSiniflar.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\StatikSiniflar\obj\Debug\net8.0\StatikSiniflar.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\StatikSiniflar\obj\Debug\net8.0\StatikSiniflar.AssemblyInfo.cs
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\StatikSiniflar\obj\Debug\net8.0\StatikSiniflar.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\StatikSiniflar\obj\Debug\net8.0\StatikSiniflar.sourcelink.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\StatikSiniflar\obj\Debug\net8.0\StatikSiniflar.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\StatikSiniflar\obj\Debug\net8.0\refint\StatikSiniflar.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\StatikSiniflar\obj\Debug\net8.0\StatikSiniflar.pdb
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\StatikSiniflar\obj\Debug\net8.0\StatikSiniflar.genruntimeconfig.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\StatikSiniflar\obj\Debug\net8.0\ref\StatikSiniflar.dll

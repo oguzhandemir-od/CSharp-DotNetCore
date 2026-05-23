@@ -1,0 +1,10 @@
+﻿################################################################################
+# Bu .gitignore dosyası Microsoft(R) Visual Studio tarafından otomatik olarak oluşturulmuştur.
+################################################################################
+
+/.vs/slnx.sqlite
+/.vs/patikadev/FileContentIndex
+/CS101/.vs/CS101/FileContentIndex
+/CS_Projeleri/.vs/CS_Projeleri/FileContentIndex/06b25242-2512-4c6e-96e8-3ff2cdcd3c62.vsidx
+/CS_Projeleri/.vs/CS_Projeleri/FileContentIndex/17ed9d45-f220-4b06-922d-7295265ef4c5.vsidx
+/CS_Projeleri/.vs/CS_Projeleri/FileContentIndex/f01a7e8b-fcc5-4a9d-9ab8-9fa3c1323812.vsidx

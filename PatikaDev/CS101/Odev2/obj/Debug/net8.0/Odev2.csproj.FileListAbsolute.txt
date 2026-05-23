@@ -1,0 +1,15 @@
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\Odev2\bin\Debug\net8.0\Odev2.exe
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\Odev2\bin\Debug\net8.0\Odev2.deps.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\Odev2\bin\Debug\net8.0\Odev2.runtimeconfig.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\Odev2\bin\Debug\net8.0\Odev2.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\Odev2\bin\Debug\net8.0\Odev2.pdb
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\Odev2\obj\Debug\net8.0\Odev2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\Odev2\obj\Debug\net8.0\Odev2.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\Odev2\obj\Debug\net8.0\Odev2.AssemblyInfo.cs
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\Odev2\obj\Debug\net8.0\Odev2.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\Odev2\obj\Debug\net8.0\Odev2.sourcelink.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\Odev2\obj\Debug\net8.0\Odev2.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\Odev2\obj\Debug\net8.0\refint\Odev2.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\Odev2\obj\Debug\net8.0\Odev2.pdb
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\Odev2\obj\Debug\net8.0\Odev2.genruntimeconfig.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\Odev2\obj\Debug\net8.0\ref\Odev2.dll

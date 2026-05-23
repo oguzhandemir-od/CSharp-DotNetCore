@@ -1,0 +1,15 @@
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\UcgenCizme\bin\Debug\net8.0\UcgenCizme.exe
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\UcgenCizme\bin\Debug\net8.0\UcgenCizme.deps.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\UcgenCizme\bin\Debug\net8.0\UcgenCizme.runtimeconfig.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\UcgenCizme\bin\Debug\net8.0\UcgenCizme.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\UcgenCizme\bin\Debug\net8.0\UcgenCizme.pdb
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\UcgenCizme\obj\Debug\net8.0\UcgenCizme.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\UcgenCizme\obj\Debug\net8.0\UcgenCizme.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\UcgenCizme\obj\Debug\net8.0\UcgenCizme.AssemblyInfo.cs
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\UcgenCizme\obj\Debug\net8.0\UcgenCizme.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\UcgenCizme\obj\Debug\net8.0\UcgenCizme.sourcelink.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\UcgenCizme\obj\Debug\net8.0\UcgenCizme.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\UcgenCizme\obj\Debug\net8.0\refint\UcgenCizme.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\UcgenCizme\obj\Debug\net8.0\UcgenCizme.pdb
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\UcgenCizme\obj\Debug\net8.0\UcgenCizme.genruntimeconfig.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\UcgenCizme\obj\Debug\net8.0\ref\UcgenCizme.dll

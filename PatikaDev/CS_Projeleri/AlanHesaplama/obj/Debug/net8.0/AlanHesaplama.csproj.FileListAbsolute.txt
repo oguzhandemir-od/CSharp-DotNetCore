@@ -1,0 +1,15 @@
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\AlanHesaplama\bin\Debug\net8.0\AlanHesaplama.exe
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\AlanHesaplama\bin\Debug\net8.0\AlanHesaplama.deps.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\AlanHesaplama\bin\Debug\net8.0\AlanHesaplama.runtimeconfig.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\AlanHesaplama\bin\Debug\net8.0\AlanHesaplama.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\AlanHesaplama\bin\Debug\net8.0\AlanHesaplama.pdb
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\AlanHesaplama\obj\Debug\net8.0\AlanHesaplama.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\AlanHesaplama\obj\Debug\net8.0\AlanHesaplama.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\AlanHesaplama\obj\Debug\net8.0\AlanHesaplama.AssemblyInfo.cs
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\AlanHesaplama\obj\Debug\net8.0\AlanHesaplama.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\AlanHesaplama\obj\Debug\net8.0\AlanHesaplama.sourcelink.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\AlanHesaplama\obj\Debug\net8.0\AlanHesaplama.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\AlanHesaplama\obj\Debug\net8.0\refint\AlanHesaplama.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\AlanHesaplama\obj\Debug\net8.0\AlanHesaplama.pdb
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\AlanHesaplama\obj\Debug\net8.0\AlanHesaplama.genruntimeconfig.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\AlanHesaplama\obj\Debug\net8.0\ref\AlanHesaplama.dll

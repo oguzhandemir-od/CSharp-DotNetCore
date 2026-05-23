@@ -1,0 +1,15 @@
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\ATMUygulamasi\bin\Debug\net8.0\ATMUygulamasi.exe
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\ATMUygulamasi\bin\Debug\net8.0\ATMUygulamasi.deps.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\ATMUygulamasi\bin\Debug\net8.0\ATMUygulamasi.runtimeconfig.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\ATMUygulamasi\bin\Debug\net8.0\ATMUygulamasi.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\ATMUygulamasi\bin\Debug\net8.0\ATMUygulamasi.pdb
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\ATMUygulamasi\obj\Debug\net8.0\ATMUygulamasi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\ATMUygulamasi\obj\Debug\net8.0\ATMUygulamasi.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\ATMUygulamasi\obj\Debug\net8.0\ATMUygulamasi.AssemblyInfo.cs
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\ATMUygulamasi\obj\Debug\net8.0\ATMUygulamasi.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\ATMUygulamasi\obj\Debug\net8.0\ATMUygulamasi.sourcelink.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\ATMUygulamasi\obj\Debug\net8.0\ATMUygulamasi.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\ATMUygulamasi\obj\Debug\net8.0\refint\ATMUygulamasi.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\ATMUygulamasi\obj\Debug\net8.0\ATMUygulamasi.pdb
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\ATMUygulamasi\obj\Debug\net8.0\ATMUygulamasi.genruntimeconfig.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\ATMUygulamasi\obj\Debug\net8.0\ref\ATMUygulamasi.dll

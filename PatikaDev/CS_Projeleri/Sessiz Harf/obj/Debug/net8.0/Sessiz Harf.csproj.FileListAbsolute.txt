@@ -1,0 +1,15 @@
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Sessiz Harf\obj\Debug\net8.0\Sessiz Harf.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Sessiz Harf\obj\Debug\net8.0\Sessiz Harf.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Sessiz Harf\obj\Debug\net8.0\Sessiz Harf.AssemblyInfo.cs
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Sessiz Harf\obj\Debug\net8.0\Sessiz Harf.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Sessiz Harf\obj\Debug\net8.0\Sessiz Harf.sourcelink.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Sessiz Harf\bin\Debug\net8.0\Sessiz Harf.exe
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Sessiz Harf\bin\Debug\net8.0\Sessiz Harf.deps.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Sessiz Harf\bin\Debug\net8.0\Sessiz Harf.runtimeconfig.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Sessiz Harf\bin\Debug\net8.0\Sessiz Harf.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Sessiz Harf\bin\Debug\net8.0\Sessiz Harf.pdb
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Sessiz Harf\obj\Debug\net8.0\Sessiz Harf.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Sessiz Harf\obj\Debug\net8.0\refint\Sessiz Harf.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Sessiz Harf\obj\Debug\net8.0\Sessiz Harf.pdb
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Sessiz Harf\obj\Debug\net8.0\Sessiz Harf.genruntimeconfig.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Sessiz Harf\obj\Debug\net8.0\ref\Sessiz Harf.dll

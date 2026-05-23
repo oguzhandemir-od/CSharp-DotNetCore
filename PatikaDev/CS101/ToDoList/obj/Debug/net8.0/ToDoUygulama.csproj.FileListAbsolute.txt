@@ -1,0 +1,15 @@
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ToDoList\bin\Debug\net8.0\ToDoUygulama.exe
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ToDoList\bin\Debug\net8.0\ToDoUygulama.deps.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ToDoList\bin\Debug\net8.0\ToDoUygulama.runtimeconfig.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ToDoList\bin\Debug\net8.0\ToDoUygulama.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ToDoList\bin\Debug\net8.0\ToDoUygulama.pdb
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ToDoList\obj\Debug\net8.0\ToDoUygulama.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ToDoList\obj\Debug\net8.0\ToDoUygulama.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ToDoList\obj\Debug\net8.0\ToDoUygulama.AssemblyInfo.cs
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ToDoList\obj\Debug\net8.0\ToDoUygulama.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ToDoList\obj\Debug\net8.0\ToDoUygulama.sourcelink.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ToDoList\obj\Debug\net8.0\ToDoUygulama.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ToDoList\obj\Debug\net8.0\refint\ToDoUygulama.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ToDoList\obj\Debug\net8.0\ToDoUygulama.pdb
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ToDoList\obj\Debug\net8.0\ToDoUygulama.genruntimeconfig.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ToDoList\obj\Debug\net8.0\ref\ToDoUygulama.dll

@@ -1,0 +1,15 @@
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ForLoop\bin\Debug\net8.0\ForLoop.exe
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ForLoop\bin\Debug\net8.0\ForLoop.deps.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ForLoop\bin\Debug\net8.0\ForLoop.runtimeconfig.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ForLoop\bin\Debug\net8.0\ForLoop.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ForLoop\bin\Debug\net8.0\ForLoop.pdb
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ForLoop\obj\Debug\net8.0\ForLoop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ForLoop\obj\Debug\net8.0\ForLoop.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ForLoop\obj\Debug\net8.0\ForLoop.AssemblyInfo.cs
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ForLoop\obj\Debug\net8.0\ForLoop.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ForLoop\obj\Debug\net8.0\ForLoop.sourcelink.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ForLoop\obj\Debug\net8.0\ForLoop.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ForLoop\obj\Debug\net8.0\refint\ForLoop.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ForLoop\obj\Debug\net8.0\ForLoop.pdb
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ForLoop\obj\Debug\net8.0\ForLoop.genruntimeconfig.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ForLoop\obj\Debug\net8.0\ref\ForLoop.dll

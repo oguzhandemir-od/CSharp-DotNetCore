@@ -1,0 +1,15 @@
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ArrayMetotları\bin\Debug\net8.0\ArrayMetotları.exe
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ArrayMetotları\bin\Debug\net8.0\ArrayMetotları.deps.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ArrayMetotları\bin\Debug\net8.0\ArrayMetotları.runtimeconfig.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ArrayMetotları\bin\Debug\net8.0\ArrayMetotları.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ArrayMetotları\bin\Debug\net8.0\ArrayMetotları.pdb
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ArrayMetotları\obj\Debug\net8.0\ArrayMetotları.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ArrayMetotları\obj\Debug\net8.0\ArrayMetotları.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ArrayMetotları\obj\Debug\net8.0\ArrayMetotları.AssemblyInfo.cs
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ArrayMetotları\obj\Debug\net8.0\ArrayMetotları.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ArrayMetotları\obj\Debug\net8.0\ArrayMetotları.sourcelink.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ArrayMetotları\obj\Debug\net8.0\ArrayMetotları.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ArrayMetotları\obj\Debug\net8.0\refint\ArrayMetotları.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\ArrayMetotları\obj\Debug\net8.0\ArrayMetotları.pdb
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ArrayMetotları\obj\Debug\net8.0\ArrayMetotları.genruntimeconfig.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\ArrayMetotları\obj\Debug\net8.0\ref\ArrayMetotları.dll

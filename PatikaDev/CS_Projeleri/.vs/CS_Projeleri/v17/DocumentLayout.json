@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\patikadev\\CS_Projeleri\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F571E30B-9F06-4208-8E80-25C38998E6D7}|OrtalamaHesaplama\\OrtalamaHesaplama.csproj|c:\\users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\patikadev\\cs_projeleri\\ortalamahesaplama\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F571E30B-9F06-4208-8E80-25C38998E6D7}|OrtalamaHesaplama\\OrtalamaHesaplama.csproj|solutionrelative:ortalamahesaplama\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F571E30B-9F06-4208-8E80-25C38998E6D7}|OrtalamaHesaplama\\OrtalamaHesaplama.csproj|c:\\users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\patikadev\\cs_projeleri\\ortalamahesaplama\\islemler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F571E30B-9F06-4208-8E80-25C38998E6D7}|OrtalamaHesaplama\\OrtalamaHesaplama.csproj|solutionrelative:ortalamahesaplama\\islemler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F571E30B-9F06-4208-8E80-25C38998E6D7}|OrtalamaHesaplama\\OrtalamaHesaplama.csproj|c:\\users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\patikadev\\cs_projeleri\\ortalamahesaplama\\fibonacci.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F571E30B-9F06-4208-8E80-25C38998E6D7}|OrtalamaHesaplama\\OrtalamaHesaplama.csproj|solutionrelative:ortalamahesaplama\\fibonacci.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Islemler.cs",
+              "DocumentMoniker": "C:\\Users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\patikadev\\CS_Projeleri\\OrtalamaHesaplama\\Islemler.cs",
+              "RelativeDocumentMoniker": "OrtalamaHesaplama\\Islemler.cs",
+              "ToolTip": "C:\\Users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\patikadev\\CS_Projeleri\\OrtalamaHesaplama\\Islemler.cs*",
+              "RelativeToolTip": "OrtalamaHesaplama\\Islemler.cs*",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAYwBEAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T17:53:49.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Fibonacci.cs",
+              "DocumentMoniker": "C:\\Users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\patikadev\\CS_Projeleri\\OrtalamaHesaplama\\Fibonacci.cs",
+              "RelativeDocumentMoniker": "OrtalamaHesaplama\\Fibonacci.cs",
+              "ToolTip": "C:\\Users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\patikadev\\CS_Projeleri\\OrtalamaHesaplama\\Fibonacci.cs",
+              "RelativeToolTip": "OrtalamaHesaplama\\Fibonacci.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAqwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T17:49:14.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\patikadev\\CS_Projeleri\\OrtalamaHesaplama\\Program.cs",
+              "RelativeDocumentMoniker": "OrtalamaHesaplama\\Program.cs",
+              "ToolTip": "C:\\Users\\o\u011Fuzhan\\source\\repos\\oguzdemir95\\patikadev\\CS_Projeleri\\OrtalamaHesaplama\\Program.cs*",
+              "RelativeToolTip": "OrtalamaHesaplama\\Program.cs*",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAxwAwAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T17:00:01.573Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

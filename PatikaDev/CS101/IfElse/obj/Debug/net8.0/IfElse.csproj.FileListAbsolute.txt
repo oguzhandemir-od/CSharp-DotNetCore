@@ -1,0 +1,15 @@
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\IfElse\bin\Debug\net8.0\IfElse.exe
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\IfElse\bin\Debug\net8.0\IfElse.deps.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\IfElse\bin\Debug\net8.0\IfElse.runtimeconfig.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\IfElse\bin\Debug\net8.0\IfElse.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\IfElse\bin\Debug\net8.0\IfElse.pdb
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\IfElse\obj\Debug\net8.0\IfElse.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\IfElse\obj\Debug\net8.0\IfElse.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\IfElse\obj\Debug\net8.0\IfElse.AssemblyInfo.cs
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\IfElse\obj\Debug\net8.0\IfElse.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\IfElse\obj\Debug\net8.0\IfElse.sourcelink.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\IfElse\obj\Debug\net8.0\IfElse.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\IfElse\obj\Debug\net8.0\refint\IfElse.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\IfElse\obj\Debug\net8.0\IfElse.pdb
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\IfElse\obj\Debug\net8.0\IfElse.genruntimeconfig.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\IfElse\obj\Debug\net8.0\ref\IfElse.dll

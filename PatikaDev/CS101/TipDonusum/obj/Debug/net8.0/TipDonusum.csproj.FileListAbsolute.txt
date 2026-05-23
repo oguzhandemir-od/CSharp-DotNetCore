@@ -1,0 +1,15 @@
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\TipDonusum\bin\Debug\net8.0\TipDonusum.exe
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\TipDonusum\bin\Debug\net8.0\TipDonusum.deps.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\TipDonusum\bin\Debug\net8.0\TipDonusum.runtimeconfig.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\TipDonusum\bin\Debug\net8.0\TipDonusum.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\TipDonusum\bin\Debug\net8.0\TipDonusum.pdb
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\TipDonusum\obj\Debug\net8.0\TipDonusum.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\TipDonusum\obj\Debug\net8.0\TipDonusum.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\TipDonusum\obj\Debug\net8.0\TipDonusum.AssemblyInfo.cs
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\TipDonusum\obj\Debug\net8.0\TipDonusum.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\TipDonusum\obj\Debug\net8.0\TipDonusum.sourcelink.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\TipDonusum\obj\Debug\net8.0\TipDonusum.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\TipDonusum\obj\Debug\net8.0\refint\TipDonusum.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\TipDonusum\obj\Debug\net8.0\TipDonusum.pdb
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\TipDonusum\obj\Debug\net8.0\TipDonusum.genruntimeconfig.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\TipDonusum\obj\Debug\net8.0\ref\TipDonusum.dll

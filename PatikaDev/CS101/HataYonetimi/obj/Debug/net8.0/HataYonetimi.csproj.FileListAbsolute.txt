@@ -1,0 +1,15 @@
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\HataYonetimi\bin\Debug\net8.0\HataYonetimi.exe
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\HataYonetimi\bin\Debug\net8.0\HataYonetimi.deps.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\HataYonetimi\bin\Debug\net8.0\HataYonetimi.runtimeconfig.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\HataYonetimi\bin\Debug\net8.0\HataYonetimi.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\HataYonetimi\bin\Debug\net8.0\HataYonetimi.pdb
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\HataYonetimi\obj\Debug\net8.0\HataYonetimi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\HataYonetimi\obj\Debug\net8.0\HataYonetimi.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\HataYonetimi\obj\Debug\net8.0\HataYonetimi.AssemblyInfo.cs
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\HataYonetimi\obj\Debug\net8.0\HataYonetimi.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\HataYonetimi\obj\Debug\net8.0\HataYonetimi.sourcelink.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\HataYonetimi\obj\Debug\net8.0\HataYonetimi.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\HataYonetimi\obj\Debug\net8.0\refint\HataYonetimi.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS101\HataYonetimi\obj\Debug\net8.0\HataYonetimi.pdb
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\HataYonetimi\obj\Debug\net8.0\HataYonetimi.genruntimeconfig.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\HataYonetimi\obj\Debug\net8.0\ref\HataYonetimi.dll

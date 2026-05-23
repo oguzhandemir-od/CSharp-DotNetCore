@@ -1,0 +1,15 @@
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\IntegerIkililer\bin\Debug\net8.0\IntegerIkililer.exe
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\IntegerIkililer\bin\Debug\net8.0\IntegerIkililer.deps.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\IntegerIkililer\bin\Debug\net8.0\IntegerIkililer.runtimeconfig.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\IntegerIkililer\bin\Debug\net8.0\IntegerIkililer.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\IntegerIkililer\bin\Debug\net8.0\IntegerIkililer.pdb
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\IntegerIkililer\obj\Debug\net8.0\IntegerIkililer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\IntegerIkililer\obj\Debug\net8.0\IntegerIkililer.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\IntegerIkililer\obj\Debug\net8.0\IntegerIkililer.AssemblyInfo.cs
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\IntegerIkililer\obj\Debug\net8.0\IntegerIkililer.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\IntegerIkililer\obj\Debug\net8.0\IntegerIkililer.sourcelink.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\IntegerIkililer\obj\Debug\net8.0\IntegerIkililer.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\IntegerIkililer\obj\Debug\net8.0\refint\IntegerIkililer.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\IntegerIkililer\obj\Debug\net8.0\IntegerIkililer.pdb
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\IntegerIkililer\obj\Debug\net8.0\IntegerIkililer.genruntimeconfig.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\IntegerIkililer\obj\Debug\net8.0\ref\IntegerIkililer.dll

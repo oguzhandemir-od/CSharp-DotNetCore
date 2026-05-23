@@ -1,0 +1,6 @@
+﻿Derleme şu saatte başlatıldı: 11:09...
+1>------ Derleme başladı: Proje: HataYonetimi, Yapılandırma: Debug Any CPU ------
+1>Yapıyı hızlandırmak için çözümleyiciler atlanıyor. Çözümleyicileri çalıştırmak için 'Oluştur' veya 'Yeniden Oluştur' komutunu çalıştırabilirsiniz.
+1>HataYonetimi -> C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS101\HataYonetimi\bin\Debug\net8.0\HataYonetimi.dll
+========== Derleme: 1 başarılı, 0 başarısız, 0 güncel, 0 atlandı ==========
+========== Derleme şu saatte tamamlandı: 11:09 ve 00,840 saniye sürdü ==========

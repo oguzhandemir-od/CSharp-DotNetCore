@@ -1,0 +1,15 @@
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\OrtalamaHesaplama\bin\Debug\net8.0\OrtalamaHesaplama.exe
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\OrtalamaHesaplama\bin\Debug\net8.0\OrtalamaHesaplama.deps.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\OrtalamaHesaplama\bin\Debug\net8.0\OrtalamaHesaplama.runtimeconfig.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\OrtalamaHesaplama\bin\Debug\net8.0\OrtalamaHesaplama.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\OrtalamaHesaplama\bin\Debug\net8.0\OrtalamaHesaplama.pdb
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\OrtalamaHesaplama\obj\Debug\net8.0\OrtalamaHesaplama.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\OrtalamaHesaplama\obj\Debug\net8.0\OrtalamaHesaplama.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\OrtalamaHesaplama\obj\Debug\net8.0\OrtalamaHesaplama.AssemblyInfo.cs
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\OrtalamaHesaplama\obj\Debug\net8.0\OrtalamaHesaplama.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\OrtalamaHesaplama\obj\Debug\net8.0\OrtalamaHesaplama.sourcelink.json
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\OrtalamaHesaplama\obj\Debug\net8.0\OrtalamaHesaplama.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\OrtalamaHesaplama\obj\Debug\net8.0\refint\OrtalamaHesaplama.dll
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\OrtalamaHesaplama\obj\Debug\net8.0\OrtalamaHesaplama.pdb
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\OrtalamaHesaplama\obj\Debug\net8.0\OrtalamaHesaplama.genruntimeconfig.cache
+C:\Users\oğuzhan\source\repos\oguzdemir95\patikadev\CS_Projeleri\OrtalamaHesaplama\obj\Debug\net8.0\ref\OrtalamaHesaplama.dll

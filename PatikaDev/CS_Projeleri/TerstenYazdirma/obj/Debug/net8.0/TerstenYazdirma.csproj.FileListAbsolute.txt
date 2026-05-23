@@ -1,0 +1,15 @@
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\TerstenYazdirma\bin\Debug\net8.0\TerstenYazdirma.exe
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\TerstenYazdirma\bin\Debug\net8.0\TerstenYazdirma.deps.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\TerstenYazdirma\bin\Debug\net8.0\TerstenYazdirma.runtimeconfig.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\TerstenYazdirma\bin\Debug\net8.0\TerstenYazdirma.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\TerstenYazdirma\bin\Debug\net8.0\TerstenYazdirma.pdb
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\TerstenYazdirma\obj\Debug\net8.0\TerstenYazdirma.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\TerstenYazdirma\obj\Debug\net8.0\TerstenYazdirma.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\TerstenYazdirma\obj\Debug\net8.0\TerstenYazdirma.AssemblyInfo.cs
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\TerstenYazdirma\obj\Debug\net8.0\TerstenYazdirma.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\TerstenYazdirma\obj\Debug\net8.0\TerstenYazdirma.sourcelink.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\TerstenYazdirma\obj\Debug\net8.0\TerstenYazdirma.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\TerstenYazdirma\obj\Debug\net8.0\refint\TerstenYazdirma.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\TerstenYazdirma\obj\Debug\net8.0\TerstenYazdirma.pdb
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\TerstenYazdirma\obj\Debug\net8.0\TerstenYazdirma.genruntimeconfig.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\TerstenYazdirma\obj\Debug\net8.0\ref\TerstenYazdirma.dll

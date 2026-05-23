@@ -1,0 +1,15 @@
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Algoritma\bin\Debug\net8.0\Algoritma.exe
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Algoritma\bin\Debug\net8.0\Algoritma.deps.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Algoritma\bin\Debug\net8.0\Algoritma.runtimeconfig.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Algoritma\bin\Debug\net8.0\Algoritma.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Algoritma\bin\Debug\net8.0\Algoritma.pdb
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Algoritma\obj\Debug\net8.0\Algoritma.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Algoritma\obj\Debug\net8.0\Algoritma.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Algoritma\obj\Debug\net8.0\Algoritma.AssemblyInfo.cs
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Algoritma\obj\Debug\net8.0\Algoritma.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Algoritma\obj\Debug\net8.0\Algoritma.sourcelink.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Algoritma\obj\Debug\net8.0\Algoritma.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Algoritma\obj\Debug\net8.0\refint\Algoritma.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Algoritma\obj\Debug\net8.0\Algoritma.pdb
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Algoritma\obj\Debug\net8.0\Algoritma.genruntimeconfig.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\Algoritma\obj\Debug\net8.0\ref\Algoritma.dll

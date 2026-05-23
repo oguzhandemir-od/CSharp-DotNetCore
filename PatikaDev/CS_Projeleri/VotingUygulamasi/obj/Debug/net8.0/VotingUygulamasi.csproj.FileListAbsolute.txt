@@ -1,0 +1,15 @@
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\VotingUygulamasi\obj\Debug\net8.0\VotingUygulamasi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\VotingUygulamasi\obj\Debug\net8.0\VotingUygulamasi.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\VotingUygulamasi\obj\Debug\net8.0\VotingUygulamasi.AssemblyInfo.cs
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\VotingUygulamasi\obj\Debug\net8.0\VotingUygulamasi.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\VotingUygulamasi\obj\Debug\net8.0\VotingUygulamasi.sourcelink.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\VotingUygulamasi\bin\Debug\net8.0\VotingUygulamasi.exe
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\VotingUygulamasi\bin\Debug\net8.0\VotingUygulamasi.deps.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\VotingUygulamasi\bin\Debug\net8.0\VotingUygulamasi.runtimeconfig.json
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\VotingUygulamasi\bin\Debug\net8.0\VotingUygulamasi.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\VotingUygulamasi\bin\Debug\net8.0\VotingUygulamasi.pdb
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\VotingUygulamasi\obj\Debug\net8.0\VotingUygulamasi.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\VotingUygulamasi\obj\Debug\net8.0\refint\VotingUygulamasi.dll
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\VotingUygulamasi\obj\Debug\net8.0\VotingUygulamasi.pdb
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\VotingUygulamasi\obj\Debug\net8.0\VotingUygulamasi.genruntimeconfig.cache
+C:\Users\oğuzhan\Source\Repos\oguzdemir95\patikadev\CS_Projeleri\VotingUygulamasi\obj\Debug\net8.0\ref\VotingUygulamasi.dll
