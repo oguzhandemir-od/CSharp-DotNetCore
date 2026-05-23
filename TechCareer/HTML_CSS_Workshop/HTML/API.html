@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas API</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="300" style="border: 1px solid #000000;"></canvas>
+
+    <script>
+        const canvas=document.getElementById('myCanvas');
+        const ctx=canvas.getContext('2d');
+
+        ctx.fillStyle='#ff0000';
+        ctx.fillRect=(10,10,150,100);
+
+        ctx.beginPath();
+        ctx.arc(300,150,50,0,2*Math.PI);
+        ctx.fillStyle="#0000FF";
+        ctx.fill();
+    </script>
+
+    <!-- https://techcareer.net/page?id=12345 -->
+     <!-- https://techcareer.net/html-seo-rehberi -->
+
+     <div role="navigation"></div>
+     <button aria-label="Kapat">X</button>
+
+     <fieldset>
+        <legend>Kişisel Bilgiler</legend>
+        <label for="">Demo</label>
+        <input type="text">
+     </fieldset>
+</body>
+</html>

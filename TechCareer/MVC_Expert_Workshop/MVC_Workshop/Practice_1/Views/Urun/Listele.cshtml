@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Practice_1.Models.Urun>
+
+@{
+    ViewBag.Title = "Listele";
+}
+
+<h2>Listele</h2>
+
+<p>
+    @Html.ActionLink("Yeni Ürün Ekle", "Yeni")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunMagazasi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunOzellikleri)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunFiyati)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunKargoSuresi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunMagazasi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunOzellikleri)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunFiyati)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunKargoSuresi)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Duzenle", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Sil", "Sil", new { id = item.Id })
+        </td>
+    </tr>
+}
+
+</table>

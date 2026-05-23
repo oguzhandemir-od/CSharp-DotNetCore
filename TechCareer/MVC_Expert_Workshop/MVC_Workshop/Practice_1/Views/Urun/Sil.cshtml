@@ -1,0 +1,64 @@
+﻿@model Practice_1.Models.Urun
+
+@{
+    ViewBag.Title = "Sil";
+}
+
+<h2>Sil</h2>
+
+<h3>Bu ürünü silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Ürün</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunMagazasi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunMagazasi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunOzellikleri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunOzellikleri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunFiyati)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunFiyati)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunKargoSuresi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunKargoSuresi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Listeye Geri Dön", "Listele")
+        </div>
+    }
+</div>

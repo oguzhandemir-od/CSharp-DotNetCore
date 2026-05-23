@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seçiciler</title>
+    <style>
+        *{ /* Evrensel Seçici */
+            background-color: aqua;
+        }
+        p{
+            color: blue;
+        }
+        .highlight{
+            background-color: yellow;
+        }
+        #unique{
+            font-weight: bold;
+        }
+        div p{ /* Div içerisindeki p*/
+            color:brown;
+        }
+        h6{
+            color:tomato;
+        }
+        div h6, h1{
+            color:blueviolet;
+        }
+        p{
+            color:teal;
+        }
+    </style>
+</head>
+<body>
+    <p>Bu bir paragraftır.</p>
+    <h6>Demo Başlık</h6>
+    <h1>Başlık</h1>
+    <h1>Başlık</h1>
+    <p class="highlight">Bu öne çıkan paragrafır.</p>
+    <p id="unique">Bu benzersiz bir paragraftır.</p>
+    <div>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <h6>Demo Başlık</h6>
+    </div>
+</body>
+</html>

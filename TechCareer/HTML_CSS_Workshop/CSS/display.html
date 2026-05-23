@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <style>
+        .block-example{
+            display: block;
+            background-color: lightblue;
+            padding: 10px;
+            margin-bottom: 10px;
+            margin-top: 15px;
+        }
+        .inline-example{
+            display: inline;
+            background-color: lightblue;
+            padding: 5px;
+            margin-right: 50px;
+            margin-bottom: 50px;
+        }
+        .inline-block-example{
+            display: inline-block;
+            margin-top: 25px;
+            width: 200px;
+            height: 100px;
+            margin-right: 10px;
+            background-color: lightcoral;
+        }
+        .none-example{
+            display: none;
+            margin-top: 25px;
+            width: 200px;
+            height: 100px;
+            margin-right: 10px;
+            background-color: lightcoral;
+        }
+        .flex-container{
+            display: flex;
+            justify-content: space-between;
+            background-color: lightpink;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .flex-example{
+            background-color: lightgray;
+            padding: 20px;
+            margin: 5px;
+        }
+        .grid-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            background-color: lightyellow;
+            padding: 10px;
+        }
+        .grid-example{
+            background-color: lightgray;
+            padding: 20px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>    
+    <span class="inline-example">Bu bir iç satır öğesidir.</span>
+    <span class="inline-example">Bu bir iç satır öğesidir.</span>
+    <div class="block-example">Bu bir blok seviyesi öğesidir.</div>
+    <div class="block-example">Bu da başka bir blok seviyesi öğesidir.</div>
+    <div class="inline-block-example">Bu bir inline blok seviyesi öğesidir.</div>
+    <div class="inline-block-example">Bu bir inline blok seviyesi öğesidir.</div>
+    <div class="none-example">Bu bir none seviyesi öğesidir.</div>
+    <div class="none-example">Bu bir none seviyesi öğesidir.</div>
+
+    <div class="flex-container">
+        <div class="flex-example">Bu bir flex seviyesi öğesidir.</div>
+        <div class="flex-example">Bu bir flex seviyesi öğesidir.</div>
+        <div class="flex-example">Bu bir flex seviyesi öğesidir.</div>
+        <div class="flex-example">Bu bir flex seviyesi öğesidir.</div>
+        <div class="flex-example">Bu bir flex seviyesi öğesidir.</div>
+        <div class="flex-example">Bu bir flex seviyesi öğesidir.</div>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-example">Bu bir grid seviyesi öğesidir.</div>
+        <div class="grid-example">Bu bir grid seviyesi öğesidir.</div>
+        <div class="grid-example">Bu bir grid seviyesi öğesidir.</div>
+        <div class="grid-example">Bu bir grid seviyesi öğesidir.</div>
+        <div class="grid-example">Bu bir grid seviyesi öğesidir.</div>
+        <div class="grid-example">Bu bir grid seviyesi öğesidir.</div>
+    </div>
+    
+</body>
+</html>

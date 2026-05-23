@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Doğrulama ve Güvenlik</title>
+</head>
+<body>
+    <form>
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="age">Age: </label>
+        <input type="number" id="age" name="age" min="1" max="120" required>
+
+        <label for="username">Username: </label>
+        <input type="text" id="username" name="username" maxlength="15" pattern="[A-Za-z0-9]+" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <form action="/submit" method="post">
+        <input id="user_input" type="hidden" name="csrf_token" value="YOUR_TOKEN">
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- JS Saldırısını Önleme -->
+     <!-- $user_input ENT_QUOTES -->
+</body>
+</html>
