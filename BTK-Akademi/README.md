@@ -9,7 +9,7 @@ Aşağıdaki tabloda bu klasör altındaki tüm projelerin listesi, teknik detay
 
 | Proje / Klasör Adı | Türü | Kullanılan Teknolojiler / Mimari | Durum | Açıklama |
 | :--- | :--- | :--- | :--- | :--- |
-| [01-AlgoritmaTasarımı](./Algoritma%20Tasarımı) | Algoritma | C# | ✅ Bitti | Algoritma kurmaya yönelik kod uygulamaları. |
+| [AlgoritmaTasarımı](./Algoritma%20Tasarımı) | Algoritma | C# | ✅ Bitti | Algoritma kurmaya yönelik kod uygulamaları. |
 
 > *(Not: Yeni projeler eklendikçe bu tablo güncellenmektedir.)*
 
