@@ -1,0 +1,32 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Faturalar
+@{
+    ViewData["Title"] = "FaturaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h1>Fatura Güncelleme Sayfası</h1>
+<br />
+<form asp-action="FaturaGuncelle" class="form-group" method="post">
+    <input type="hidden" asp-for="Faturalarid" />
+
+    <label asp-for="FaturaSeriNo" class="form-label">Fatura Seri No</label>
+    <input asp-for="FaturaSeriNo" class="form-control" />
+    <br />
+    <label asp-for="FaturaSiraNo" class="form-label">Fatura Sıra No</label>
+    <input asp-for="FaturaSiraNo" class="form-control" />
+    <br />
+    <label asp-for="VergiDairesi" class="form-label">Vergi Dairesi</label>
+    <input asp-for="VergiDairesi" class="form-control" />
+    <br />
+    <label asp-for="Tarih" class="form-label">Tarih</label>
+    <input asp-for="Tarih" class="form-control" />
+    <br />
+    <label asp-for="TeslimEden" class="form-label">Teslim Eden</label>
+    <input asp-for="TeslimEden" class="form-control" />
+    <br />    
+    <label asp-for="TeslimAlan" class="form-label">Teslim Alan</label>
+    <input asp-for="TeslimAlan" class="form-control" />
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+

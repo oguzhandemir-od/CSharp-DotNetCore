@@ -1,0 +1,34 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model MvcOnlineTicariOtomasyon.Models.Siniflar.Personel
+@{
+    ViewData["Title"] = "PersonelEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h1>Yeni Personel Sayfası</h1>
+<br />
+<form class="form-group" method="post" enctype="multipart/form-data">
+    <label asp-for="PersonelAd" class="form-label">Personel Adı</label>
+    <input asp-for="PersonelAd" class="form-control" />
+    <br />
+    <label asp-for="PersonelSoyad" class="form-label">Personel Soyadı</label>
+    <input asp-for="PersonelSoyad" class="form-control" />
+    <br />
+    <label asp-for="PersonelGorsel" class="form-label">Görsel</label>
+    <br />
+    <input type="file" name="resim" />
+    <br />
+    <label asp-for="Departmanid" class="form-label">Departman</label>
+    <br />
+    <select asp-for="Departmanid" class="form-control">
+        <option value="">Lütfen bir departman seçin</option>
+        @foreach (var d in ViewBag.Departmanlar as List<Departman>)
+        {
+            <option value="@d.Departmanid">@d.DepartmanAd</option>
+        }
+    </select>
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+

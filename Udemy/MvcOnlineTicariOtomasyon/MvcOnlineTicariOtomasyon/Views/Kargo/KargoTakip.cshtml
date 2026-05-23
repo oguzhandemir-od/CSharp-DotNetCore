@@ -1,0 +1,25 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model IEnumerable<KargoTakip>
+@{
+    ViewData["Title"] = "KargoTakip";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Kargo Takip</h1>
+<br />
+<table class="table table-striped">
+    <tr>
+        <th>Tarih</th>
+        <th>Açıklama</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.Tarih</td>
+            <td>@k.Aciklama</td>
+        </tr>
+    }
+</table>
+@* <a href="/Carilers/CariEkle" class="btn btn-primary">Cari Ekle</a> *@
+
+

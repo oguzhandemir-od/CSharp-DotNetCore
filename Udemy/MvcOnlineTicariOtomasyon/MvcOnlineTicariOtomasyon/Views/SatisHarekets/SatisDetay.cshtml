@@ -1,0 +1,34 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model MvcOnlineTicariOtomasyon.Models.Siniflar.SatisHareket
+@{
+    ViewData["Title"] = "SatisDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h1>Satış Detayı</h1>
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>Satış ID</th>
+        <th>Ürün</th>
+        <th>Cari</th>
+        <th>Personel</th>
+        <th>Fiyat</th>
+        <th>Adet</th>
+        <th>Toplam</th>
+        <th>Tarih</th>
+    </tr>
+    <tr>
+        <td>@Model.Satishareketid</td>
+        <td>@Model.Urun.UrunAd</td>
+        <td>@Model.Cariler.CariAd @Model.Cariler.CariSoyad</td>
+        <td>@Model.Personel.PersonelAd @Model.Personel.PersonelSoyad</td>
+        <td>@Model.Fiyat</td>
+        <td>@Model.Adet</td>
+        <td>@Model.ToplamTutar</td>
+        <td>@Model.Tarih</td>
+    </tr>
+</table>
+<br />
+<td><a href="" class="btn btn-primary">Yazdır</a></td>
+

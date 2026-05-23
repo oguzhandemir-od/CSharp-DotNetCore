@@ -1,0 +1,46 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model MvcOnlineTicariOtomasyon.Models.Siniflar.Urun
+@{
+    ViewData["Title"] = "UrunGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h1>Ürün Güncelleme Sayfası</h1>
+<br />
+<form asp-action="UrunGuncelle" class="form-group" method="post">
+    <input type="hidden" asp-for="Urunid" />
+
+    <label asp-for="UrunAd" class="form-label">Ürün Adı</label>
+    <input asp-for="UrunAd" class="form-control" />
+    <br />
+    <label asp-for="Marka" class="form-label">Marka</label>
+    <input asp-for="Marka" class="form-control" />
+    <br />
+    <label asp-for="Stok" class="form-label">Stok</label>
+    <input asp-for="Stok" class="form-control" />
+    <br />
+    <label asp-for="AlisFiyat" class="form-label">Alış Fiyatı</label>
+    <input asp-for="AlisFiyat" class="form-control" />
+    <br />
+    <label asp-for="SatisFiyat" class="form-label">Satış Fiyatı</label>
+    <input asp-for="SatisFiyat" class="form-control" />
+    <br />
+    <label asp-for="Kategoriid" class="form-label">Kategori</label>
+    <br />
+    <select asp-for="Kategoriid" class="form-control">
+        <option value="">Lütfen bir kategori seçin</option>
+        @foreach (var k in ViewBag.Kategoriler as List<Kategori>)
+        {
+            <option value="@k.Kategoriid">@k.KategoriAd</option>
+        }
+    </select>
+    <br />
+    <label asp-for="UrunGorsel" class="form-label">Görsel</label>
+    <input asp-for="UrunGorsel" class="form-control" />
+    <br />
+    <label asp-for="Durum" class="form-label">Durum</label>
+    <input asp-for="Durum" class="form-control" />
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+

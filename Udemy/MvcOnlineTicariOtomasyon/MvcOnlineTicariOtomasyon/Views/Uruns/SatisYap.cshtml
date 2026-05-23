@@ -1,0 +1,58 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model MvcOnlineTicariOtomasyon.Models.ViewModels.UrunSatisViewModel
+@{
+    ViewData["Title"] = "SatisYap";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h1>Yeni Satış</h1>
+<br />
+<form class="form-group" method="post">
+    <input type="hidden" asp-for="Satis.Urunid" />
+    <input type="hidden" asp-for="Satis.Fiyat" />
+
+    <label asp-for="Satis.Urunid" class="form-label">Ürün</label>
+    <br />
+    <label class="form-label">@Model.UrunAd : @Model.UrunMarka</label>
+    <br />
+    <label asp-for="Satis.Personelid" class="form-label">Personel</label>
+    <select asp-for="Satis.Personelid" class="form-control">
+        <option value="">Lütfen bir personel seçin</option>
+        @foreach (var p in Model.Personeller)
+        {
+            <option value="@p.Personelid">@p.PersonelAd @p.PersonelSoyad</option>
+        }
+    </select>
+    <br />
+    <label asp-for="Satis.Cariid" class="form-label">Cari</label>
+    <input asp-for="Satis.Cariid" class="form-control" />
+    <br />
+    <label asp-for="Satis.Adet" class="form-label">Adet</label>
+    <input asp-for="Satis.Adet" class="form-control" id="adet" onkeyup="sum();" />
+    <br />
+    <label asp-for="Satis.Fiyat" class="form-label">Fiyat</label>
+    <input asp-for="Satis.Fiyat" class="form-control" id="fiyat" onkeyup="sum();" />
+    <br />
+    <label asp-for="Satis.ToplamTutar" class="form-label">Toplam Tutar</label>
+    <input asp-for="Satis.ToplamTutar" class="form-control" id="toplamTutar" readonly />
+    <br />
+    <label asp-for="Satis.Tarih" class="form-label">Tarih</label>
+    <input asp-for="Satis.Tarih" class="form-control" />
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+
+<script>
+    function sum(){
+        var fiyat=document.getElementById("fiyat").value;
+        var adet=document.getElementById("adet").value;        
+
+        var toplam=parseInt(fiyat)*parseInt(adet);
+
+        if(!isNaN(toplam))
+        {
+            document.getElementById("toplamTutar").value=toplam;
+        }
+    };
+</script>
+

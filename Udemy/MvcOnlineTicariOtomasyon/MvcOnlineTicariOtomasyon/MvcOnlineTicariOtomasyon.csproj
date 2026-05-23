@@ -1,0 +1,208 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\styles.css" />
+    <Content Remove="wwwroot\js\scripts.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\adminlte.css" />
+    <None Include="wwwroot\css\adminlte.css.map" />
+    <None Include="wwwroot\css\adminlte.min.css" />
+    <None Include="wwwroot\css\adminlte.min.css.map" />
+    <None Include="wwwroot\css\aos.css" />
+    <None Include="wwwroot\css\bootstrap-datepicker.css" />
+    <None Include="wwwroot\css\bootstrap.css" />
+    <None Include="wwwroot\css\cari-bootstrap.css" />
+    <None Include="wwwroot\css\cari-bootstrap.css.map" />
+    <None Include="wwwroot\css\cari-bootstrap.min.css" />
+    <None Include="wwwroot\css\cari-bootstrap.min.css.map" />
+    <None Include="wwwroot\css\clndr.css" />
+    <None Include="wwwroot\css\fancybox.min.css" />
+    <None Include="wwwroot\css\gallerystyle.css" />
+    <None Include="wwwroot\css\icheck-bootstrap.css" />
+    <None Include="wwwroot\css\icheck-bootstrap.min.css" />
+    <None Include="wwwroot\css\jquery-ui.css" />
+    <None Include="wwwroot\css\jquery.scrollbar.css" />
+    <None Include="wwwroot\css\jqvmap.css" />
+    <None Include="wwwroot\css\login-font-awesome.css" />
+    <None Include="wwwroot\css\login-popup-box.css" />
+    <None Include="wwwroot\css\login-style.css" />
+    <None Include="wwwroot\css\lte-fa-all.css" />
+    <None Include="wwwroot\css\lte-fa-all.min.css" />
+    <None Include="wwwroot\css\magnific-popup.css" />
+    <None Include="wwwroot\css\mediaelementplayer.css" />
+    <None Include="wwwroot\css\nav.css" />
+    <None Include="wwwroot\css\owl.carousel.min.css" />
+    <None Include="wwwroot\css\owl.theme.default.min.css" />
+    <None Include="wwwroot\css\simple-sidebar.css" />
+    <None Include="wwwroot\css\style.css" />
+    <None Include="wwwroot\css\styles.css" />
+    <None Include="wwwroot\css\summernote-bs4.css" />
+    <None Include="wwwroot\css\summernote-bs4.min.css" />
+    <None Include="wwwroot\css\swiper.min.css" />
+    <None Include="wwwroot\css\Thumberbootstrap.min.css" />
+    <None Include="wwwroot\fonts\flaticon\backup.txt" />
+    <None Include="wwwroot\fonts\flaticon\font\flaticon.css" />
+    <None Include="wwwroot\fonts\flaticon\font\Flaticon.eot" />
+    <None Include="wwwroot\fonts\flaticon\font\flaticon.html" />
+    <None Include="wwwroot\fonts\flaticon\font\Flaticon.svg" />
+    <None Include="wwwroot\fonts\flaticon\font\Flaticon.ttf" />
+    <None Include="wwwroot\fonts\flaticon\font\Flaticon.woff" />
+    <None Include="wwwroot\fonts\flaticon\font\Flaticon.woff2" />
+    <None Include="wwwroot\fonts\flaticon\font\_flaticon.css" />
+    <None Include="wwwroot\fonts\flaticon\font\_flaticon.scss" />
+    <None Include="wwwroot\fonts\flaticon\license\license.pdf" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.eot" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.ttf" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.woff" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\fonts\FontAwesome.otf" />
+    <None Include="wwwroot\fonts\icomoon\demo-files\demo.css" />
+    <None Include="wwwroot\fonts\icomoon\demo-files\demo.js" />
+    <None Include="wwwroot\fonts\icomoon\demo.html" />
+    <None Include="wwwroot\fonts\icomoon\fonts\icomoon.eot" />
+    <None Include="wwwroot\fonts\icomoon\fonts\icomoon.svg" />
+    <None Include="wwwroot\fonts\icomoon\fonts\icomoon.ttf" />
+    <None Include="wwwroot\fonts\icomoon\fonts\icomoon.woff" />
+    <None Include="wwwroot\fonts\icomoon\Read Me.txt" />
+    <None Include="wwwroot\fonts\icomoon\style.css" />
+    <None Include="wwwroot\images\bg.jpg" />
+    <None Include="wwwroot\images\img_1.jpg" />
+    <None Include="wwwroot\images\img_10.jpg" />
+    <None Include="wwwroot\images\img_2.jpg" />
+    <None Include="wwwroot\images\img_3.jpg" />
+    <None Include="wwwroot\images\img_4.jpg" />
+    <None Include="wwwroot\images\img_5.jpg" />
+    <None Include="wwwroot\images\img_6.jpg" />
+    <None Include="wwwroot\images\img_7.jpg" />
+    <None Include="wwwroot\images\img_8.jpg" />
+    <None Include="wwwroot\images\img_9.jpg" />
+    <None Include="wwwroot\images\person_1.jpg" />
+    <None Include="wwwroot\images\person_2.jpg" />
+    <None Include="wwwroot\images\person_3.jpg" />
+    <None Include="wwwroot\images\person_4.jpg" />
+    <None Include="wwwroot\images\person_5.jpg" />
+    <None Include="wwwroot\js\adminlte.js" />
+    <None Include="wwwroot\js\adminlte.js.map" />
+    <None Include="wwwroot\js\adminlte.min.js" />
+    <None Include="wwwroot\js\adminlte.min.js.map" />
+    <None Include="wwwroot\js\aos.js" />
+    <None Include="wwwroot\js\bootstrap-datepicker.min.js" />
+    <None Include="wwwroot\js\cari-bootstrap.bundle.js" />
+    <None Include="wwwroot\js\cari-bootstrap.bundle.js.map" />
+    <None Include="wwwroot\js\cari-bootstrap.bundle.min.js" />
+    <None Include="wwwroot\js\cari-bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\js\cari-bootstrap.js" />
+    <None Include="wwwroot\js\cari-bootstrap.js.map" />
+    <None Include="wwwroot\js\cari-bootstrap.min.js" />
+    <None Include="wwwroot\js\cari-bootstrap.min.js.map" />
+    <None Include="wwwroot\js\cari-jquery.js" />
+    <None Include="wwwroot\js\cari-jquery.min.js" />
+    <None Include="wwwroot\js\cari-jquery.min.map" />
+    <None Include="wwwroot\js\cari-jquery.slim.js" />
+    <None Include="wwwroot\js\cari-jquery.slim.min.js" />
+    <None Include="wwwroot\js\cari-jquery.slim.min.map" />
+    <None Include="wwwroot\js\Chart1.js" />
+    <None Include="wwwroot\js\clndr.js" />
+    <None Include="wwwroot\js\dashboard.js" />
+    <None Include="wwwroot\js\demo.js" />
+    <None Include="wwwroot\js\easyResponsiveTabs.js" />
+    <None Include="wwwroot\js\jquery-2.1.4.min.js" />
+    <None Include="wwwroot\js\jquery-3.3.1.min.js" />
+    <None Include="wwwroot\js\jquery-migrate-3.0.1.min.js" />
+    <None Include="wwwroot\js\jquery-ui.js" />
+    <None Include="wwwroot\js\jquery.countdown.min.js" />
+    <None Include="wwwroot\js\jquery.easydropdown.js" />
+    <None Include="wwwroot\js\jquery.fancybox.min.js" />
+    <None Include="wwwroot\js\jquery.magnific-popup.min.js" />
+    <None Include="wwwroot\js\jquery.min.js" />
+    <None Include="wwwroot\js\jquery.nicescroll.js" />
+    <None Include="wwwroot\js\jquery.scrollbar.js" />
+    <None Include="wwwroot\js\jquery.stellar.min.js" />
+    <None Include="wwwroot\js\jquery.vmap.js" />
+    <None Include="wwwroot\js\jquery.vmap.sampledata.js" />
+    <None Include="wwwroot\js\jquery.vmap.world.js" />
+    <None Include="wwwroot\js\login-jquery.magnific-popup.js" />
+    <None Include="wwwroot\js\lte-bootstrap.bundle.js" />
+    <None Include="wwwroot\js\lte-bootstrap.bundle.js.map" />
+    <None Include="wwwroot\js\lte-bootstrap.bundle.min.js" />
+    <None Include="wwwroot\js\lte-bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\js\lte-bootstrap.js" />
+    <None Include="wwwroot\js\lte-bootstrap.js.map" />
+    <None Include="wwwroot\js\lte-bootstrap.min.js" />
+    <None Include="wwwroot\js\lte-bootstrap.min.js.map" />
+    <None Include="wwwroot\js\lte-jquery.js" />
+    <None Include="wwwroot\js\lte-jquery.min.js" />
+    <None Include="wwwroot\js\lte-jquery.min.map" />
+    <None Include="wwwroot\js\lte-jquery.slim.js" />
+    <None Include="wwwroot\js\lte-jquery.slim.min.js" />
+    <None Include="wwwroot\js\lte-jquery.slim.min.map" />
+    <None Include="wwwroot\js\main.js" />
+    <None Include="wwwroot\js\mediaelement-and-player.min.js" />
+    <None Include="wwwroot\js\moment-2.2.1.js" />
+    <None Include="wwwroot\js\owl.carousel.min.js" />
+    <None Include="wwwroot\js\popper.min.js" />
+    <None Include="wwwroot\js\siteIs.js" />
+    <None Include="wwwroot\js\slick.min.js" />
+    <None Include="wwwroot\js\summernote-bs4.js" />
+    <None Include="wwwroot\js\summernote-bs4.js.map" />
+    <None Include="wwwroot\js\summernote-bs4.min.js" />
+    <None Include="wwwroot\js\summernote-bs4.min.js.map" />
+    <None Include="wwwroot\js\swiper.min.js" />
+    <None Include="wwwroot\js\Thumberbootstrap.min.js" />
+    <None Include="wwwroot\js\Thumbermain.js" />
+    <None Include="wwwroot\js\typed.js" />
+    <None Include="wwwroot\js\underscore-min.js" />
+    <None Include="wwwroot\js\scripts.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="jquery.datatables" Version="1.10.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Core" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.18" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.3.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="10.5.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="AdminLTE-3.0.4\plugins\bootstrap\js\" />
+    <Folder Include="thumber\js\" />
+    <Folder Include="web2\css\" />
+    <Folder Include="web2\js\" />
+    <Folder Include="weblogin\css\" />
+    <Folder Include="weblogin\fonts\" />
+    <Folder Include="weblogin\images\" />
+    <Folder Include="weblogin\js\" />
+    <Folder Include="webpanel\css\" />
+    <Folder Include="webpanel\vendor\bootstrap\js\" />
+    <Folder Include="webpanel\vendor\jquery\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="QRCoder">
+      <HintPath>..\..\..\..\..\Downloads\QRCoder.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

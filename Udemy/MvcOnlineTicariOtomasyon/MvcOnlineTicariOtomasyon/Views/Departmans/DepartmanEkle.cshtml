@@ -1,0 +1,16 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Departman
+@{
+    ViewData["Title"] = "DepartmanEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Departman Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    <label asp-for="DepartmanAd" class="form-label">Kategori Adı</label>
+    <input asp-for="DepartmanAd" class="form-control" />
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+
