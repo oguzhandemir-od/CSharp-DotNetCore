@@ -9,8 +9,8 @@ Aşağıdaki tabloda bu klasör altındaki tüm projelerin listesi, teknik detay
 
 | Proje / Klasör Adı | Türü | Kullanılan Teknolojiler / Mimari | Durum | Açıklama |
 | :--- | :--- | :--- | :--- | :--- |
-| [C# Eğitim Kitabı](/CS_Egitim_Kitabi) | Form | C#, SQL | ⏳ Geliştiriliyor | Murat Yücedağ tarafından yazılan kitaptaki uygulama ve projeler, Dikeyeksen yayınları. |
-| [C# Soru Bankası](/CS_Soru_Bankasi) | Console | C# | ⏳ Geliştiriliyor | Kodlab tarafından yayınlanan kitaptaki uygulamalar. |
+| [C# Eğitim Kitabı](./CS_Egitim_Kitabi) | Form | C#, SQL | ⏳ Geliştiriliyor | Murat Yücedağ tarafından yazılan kitaptaki uygulama ve projeler, Dikeyeksen yayınları. |
+| [C# Soru Bankası](./CS_Soru_Bankasi) | Console | C# | ⏳ Geliştiriliyor | Kodlab tarafından yayınlanan kitaptaki uygulamalar. |
 
 > *(Not: Yeni projeler eklendikçe bu tablo güncellenmektedir.)*
 
