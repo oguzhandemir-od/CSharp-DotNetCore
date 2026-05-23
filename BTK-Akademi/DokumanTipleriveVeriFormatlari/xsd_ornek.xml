@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<ogrenciler xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="xsd_sema.xsd">
+    <ogrenci id="1" sinif="1">
+        <isim>Orhan</isim>
+        <numara>78</numara>
+        <okul>Mustafa Kemal Atatürk İlkokulu</okul>
+    </ogrenci>
+
+    <ogrenci id="2">
+        <isim>Selim</isim>
+        <numara>85</numara>
+        <okul>Mehmet Akif Ersoy İlkokulu</okul>
+    </ogrenci>
+</ogrenciler>

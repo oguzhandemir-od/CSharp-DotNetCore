@@ -1,0 +1,5 @@
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\IFEL\bin\Debug\IFEL.exe.config
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\IFEL\bin\Debug\IFEL.exe
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\IFEL\bin\Debug\IFEL.pdb
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\IFEL\obj\Debug\IFEL.exe
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\IFEL\obj\Debug\IFEL.pdb

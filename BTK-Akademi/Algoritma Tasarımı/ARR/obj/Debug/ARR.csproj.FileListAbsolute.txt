@@ -1,0 +1,6 @@
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\ARR\bin\Debug\ARR.exe.config
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\ARR\bin\Debug\ARR.exe
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\ARR\bin\Debug\ARR.pdb
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\ARR\obj\Debug\ARR.exe
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\ARR\obj\Debug\ARR.pdb
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\ARR\obj\Debug\ARR.csprojResolveAssemblyReference.cache

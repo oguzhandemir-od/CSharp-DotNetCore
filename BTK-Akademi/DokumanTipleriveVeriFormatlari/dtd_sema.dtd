@@ -1,0 +1,13 @@
+<!ELEMENT ogrenciler (ogrenci+)>
+    <!ELEMENT ogrenci (isim,numara,okul)>
+    <!ELEMENT isim (#PCDATA)>
+    <!ELEMENT numara (#PCDATA)>
+    <!ELEMENT okul (#PCDATA)>
+
+    <!ATTLIST ogrenci 
+        id CDATA #REQUIRED 
+        sinif (1|2|3|4) #IMPLIED
+    >
+
+    <!ENTITY okul1 SYSTEM "Mustafa Kemal Atatürk İlkokulu">
+    <!ENTITY okul2 SYSTEM "Mehmet Akif Ersoy İlkokulu">

@@ -1,0 +1,37 @@
+{
+    "otomobiller":[
+        {
+            "marka":"A",
+            "model":2019,
+            "renk":["Siyah","Beyaz","Kırmızı"],
+            "motor":{
+                "guc":76,
+                "yakit":"Benzin",
+                "tuketim":6.5
+            },
+            "garanti":true
+        },
+        {
+            "marka":"B",
+            "model":2020,
+            "renk":["Mavi","Gri","Bordo"],
+            "motor":{
+                "guc":100,
+                "yakit":"Motorin",
+                "tuketim":7.3
+            },
+            "garanti":true
+        },
+        {
+            "marka":"C",
+            "model":2017,
+            "renk":["Beyaz","Turuncu","Lacivert"],
+            "motor":{
+                "guc":96,
+                "yakit":"Benzin",
+                "tuketim":6.9
+            },
+            "garanti":false
+        }
+    ]
+}

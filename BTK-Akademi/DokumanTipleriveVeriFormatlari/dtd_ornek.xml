@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ogrenciler SYSTEM "dtd_sema.dtd">
+
+<ogrenciler>
+    <ogrenci id="1" sinif="1">
+        <isim>Orhan</isim>
+        <numara>78</numara>
+        <okul>&okul1;</okul>
+    </ogrenci>
+
+    <ogrenci id="2">
+        <isim>Selim</isim>
+        <numara>85</numara>
+        <okul>&okul2;</okul>
+    </ogrenci>
+</ogrenciler>

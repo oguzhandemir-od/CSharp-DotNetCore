@@ -1,0 +1,6 @@
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\CBDZ\bin\Debug\CBDZ.exe.config
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\CBDZ\bin\Debug\CBDZ.exe
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\CBDZ\bin\Debug\CBDZ.pdb
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\CBDZ\obj\Debug\CBDZ.csprojResolveAssemblyReference.cache
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\CBDZ\obj\Debug\CBDZ.exe
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\CBDZ\obj\Debug\CBDZ.pdb

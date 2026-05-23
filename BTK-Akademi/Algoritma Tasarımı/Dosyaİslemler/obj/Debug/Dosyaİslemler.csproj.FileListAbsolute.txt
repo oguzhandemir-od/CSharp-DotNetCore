@@ -1,0 +1,6 @@
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\Dosyaİslemler\bin\Debug\Dosyaİslemler.exe.config
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\Dosyaİslemler\bin\Debug\Dosyaİslemler.exe
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\Dosyaİslemler\bin\Debug\Dosyaİslemler.pdb
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\Dosyaİslemler\obj\Debug\Dosyaİslemler.exe
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\Dosyaİslemler\obj\Debug\Dosyaİslemler.pdb
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\Dosyaİslemler\obj\Debug\Dosyaİslemler.csprojResolveAssemblyReference.cache

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OOP.Cizim.Pozisyon">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Cizim\Sekil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP.Cizim.Boyut">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABACAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cizim\Sekil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP.Cizim.Sekil">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIABAAAAAAAAAKAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Cizim\Sekil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP.Cizim.Dikdortgen">
+    <Position X="2" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIABAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Cizim\Dikdortgen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP.Program">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP.Cizim.Elips">
+    <Position X="5.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Cizim\Elips.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

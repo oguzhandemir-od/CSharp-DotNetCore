@@ -1,0 +1,6 @@
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\OOP\bin\Debug\OOP.exe.config
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\OOP\bin\Debug\OOP.exe
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\OOP\bin\Debug\OOP.pdb
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\OOP\obj\Debug\OOP.csprojResolveAssemblyReference.cache
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\OOP\obj\Debug\OOP.exe
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\OOP\obj\Debug\OOP.pdb

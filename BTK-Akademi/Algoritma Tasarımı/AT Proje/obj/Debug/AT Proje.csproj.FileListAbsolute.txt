@@ -1,0 +1,6 @@
+c:\users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\AT Proje\bin\Debug\AT Proje.exe.config
+c:\users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\AT Proje\bin\Debug\AT Proje.exe
+c:\users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\AT Proje\bin\Debug\AT Proje.pdb
+c:\users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\AT Proje\obj\Debug\AT Proje.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\AT Proje\obj\Debug\AT Proje.exe
+c:\users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\AT Proje\obj\Debug\AT Proje.pdb

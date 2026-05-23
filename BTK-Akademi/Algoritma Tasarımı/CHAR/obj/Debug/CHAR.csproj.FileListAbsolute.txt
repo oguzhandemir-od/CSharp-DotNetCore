@@ -1,0 +1,6 @@
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\CHAR\bin\Debug\CHAR.exe.config
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\CHAR\bin\Debug\CHAR.exe
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\CHAR\bin\Debug\CHAR.pdb
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\CHAR\obj\Debug\CHAR.csprojResolveAssemblyReference.cache
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\CHAR\obj\Debug\CHAR.exe
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\CHAR\obj\Debug\CHAR.pdb

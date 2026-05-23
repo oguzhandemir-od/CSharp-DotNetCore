@@ -1,0 +1,6 @@
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\TMD\bin\Debug\TMD.exe.config
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\TMD\bin\Debug\TMD.exe
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\TMD\bin\Debug\TMD.pdb
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\TMD\obj\Debug\TMD.exe
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\TMD\obj\Debug\TMD.pdb
+C:\Users\user\documents\visual studio 2015\Projects\Algoritma Tasarımı\TMD\obj\Debug\TMD.csprojResolveAssemblyReference.cache
