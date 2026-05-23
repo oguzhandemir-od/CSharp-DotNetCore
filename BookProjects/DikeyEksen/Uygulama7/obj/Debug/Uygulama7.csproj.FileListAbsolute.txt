@@ -1,0 +1,8 @@
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama7\bin\Debug\Uygulama7.exe.config
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama7\bin\Debug\Uygulama7.exe
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama7\bin\Debug\Uygulama7.pdb
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama7\obj\Debug\Uygulama7.Form1.resources
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama7\obj\Debug\Uygulama7.Properties.Resources.resources
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama7\obj\Debug\Uygulama7.csproj.GenerateResource.Cache
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama7\obj\Debug\Uygulama7.exe
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama7\obj\Debug\Uygulama7.pdb

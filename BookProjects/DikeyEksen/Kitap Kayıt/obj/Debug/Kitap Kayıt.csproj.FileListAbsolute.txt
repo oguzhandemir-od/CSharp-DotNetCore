@@ -1,0 +1,9 @@
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Kitap Kayıt\bin\Debug\Kitap Kayıt.exe.config
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Kitap Kayıt\obj\Debug\Kitap Kayıt.csprojResolveAssemblyReference.cache
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Kitap Kayıt\obj\Debug\Kitap_Kayıt.Form1.resources
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Kitap Kayıt\obj\Debug\Kitap_Kayıt.Properties.Resources.resources
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Kitap Kayıt\obj\Debug\Kitap Kayıt.csproj.GenerateResource.Cache
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Kitap Kayıt\bin\Debug\Kitap Kayıt.exe
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Kitap Kayıt\bin\Debug\Kitap Kayıt.pdb
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Kitap Kayıt\obj\Debug\Kitap Kayıt.exe
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Kitap Kayıt\obj\Debug\Kitap Kayıt.pdb

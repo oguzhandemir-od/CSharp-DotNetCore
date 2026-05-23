@@ -1,0 +1,8 @@
+c:\users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama2\bin\Debug\Uygulama2.exe.config
+c:\users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama2\bin\Debug\Uygulama2.exe
+c:\users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama2\bin\Debug\Uygulama2.pdb
+c:\users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama2\obj\Debug\Uygulama2.Form1.resources
+c:\users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama2\obj\Debug\Uygulama2.Properties.Resources.resources
+c:\users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama2\obj\Debug\Uygulama2.csproj.GenerateResource.Cache
+c:\users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama2\obj\Debug\Uygulama2.exe
+c:\users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama2\obj\Debug\Uygulama2.pdb

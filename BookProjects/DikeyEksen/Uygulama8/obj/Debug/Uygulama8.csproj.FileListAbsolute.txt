@@ -1,0 +1,9 @@
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama8\bin\Debug\Uygulama8.exe.config
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama8\bin\Debug\Uygulama8.exe
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama8\bin\Debug\Uygulama8.pdb
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama8\obj\Debug\Uygulama8.Form1.resources
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama8\obj\Debug\Uygulama8.Properties.Resources.resources
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama8\obj\Debug\Uygulama8.csproj.GenerateResource.Cache
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama8\obj\Debug\Uygulama8.exe
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama8\obj\Debug\Uygulama8.pdb
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama8\obj\Debug\Uygulama8.csprojResolveAssemblyReference.cache

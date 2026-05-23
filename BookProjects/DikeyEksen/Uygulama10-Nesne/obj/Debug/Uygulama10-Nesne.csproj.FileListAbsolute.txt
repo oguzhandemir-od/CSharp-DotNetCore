@@ -1,0 +1,9 @@
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama10-Nesne\bin\Debug\Uygulama10-Nesne.exe.config
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama10-Nesne\bin\Debug\Uygulama10-Nesne.exe
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama10-Nesne\bin\Debug\Uygulama10-Nesne.pdb
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama10-Nesne\obj\Debug\Uygulama10-Nesne.csprojResolveAssemblyReference.cache
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama10-Nesne\obj\Debug\Uygulama10_Nesne.Form1.resources
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama10-Nesne\obj\Debug\Uygulama10_Nesne.Properties.Resources.resources
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama10-Nesne\obj\Debug\Uygulama10-Nesne.csproj.GenerateResource.Cache
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama10-Nesne\obj\Debug\Uygulama10-Nesne.exe
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama10-Nesne\obj\Debug\Uygulama10-Nesne.pdb

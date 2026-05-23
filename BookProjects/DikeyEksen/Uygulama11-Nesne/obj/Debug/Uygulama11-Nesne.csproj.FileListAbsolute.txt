@@ -1,0 +1,8 @@
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama11-Nesne\bin\Debug\Uygulama11-Nesne.exe.config
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama11-Nesne\bin\Debug\Uygulama11-Nesne.exe
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama11-Nesne\bin\Debug\Uygulama11-Nesne.pdb
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama11-Nesne\obj\Debug\Uygulama11_Nesne.Form1.resources
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama11-Nesne\obj\Debug\Uygulama11_Nesne.Properties.Resources.resources
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama11-Nesne\obj\Debug\Uygulama11-Nesne.csproj.GenerateResource.Cache
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama11-Nesne\obj\Debug\Uygulama11-Nesne.exe
+C:\Users\user\documents\visual studio 2015\Projects\EgitimKitabi\Uygulama11-Nesne\obj\Debug\Uygulama11-Nesne.pdb
