@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\PC\\Documents\\Unity\\Fow45\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{80139615-43B9-DC10-35D0-37ADE169B55F}|Assembly-CSharp.csproj|c:\\users\\pc\\documents\\unity\\fow45\\assets\\scripts\\ates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80139615-43B9-DC10-35D0-37ADE169B55F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80139615-43B9-DC10-35D0-37ADE169B55F}|Assembly-CSharp.csproj|c:\\users\\pc\\documents\\unity\\fow45\\assets\\scripts\\sescal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80139615-43B9-DC10-35D0-37ADE169B55F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sescal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SesCal.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Unity\\Fow45\\Assets\\Scripts\\SesCal.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SesCal.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\Unity\\Fow45\\Assets\\Scripts\\SesCal.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SesCal.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-05T07:52:27.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Ates.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Unity\\Fow45\\Assets\\Scripts\\Ates.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Ates.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\Unity\\Fow45\\Assets\\Scripts\\Ates.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Ates.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-05T07:44:27.545Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

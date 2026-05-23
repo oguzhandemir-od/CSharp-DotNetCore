@@ -1,0 +1,151 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\PC\\Documents\\Unity\\Fow44\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F7226E1D-A97E-7C2F-0BA4-D771343C2F2E}|Assembly-CSharp.csproj|C:\\Users\\PC\\Documents\\Unity\\Fow44\\assets\\scripts\\yoket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7226E1D-A97E-7C2F-0BA4-D771343C2F2E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\yoket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7226E1D-A97E-7C2F-0BA4-D771343C2F2E}|Assembly-CSharp.csproj|c:\\users\\pc\\documents\\unity\\fow44\\assets\\scripts\\skorsay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7226E1D-A97E-7C2F-0BA4-D771343C2F2E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skorsay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7226E1D-A97E-7C2F-0BA4-D771343C2F2E}|Assembly-CSharp.csproj|c:\\users\\pc\\documents\\unity\\fow44\\assets\\scripts\\ates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7226E1D-A97E-7C2F-0BA4-D771343C2F2E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7226E1D-A97E-7C2F-0BA4-D771343C2F2E}|Assembly-CSharp.csproj|C:\\Users\\PC\\Documents\\Unity\\Fow44\\assets\\scripts\\dusman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7226E1D-A97E-7C2F-0BA4-D771343C2F2E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dusman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Documents\\Unity\\Fow42\\Assets\\Scripts\\Olustur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7226E1D-A97E-7C2F-0BA4-D771343C2F2E}|Assembly-CSharp.csproj|C:\\Users\\PC\\Documents\\Unity\\Fow44\\assets\\scripts\\baslatcikis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7226E1D-A97E-7C2F-0BA4-D771343C2F2E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\baslatcikis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Documents\\Unity\\Fow43r\\Assets\\Scripts\\RastgeleKure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Documents\\Unity\\Fow43r\\Assets\\Scripts\\Etkilesim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SkorSay.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Unity\\Fow44\\Assets\\Scripts\\SkorSay.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SkorSay.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\Unity\\Fow44\\Assets\\Scripts\\SkorSay.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SkorSay.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T11:47:17.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Ates.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Unity\\Fow44\\Assets\\Scripts\\Ates.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Ates.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\Unity\\Fow44\\Assets\\Scripts\\Ates.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Ates.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T09:34:32.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BaslatCikis.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Unity\\Fow44\\Assets\\Scripts\\BaslatCikis.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\BaslatCikis.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\Unity\\Fow44\\Assets\\Scripts\\BaslatCikis.cs",
+              "RelativeToolTip": "Assets\\Scripts\\BaslatCikis.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T08:21:40.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "YokEt.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Unity\\Fow44\\Assets\\Scripts\\YokEt.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\YokEt.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\Unity\\Fow44\\Assets\\Scripts\\YokEt.cs",
+              "RelativeToolTip": "Assets\\Scripts\\YokEt.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T07:00:07.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Etkilesim.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Unity\\Fow43r\\Assets\\Scripts\\Etkilesim.cs",
+              "RelativeDocumentMoniker": "..\\Fow43r\\Assets\\Scripts\\Etkilesim.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\Unity\\Fow43r\\Assets\\Scripts\\Etkilesim.cs",
+              "RelativeToolTip": "..\\Fow43r\\Assets\\Scripts\\Etkilesim.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T06:55:55.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Olustur.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Unity\\Fow42\\Assets\\Scripts\\Olustur.cs",
+              "RelativeDocumentMoniker": "..\\Fow42\\Assets\\Scripts\\Olustur.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\Unity\\Fow42\\Assets\\Scripts\\Olustur.cs",
+              "RelativeToolTip": "..\\Fow42\\Assets\\Scripts\\Olustur.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T06:50:04.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RastgeleKure.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Unity\\Fow43r\\Assets\\Scripts\\RastgeleKure.cs",
+              "RelativeDocumentMoniker": "..\\Fow43r\\Assets\\Scripts\\RastgeleKure.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\Unity\\Fow43r\\Assets\\Scripts\\RastgeleKure.cs",
+              "RelativeToolTip": "..\\Fow43r\\Assets\\Scripts\\RastgeleKure.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T06:45:00.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dusman.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Unity\\Fow44\\Assets\\Scripts\\Dusman.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Dusman.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\Unity\\Fow44\\Assets\\Scripts\\Dusman.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Dusman.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T06:44:48.671Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

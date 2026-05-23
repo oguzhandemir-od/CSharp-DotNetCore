@@ -1,0 +1,7 @@
+C:\Users\PC\source\repos\ODFow\Fow42\bin\Debug\Fow42.exe.config
+C:\Users\PC\source\repos\ODFow\Fow42\bin\Debug\Fow42.exe
+C:\Users\PC\source\repos\ODFow\Fow42\bin\Debug\Fow42.pdb
+C:\Users\PC\source\repos\ODFow\Fow42\obj\Debug\Fow42.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\ODFow\Fow42\obj\Debug\Fow42.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\ODFow\Fow42\obj\Debug\Fow42.exe
+C:\Users\PC\source\repos\ODFow\Fow42\obj\Debug\Fow42.pdb
