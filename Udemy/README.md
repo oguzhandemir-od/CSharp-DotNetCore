@@ -10,6 +10,7 @@ Aşağıdaki tabloda bu klasör altındaki tüm projelerin listesi, teknik detay
 | :--- | :--- | :--- | :--- | :--- |
 | [Online Ticari Otomasyon](./MvcOnlineTicariOtomasyon) | MVC | .NET Core, MVC, SQL, EF Core | ✅ Bitti | Murat Yücedağ'ın yayınladığı .NET Core MVC Ticari Otomasyon projesinin uygulaması. |
 | [Portfolyo](./MyPortfolioUdemy) | MVC | .NET Core, MVC | ⏳ Geliştiriliyor | Murat Yücedağ'ın yayınladığı MVC portfolyo projesi uygulaması. |
+| [Restful API](./MyFirsRestApi) | API | .NET Core | ✅ Bitti | Roshan Academy'nin Restful API'ye giriş projesinin uygulaması. |
 
 > *(Not: Yeni projeler eklendikçe bu tablo güncellenmektedir.)*
 
