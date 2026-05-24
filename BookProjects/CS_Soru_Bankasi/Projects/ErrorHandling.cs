@@ -24,6 +24,22 @@ namespace Projects
                 Console.WriteLine("Lütfen sadece sayı giriniz");
             }
         }
+
+        // Write the codes that show the exception during the type conversion of the data input by user 
+        public static void Question2()
+        {
+            Console.Write("Lütfen bir sayı giriniz: ");
+
+            try
+            {
+                int children = int.Parse(Console.ReadLine());
+                Console.WriteLine("Geçerli bir değer girdiniz");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
         #endregion
     }
 }
