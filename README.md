@@ -20,6 +20,8 @@ Kütüphane içerisindeki klasörlere dair bilgi:
 
 * [PatikaDev](/PatikaDev) - Patika.dev platformu üzerindeki C# ve temel .NET patikalarına ait algoritma, pratik ve backend görevleri.
 
+* [Playground](/Playground) - Kendi hobi proje ve pratik uygulamalarımın bulundğuğu yer.
+
 * [TechCareer](/TechCareer) - Techcareer bünyesinde katıldığım, sektörel standartlarda .NET Core backend mimarileri geliştirdiğimiz yoğunlaştırılmış bootcamp/eğitim projeleri.
 
 * [Udemy](/Udemy) - Udemy üzerindeki eğitmenlerden aldığım C# / .NET mimari, tasarım desenleri ve pratik odaklı kurs projeleri.
