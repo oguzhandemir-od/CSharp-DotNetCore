@@ -387,4 +387,38 @@ class ArraysAndCollections
             Console.Write($"{unorderedArray[3][m]}  ");
         }
     }
+    #endregion
+
+    #region Arrays - Resizing Arrays
+    // Write the codes that type the values of an array after resizing it
+    public static void Question11()
+    {
+        string[] array = { "C#", "Çözümlü", "Soru", "Bankası" };
+
+        Console.WriteLine("Dizinin başlangıçtaki değerleri:");
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            Console.WriteLine($"{i + 1}: " + array[i]);
+        }
+
+        Console.WriteLine("\nDizinin boyutunu artırınca dizi içindeki değerler:");
+
+        Array.Resize(ref array, array.Length + 5);
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            Console.WriteLine($"{i + 1}: " + array[i]);
+        }
+
+        Console.WriteLine("\nDizinin boyutunu azaltınca dizi içindeki değerler:");
+
+        Array.Resize(ref array, 2);
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            Console.WriteLine($"{i + 1}: " + array[i]);
+        }
+    }
+    #endregion
 }
