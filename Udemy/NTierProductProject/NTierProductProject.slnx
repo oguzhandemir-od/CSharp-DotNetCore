@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="BusinessLayer/BusinessLayer.csproj" />
+  <Project Path="DataAccessLayer/DataAccessLayer.csproj" />
+  <Project Path="EntityLayer/EntityLayer.csproj" />
+  <Project Path="PresantationLayer/PresantationLayer.csproj" Id="38007cc1-592a-4aaf-8612-3b42081dddb8" />
+</Solution>
