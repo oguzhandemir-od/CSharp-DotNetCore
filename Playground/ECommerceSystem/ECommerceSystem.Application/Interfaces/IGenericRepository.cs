@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ECommerceSystem.Application.Interfaces
 {
-    internal interface IGenericRepository<T>
+    public interface IGenericRepository<T>
     {
         Task<T> GetByIdAsync(int id);
         Task<IEnumerable<T>> GetAllAsync();

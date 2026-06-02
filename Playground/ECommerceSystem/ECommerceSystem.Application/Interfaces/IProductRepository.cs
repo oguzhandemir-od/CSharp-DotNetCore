@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ECommerceSystem.Application.Interfaces
 {
-    internal interface IProductRepository : IGenericRepository<Product>
+    public interface IProductRepository : IGenericRepository<Product>
     {
         
     }

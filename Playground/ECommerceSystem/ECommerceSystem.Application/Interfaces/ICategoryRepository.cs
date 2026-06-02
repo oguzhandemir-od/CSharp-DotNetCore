@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ECommerceSystem.Application.Interfaces
 {
-    internal interface ICategoryRepository : IGenericRepository<Category>
+    public interface ICategoryRepository : IGenericRepository<Category>
     {
         
     }
