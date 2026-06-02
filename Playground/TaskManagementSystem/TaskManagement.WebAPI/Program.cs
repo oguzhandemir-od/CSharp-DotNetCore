@@ -40,7 +40,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
-        // Bazı şablonlarda burası boş kalırsa rota şaşırabilir, garantiye alalım:
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Task Management API V1");
     });
 
