@@ -8,7 +8,7 @@ Aşağıdaki tabloda bu klasör altındaki tüm projelerin listesi, teknik detay
 
 | Proje / Klasör Adı | Türü | Kullanılan Teknolojiler / Mimari | Durum | Açıklama |
 | :--- | :--- | :--- | :--- | :--- |
-| [Görev Yönetimi](./TaskManagementSystem) | Web | .NET Core, SQL, EF Core, Onion, DI, RP | ⚠️ Prototip | Öğrendiğim teknolojilerle bir pratik projesi. |
+| [Görev Yönetimi](./TaskManagementSystem) | Web | .NET Core, EF Core, Onion Architecture, Repository Pattern, Dependency Injection (DI), FluentValidation, Global Exception Handling | ✅ Bitti | Domain kurallarının kapsüllendiği, katmanlar arası bağımlılıkların gevşetildiği ve merkezi hata yönetiminin kurgulandığı kurumsal mimari pratiği. |
 
 > *(Not: Yeni projeler eklendikçe bu tablo güncellenmektedir.)*
 
