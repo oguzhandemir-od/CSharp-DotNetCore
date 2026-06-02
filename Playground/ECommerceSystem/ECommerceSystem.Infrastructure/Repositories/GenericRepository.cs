@@ -1,4 +1,5 @@
 ﻿using ECommerceSystem.Application.Interfaces;
+using ECommerceSystem.Infrastructure.Context;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,6 +8,7 @@ namespace ECommerceSystem.Infrastructure.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T>
     {
+        private readonly AppDbContext _context;
         public Task AddEntityAsync(T entity)
         {
             throw new NotImplementedException();

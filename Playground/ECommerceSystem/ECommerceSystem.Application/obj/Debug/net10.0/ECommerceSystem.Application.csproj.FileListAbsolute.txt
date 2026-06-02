@@ -1,0 +1,16 @@
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Application\bin\Debug\net10.0\ECommerceSystem.Application.deps.json
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Application\bin\Debug\net10.0\ECommerceSystem.Application.dll
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Application\bin\Debug\net10.0\ECommerceSystem.Application.pdb
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Application\bin\Debug\net10.0\ECommerceSystem.Domain.dll
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Application\bin\Debug\net10.0\ECommerceSystem.Domain.pdb
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Application\obj\Debug\net10.0\ECommerceSystem.Application.csproj.AssemblyReference.cache
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Application\obj\Debug\net10.0\ECommerceSystem.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Application\obj\Debug\net10.0\ECommerceSystem.Application.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Application\obj\Debug\net10.0\ECommerceSystem.Application.AssemblyInfo.cs
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Application\obj\Debug\net10.0\ECommerceSystem.Application.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Application\obj\Debug\net10.0\ECommerceSystem.Application.sourcelink.json
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Application\obj\Debug\net10.0\ECommerc.6F8FC409.Up2Date
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Application\obj\Debug\net10.0\ECommerceSystem.Application.dll
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Application\obj\Debug\net10.0\refint\ECommerceSystem.Application.dll
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Application\obj\Debug\net10.0\ECommerceSystem.Application.pdb
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Application\obj\Debug\net10.0\ref\ECommerceSystem.Application.dll

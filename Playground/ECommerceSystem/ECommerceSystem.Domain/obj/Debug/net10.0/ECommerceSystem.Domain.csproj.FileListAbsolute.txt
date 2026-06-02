@@ -1,0 +1,12 @@
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Domain\bin\Debug\net10.0\ECommerceSystem.Domain.deps.json
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Domain\bin\Debug\net10.0\ECommerceSystem.Domain.dll
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Domain\bin\Debug\net10.0\ECommerceSystem.Domain.pdb
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Domain\obj\Debug\net10.0\ECommerceSystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Domain\obj\Debug\net10.0\ECommerceSystem.Domain.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Domain\obj\Debug\net10.0\ECommerceSystem.Domain.AssemblyInfo.cs
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Domain\obj\Debug\net10.0\ECommerceSystem.Domain.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Domain\obj\Debug\net10.0\ECommerceSystem.Domain.sourcelink.json
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Domain\obj\Debug\net10.0\ECommerceSystem.Domain.dll
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Domain\obj\Debug\net10.0\refint\ECommerceSystem.Domain.dll
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Domain\obj\Debug\net10.0\ECommerceSystem.Domain.pdb
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.Domain\obj\Debug\net10.0\ref\ECommerceSystem.Domain.dll

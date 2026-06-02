@@ -1,11 +1,30 @@
 {
   "version": 4,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "ECommerceSystem.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/ECommerceSystem.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ECommerceSystem.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ECommerceSystem.Domain/1.0.0": {
+      "type": "project",
+      "path": "../ECommerceSystem.Domain/ECommerceSystem.Domain.csproj",
+      "msbuildProject": "../ECommerceSystem.Domain/ECommerceSystem.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "ECommerceSystem.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\oğuzhan\\.nuget\\packages\\": {},
@@ -39,7 +58,11 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\oğuzhan\\Desktop\\CSharp-DotNetCore\\Playground\\ECommerceSystem\\ECommerceSystem.Domain\\ECommerceSystem.Domain.csproj": {
+              "projectPath": "C:\\Users\\oğuzhan\\Desktop\\CSharp-DotNetCore\\Playground\\ECommerceSystem\\ECommerceSystem.Domain\\ECommerceSystem.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
