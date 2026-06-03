@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HG5VXnVDqro=",
+  "dgSpecHash": "+Q5WX/rwPA8=",
   "success": true,
   "projectFilePath": "C:\\Users\\oğuzhan\\Desktop\\CSharp-DotNetCore\\Playground\\ECommerceSystem\\ECommerceSystem.WebAPI\\ECommerceSystem.WebAPI.csproj",
   "expectedPackageFiles": [
@@ -26,6 +26,7 @@
     "C:\\Users\\oğuzhan\\.nuget\\packages\\microsoft.entityframeworkcore.design\\10.0.8\\microsoft.entityframeworkcore.design.10.0.8.nupkg.sha512",
     "C:\\Users\\oğuzhan\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\10.0.8\\microsoft.entityframeworkcore.relational.10.0.8.nupkg.sha512",
     "C:\\Users\\oğuzhan\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\10.0.8\\microsoft.entityframeworkcore.sqlserver.10.0.8.nupkg.sha512",
+    "C:\\Users\\oğuzhan\\.nuget\\packages\\microsoft.extensions.caching.stackexchangeredis\\10.0.8\\microsoft.extensions.caching.stackexchangeredis.10.0.8.nupkg.sha512",
     "C:\\Users\\oğuzhan\\.nuget\\packages\\microsoft.extensions.dependencymodel\\10.0.8\\microsoft.extensions.dependencymodel.10.0.8.nupkg.sha512",
     "C:\\Users\\oğuzhan\\.nuget\\packages\\microsoft.identity.client\\4.73.1\\microsoft.identity.client.4.73.1.nupkg.sha512",
     "C:\\Users\\oğuzhan\\.nuget\\packages\\microsoft.identity.client.extensions.msal\\4.73.1\\microsoft.identity.client.extensions.msal.4.73.1.nupkg.sha512",
@@ -40,8 +41,10 @@
     "C:\\Users\\oğuzhan\\.nuget\\packages\\microsoft.visualstudio.solutionpersistence\\1.0.52\\microsoft.visualstudio.solutionpersistence.1.0.52.nupkg.sha512",
     "C:\\Users\\oğuzhan\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
     "C:\\Users\\oğuzhan\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\oğuzhan\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
     "C:\\Users\\oğuzhan\\.nuget\\packages\\scalar.aspnetcore\\2.14.14\\scalar.aspnetcore.2.14.14.nupkg.sha512",
     "C:\\Users\\oğuzhan\\.nuget\\packages\\scalar.aspnetcore.microsoft\\2.14.14\\scalar.aspnetcore.microsoft.2.14.14.nupkg.sha512",
+    "C:\\Users\\oğuzhan\\.nuget\\packages\\stackexchange.redis\\2.7.27\\stackexchange.redis.2.7.27.nupkg.sha512",
     "C:\\Users\\oğuzhan\\.nuget\\packages\\system.clientmodel\\1.5.1\\system.clientmodel.1.5.1.nupkg.sha512",
     "C:\\Users\\oğuzhan\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
     "C:\\Users\\oğuzhan\\.nuget\\packages\\system.composition\\9.0.0\\system.composition.9.0.0.nupkg.sha512",

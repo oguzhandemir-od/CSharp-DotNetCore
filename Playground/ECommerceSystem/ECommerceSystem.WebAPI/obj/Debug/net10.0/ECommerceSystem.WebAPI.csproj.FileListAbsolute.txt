@@ -167,3 +167,6 @@ C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerce
 C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.WebAPI\obj\Debug\net10.0\ECommerceSystem.WebAPI.genruntimeconfig.cache
 C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.WebAPI\obj\Debug\net10.0\ref\ECommerceSystem.WebAPI.dll
 C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.WebAPI\bin\Debug\net10.0\Scalar.AspNetCore.Microsoft.dll
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.WebAPI\bin\Debug\net10.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.WebAPI\bin\Debug\net10.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem.WebAPI\bin\Debug\net10.0\StackExchange.Redis.dll
