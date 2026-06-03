@@ -1130,17 +1130,13 @@
               "target": "Package",
               "version": "[10.0.8, )"
             },
-            "Swashbuckle.AspNetCore.Swagger": {
+            "Scalar.AspNetCore": {
               "target": "Package",
-              "version": "[10.2.1, )"
+              "version": "[2.14.14, )"
             },
-            "Swashbuckle.AspNetCore.SwaggerGen": {
+            "Scalar.AspNetCore.Microsoft": {
               "target": "Package",
-              "version": "[10.2.1, )"
-            },
-            "Swashbuckle.AspNetCore.SwaggerUI": {
-              "target": "Package",
-              "version": "[10.2.1, )"
+              "version": "[2.14.14, )"
             }
           },
           "imports": [

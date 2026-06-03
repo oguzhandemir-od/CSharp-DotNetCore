@@ -22,9 +22,9 @@ C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerce
 C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem\obj\Debug\net10.0\staticwebassets.development.json
 C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem\obj\Debug\net10.0\swae.build.ex.cache
-C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem\obj\Debug\net10.0\ECommerceSystem.dll
 C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem\obj\Debug\net10.0\refint\ECommerceSystem.dll
 C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem\obj\Debug\net10.0\ECommerceSystem.pdb
 C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem\obj\Debug\net10.0\ECommerceSystem.genruntimeconfig.cache
 C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem\obj\Debug\net10.0\ref\ECommerceSystem.dll
+C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\ECommerceSystem\ECommerceSystem\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
