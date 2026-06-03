@@ -20,6 +20,8 @@ namespace ECommerceSystem.WebAPI.Controllers
         [Authorize]
         public async Task<IActionResult> GetProducts()
         {
+            // throw new Exception("Veritabanı bağlantısı aniden koptu! (Yapay Hata)");
+
             string cacheKey = "products_list";
 
             var cacheProducts=await _cache.GetStringAsync(cacheKey);
