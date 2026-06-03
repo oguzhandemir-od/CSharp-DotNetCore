@@ -31,4 +31,4 @@ Projede hazır şablonlar veya demode kütüphaneler yerine, modern .NET ekosist
 * OpenAPI boru hattına yazılan özel bir *Document Transformer* sınıfı ile JWT şeması Scalar arayüzüne global bir güvenlik gereksinimi olarak dinamik şekilde enjekte edilmiştir.
 
 ---
-[⬅️ Proje Kataloğuna Dön](../README.md)
+[⬅️ Proje Kataloğuna Dön](..)
