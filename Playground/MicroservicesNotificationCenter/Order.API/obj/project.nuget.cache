@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "nfYFIw8vdSI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\oğuzhan\\Desktop\\CSharp-DotNetCore\\Playground\\MicroservicesNotificationCenter\\Order.API\\Order.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\oğuzhan\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.8\\microsoft.aspnetcore.openapi.10.0.8.nupkg.sha512",
+    "C:\\Users\\oğuzhan\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
+    "C:\\Users\\oğuzhan\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.23.0\\microsoft.visualstudio.azure.containers.tools.targets.1.23.0.nupkg.sha512",
+    "C:\\Users\\oğuzhan\\.nuget\\packages\\rabbitmq.client\\7.2.1\\rabbitmq.client.7.2.1.nupkg.sha512",
+    "C:\\Users\\oğuzhan\\.nuget\\packages\\scalar.aspnetcore\\2.14.14\\scalar.aspnetcore.2.14.14.nupkg.sha512",
+    "C:\\Users\\oğuzhan\\.nuget\\packages\\scalar.aspnetcore.microsoft\\2.14.14\\scalar.aspnetcore.microsoft.2.14.14.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  rabbitmq:
+    image: rabbitmq:4.3-management
+    container_name: notification_center_rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
+  order.api:
+    image: order-api-image
+    container_name: order_api_container
+    build:
+      context: .
+      dockerfile: Order.API/Dockerfile
+    ports:
+      - "5001:8080"
+    environment:
+      - RabbitMQ__HostName=rabbitmq
+    depends_on:
+      - rabbitmq
+
+  notification.consumer:
+    image: notification-consumer-image
+    container_name: notification_consumer_container
+    build:
+      context: .
+      dockerfile: Notification.Consumer/Dockerfile
+    environment:
+      - RabbitMQ__HostName=rabbitmq
+    depends_on:
+      - rabbitmq
