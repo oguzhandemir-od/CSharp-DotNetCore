@@ -26,6 +26,15 @@ Kütüphane içerisindeki klasörlere dair bilgi:
 
 * [Udemy](/Udemy) - Udemy üzerindeki eğitmenlerden aldığım C# / .NET mimari, tasarım desenleri ve pratik odaklı kurs projeleri.
 
+## 💼 Canlı Ticari Projeler & Üretim Çıktıları (Production Showcase)
+*Bu bölümde yer alan projelerin kaynak kodları, ticari haklar ve veri güvenliği senaryoları nedeniyle gizlidir. Projelerin mimari özetleri ve canlı bağlantıları aşağıda listelenmiştir:*
+
+| Proje Adı / Platform | Türü | Mimari & Kullanılan Teknolojiler | Canlı Link | Açıklama / Sektörel Çözüm |
+| :--- | :--- | :--- | :--- | :--- |
+| **Maktel Elektronik Kurumsal Web Sitesi** | Web UI & Backend | .NET Core, MVC, Entity Framework Core, MS SQL Server, Bootstrap, JavaScript | [maktelelektronik.com](https://www.maktelelektronik.com)  | Maktel Elektronik firması için tasarlanmış, dinamik içerik yönetimli (CMS) ve SEO optimizasyonlu proje. |
+| **ODimension (v1)** | Full-Stack | .NET Core, MVC, Entity Framework Core, MS SQL Server, JavaScript | [odimensional.com](https://www.odimensional.com) | Kişisel projem, boyutum. Yakın zamanda yayına alınacak versiyonuyla güçlü ve güncel teknolojilerle desteklenecektir. |
+| **SMG Elektronik Kurumsal Web Sitesi** | Web UI & Backend | .NET Core, MVC, Entity Framework Core, MS SQL Server, Tailwind CSS, JavaScript | [smgelektronik.com.tr](https://www.smgelektronik.com.tr) | Zayıf akım sistemleri üzerine faaliyet gösteren kurumsal firma için tasarlanmış, dinamik içerik yönetimli (CMS) ve SEO optimizasyonlu proje. |
+
 ## 🛠️ Kullanılan Teknolojiler & Yetkinlikler
 
 Bu kütüphane genelinde aşağıdaki teknolojiler ve yaklaşımlar üzerine pratikler yer almaktadır:

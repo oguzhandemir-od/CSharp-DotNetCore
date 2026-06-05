@@ -10,6 +10,7 @@ Aşağıdaki tabloda bu klasör altındaki tüm projelerin listesi, teknik detay
 | :--- | :--- | :--- | :--- | :--- |
 | [Görev Yönetimi](./TaskManagementSystem) | Web API | .NET Core, EF Core, Onion Architecture, Repository Pattern, Dependency Injection (DI), FluentValidation, Global Exception Handling | ✅ Bitti | Domain kurallarının kapsüllendiği, katmanlar arası bağımlılıkların gevşetildiği ve merkezi hata yönetiminin kurgulandığı kurumsal mimari pratiği. |
 | [E-Ticaret Altyapı Prototipi](./ECommerceSystem) | Web API | .NET Core, Onion Architecture, JWT Authentication & Role Security, Docker, Redis Distributed Caching, Global Exception Handling Middleware, Microsoft OpenAPI & Scalar UI | ✅ Bitti | Yüksek trafikli sistemler için tasarlanmış; token tabanlı güvenlik kalkanı, RAM tabanlı önbellekleme (Cache Invalidation) ve merkezi hata yönetimini barındıran performans odaklı backend prototipi. |
+| [Asenkron Bildirim Merkezi](./MicroservicesNotificationCenter) | Microservices & Worker | .NET 10.0 (Web API & Background Service), RabbitMQ 4.3 (Management), Docker Compose, Isolated Bridge Network, Asynchronous Event Publishing, Resilience Retry Pattern | ✅ Bitti | Olay güdümlü mimari (Event-Driven) temelinde; sipariş API'si ile bildirim servisini mesaj kuyruğu üzerinden tamamen ayıran, hata izolasyonlu ve yüksek ölçeklenebilir asenkron haberleşme prototipi. |
 
 > *(Not: Yeni projeler eklendikçe bu tablo güncellenmektedir.)*
 
