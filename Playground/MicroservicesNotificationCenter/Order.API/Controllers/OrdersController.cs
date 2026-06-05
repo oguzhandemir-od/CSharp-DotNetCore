@@ -25,7 +25,9 @@ namespace Order.API.Controllers
 
             var factory = new ConnectionFactory()
             {
-                HostName = _configuration["RabbitMQ: HostName"]??"rabbitmq",
+                HostName = Environment.GetEnvironmentVariable("RabbitMQ__HostName")
+                           ?? _configuration["RabbitMQ:HostName"]
+                           ?? "172.20.0.10",
                 UserName = "guest",
                 Password = "guest"
             };
@@ -59,7 +61,7 @@ namespace Order.API.Controllers
                 body: body
                 );
 
-            return Ok(new { Message = "Siperiş alındı ve bildirim kuyruğuna gönderildi.", OrderId = generatedOrderId });
+            return Ok(new { Message = "Sipariş alındı ve bildirim kuyruğuna gönderildi.", OrderId = generatedOrderId });
         }
     }
 }

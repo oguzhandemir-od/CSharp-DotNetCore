@@ -15,7 +15,9 @@ namespace Notification.Consumer
         {
             var factory = new ConnectionFactory()
             {
-                HostName = _configuration["RabbitMQ__HostName"] ?? "rabbitmq",
+                HostName = Environment.GetEnvironmentVariable("RabbitMQ__HostName")
+                           ?? _configuration["RabbitMQ:HostName"]
+                           ?? "172.20.0.10",
                 UserName = "guest",
                 Password = "guest"
             };

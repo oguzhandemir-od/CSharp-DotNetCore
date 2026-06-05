@@ -1,0 +1,91 @@
+name: dockercompose10309762036620903592
+services:
+  notification.consumer:
+    build:
+      context: C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\MicroservicesNotificationCenter
+      dockerfile: Notification.Consumer/Dockerfile
+    container_name: notification_consumer_container
+    depends_on:
+      rabbitmq:
+        condition: service_started
+        required: true
+    environment:
+      RabbitMQ__HostName: 172.20.0.10
+    image: notification-consumer-image
+    networks:
+      notification_net: null
+  order.api:
+    build:
+      context: C:\Users\oğuzhan\Desktop\CSharp-DotNetCore\Playground\MicroservicesNotificationCenter
+      dockerfile: Order.API/Dockerfile
+    container_name: order_api_container
+    depends_on:
+      rabbitmq:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+      ASPNETCORE_URLS: http://+:5001
+      RabbitMQ__HostName: 172.20.0.10
+    image: order-api-image
+    networks:
+      notification_net: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "5001"
+        protocol: tcp
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\oğuzhan\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind: {}
+      - type: bind
+        source: C:\Users\oğuzhan\AppData\Roaming/Microsoft/UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind: {}
+      - type: bind
+        source: C:\Users\oğuzhan\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind: {}
+      - type: bind
+        source: C:\Users\oğuzhan\AppData\Roaming/ASP.NET/Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind: {}
+  rabbitmq:
+    container_name: notification_center_rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_DEFAULT_USER: guest
+    image: rabbitmq:4.3-management
+    networks:
+      notification_net:
+        ipv4_address: 172.20.0.10
+    ports:
+      - mode: ingress
+        target: 5672
+        published: "5672"
+        protocol: tcp
+      - mode: ingress
+        target: 15672
+        published: "15672"
+        protocol: tcp
+networks:
+  notification_net:
+    name: dockercompose10309762036620903592_notification_net
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

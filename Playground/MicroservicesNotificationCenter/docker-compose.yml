@@ -10,6 +10,9 @@ services:
     environment:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
+    networks:
+      notification_net:
+        ipv4_address: 172.20.0.10
 
   order.api:
     image: order-api-image
@@ -20,9 +23,12 @@ services:
     ports:
       - "5001:8080"
     environment:
-      - RabbitMQ__HostName=rabbitmq
+      - RabbitMQ__HostName=172.20.0.10
+      - ASPNETCORE_URLS=http://+:5001
     depends_on:
       - rabbitmq
+    networks:
+      notification_net:
 
   notification.consumer:
     image: notification-consumer-image
@@ -31,6 +37,15 @@ services:
       context: .
       dockerfile: Notification.Consumer/Dockerfile
     environment:
-      - RabbitMQ__HostName=rabbitmq
+      - RabbitMQ__HostName=172.20.0.10
     depends_on:
       - rabbitmq
+    networks:
+      notification_net:
+
+networks:
+  notification_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
