@@ -20,14 +20,14 @@ namespace LibraryManagement.WebAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCategories()
         {
-            var categories = await _categoryRepository.GetCategoriesAsync();
+            var categories = await _categoryRepository.GetEntitiesAsync();
             return Ok(categories);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCategoryById(int id)
         {
-            var category = await _categoryRepository.GetCategoryAsync(id);
+            var category = await _categoryRepository.GetEntityByIdAsync(id);
             if (category == null)
                 return NotFound();
 
@@ -42,28 +42,28 @@ namespace LibraryManagement.WebAPI.Controllers
                 Name = dto.Name
             };
 
-            await _categoryRepository.AddCategoryAsync(category);
+            await _categoryRepository.AddEntityAsync(category);
             return CreatedAtAction(nameof(GetCategories), new { id = category.Id }, category);
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCategory(int id, CategoryDto dto)
         {
-            var existingCategory = await _categoryRepository.GetCategoryAsync(id);
+            var existingCategory = await _categoryRepository.GetEntityByIdAsync(id);
 
             if (existingCategory == null)
                 return NotFound("Güncellenmek istenen kategori bulunamadı.");
 
             existingCategory.Name= dto.Name;
 
-            await _categoryRepository.UpdateCategoryAsync(existingCategory);
+            await _categoryRepository.UpdateEntityAsync(existingCategory);
             return Ok(new { message = "Kategori başarıyla güncellendi.", data = existingCategory });
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {
-            await _categoryRepository.DeleteCategoryAsync(id);
+            await _categoryRepository.DeleteEntityAsync(id);
             return NoContent();
         }
     }

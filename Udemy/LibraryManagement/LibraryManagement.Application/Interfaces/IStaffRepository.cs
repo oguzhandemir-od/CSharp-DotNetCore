@@ -5,7 +5,8 @@ using System.Text;
 
 namespace LibraryManagement.Application.Interfaces
 {
-    public interface IAuthorRepository:IGenericRepository<Author> 
+    public interface IStaffRepository:IGenericRepository<Staff>
     {
+
     }
 }

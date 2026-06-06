@@ -5,12 +5,8 @@ using System.Text;
 
 namespace LibraryManagement.Application.Interfaces
 {
-    public interface ICategoryRepository
+    public interface ICategoryRepository:IGenericRepository<Category>
     {
-        Task<IEnumerable<Category>> GetCategoriesAsync();
-        Task<Category> GetCategoryAsync(int id);
-        Task AddCategoryAsync(Category category);
-        Task UpdateCategoryAsync(Category category);
-        Task DeleteCategoryAsync(int id);
+        
     }
 }

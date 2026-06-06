@@ -1,16 +1,15 @@
 ﻿using LibraryManagement.Application.Interfaces;
 using LibraryManagement.Domain.Entities;
 using LibraryManagement.Infrastructure.Context;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace LibraryManagement.Infrastructure.Repositories
 {
-    public class CategoryRepository : GenericRepository<Category>, ICategoryRepository
+    public class LoanRepository : GenericRepository<Loan>, ILoanRepository
     {
-        public CategoryRepository(AppDbContext context) : base(context)
+        public LoanRepository(AppDbContext context) : base(context)
         {
         }
     }

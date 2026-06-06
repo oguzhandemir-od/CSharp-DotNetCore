@@ -5,7 +5,8 @@ using System.Text;
 
 namespace LibraryManagement.Application.Interfaces
 {
-    public interface IAuthorRepository:IGenericRepository<Author> 
+    public interface IMemberRepository:IGenericRepository<Member>
     {
+        Task<IEnumerable<Member>> GetMembersWithAllDetailsAsync();
     }
 }

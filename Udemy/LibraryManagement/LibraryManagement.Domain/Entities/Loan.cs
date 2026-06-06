@@ -16,7 +16,7 @@ namespace LibraryManagement.Domain.Entities
         public int StaffId { get; set; }
         public Staff Staff { get; set; }
 
-        public DateTime LoadDate { get; set; } = DateTime.UtcNow;
+        public DateTime LoanDate { get; set; } = DateTime.UtcNow;
         public DateTime DueDate {  get; set; }
         public DateTime? ReturnDate {  get; set; }
 

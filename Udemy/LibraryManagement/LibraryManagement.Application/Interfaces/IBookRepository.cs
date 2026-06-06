@@ -5,13 +5,8 @@ using System.Text;
 
 namespace LibraryManagement.Application.Interfaces
 {
-    public interface IBookRepository
+    public interface IBookRepository:IGenericRepository<Book>
     {
-        Task<IEnumerable<Book>> GetBooksAsync();
-        Task<Book> GetBookByIdAsync(int id);
-        Task AddBookAsync(Book book);
-        Task UpdateBookAsync(Book book);
-        Task DeleteBookAsync(int id);
-
+        Task<IEnumerable<Book>> GetBooksWithAllDetailsAsync();
     }
 }

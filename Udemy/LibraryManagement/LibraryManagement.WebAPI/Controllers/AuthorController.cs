@@ -1,4 +1,6 @@
-﻿using LibraryManagement.Application.DTOs;
+﻿using FluentValidation;
+using LibraryManagement.Application.DTOs;
+using LibraryManagement.Application.DTOs.Staff;
 using LibraryManagement.Application.Interfaces;
 using LibraryManagement.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
@@ -12,22 +14,24 @@ namespace LibraryManagement.WebAPI.Controllers
     public class AuthorController : ControllerBase
     {
         private readonly IAuthorRepository _authorRepository;
-        public AuthorController(IAuthorRepository authorRepository)
+        private readonly IValidator<AuthorDto> _validator;
+        public AuthorController(IAuthorRepository authorRepository, IValidator<AuthorDto> validator)
         {
             _authorRepository = authorRepository;
+            _validator= validator;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAuthors()
         {
-            var authors= await _authorRepository.GetAuthorsAsync();
+            var authors= await _authorRepository.GetEntitiesAsync();
             return Ok(authors);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAuthorById(int id)
         {
-            var author = await _authorRepository.GetAuthorByIdAsync(id);
+            var author = await _authorRepository.GetEntityByIdAsync(id);
             if (author == null)
                 return NotFound();
 
@@ -36,7 +40,8 @@ namespace LibraryManagement.WebAPI.Controllers
 
         [HttpPost]
         public async Task<IActionResult> AddAuthor(AuthorDto dto)
-        {
+        {     
+
             var author = new Author
             {
                 Name = dto.Name,
@@ -44,14 +49,14 @@ namespace LibraryManagement.WebAPI.Controllers
                 Detail = dto.Detail
             };
 
-            await _authorRepository.AddAuthorAsync(author);
+            await _authorRepository.AddEntityAsync(author);
             return CreatedAtAction(nameof(GetAuthors), new { id = author.Id }, author);
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateAuthor(int id, AuthorDto dto)
         {
-            var existingAuthor = await _authorRepository.GetAuthorByIdAsync(id);
+            var existingAuthor = await _authorRepository.GetEntityByIdAsync(id);
 
             if (existingAuthor == null)
                 return NotFound();
@@ -60,14 +65,14 @@ namespace LibraryManagement.WebAPI.Controllers
             existingAuthor.Surname= dto.Surname;
             existingAuthor.Detail = dto.Detail;
 
-            await _authorRepository.UpdateAuthorAsync(existingAuthor);
+            await _authorRepository.UpdateEntityAsync(existingAuthor);
             return Ok();
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAuthor(int id)
         {
-            await _authorRepository.DeleteAuthorAsync(id);
+            await _authorRepository.DeleteEntityAsync(id);
 
             return NoContent();
         }

@@ -8,18 +8,17 @@ using System.Text;
 
 namespace LibraryManagement.Infrastructure.Repositories
 {
-    public class BookRepository : GenericRepository<Book>, IBookRepository
+    public class MemberRepository : GenericRepository<Member>, IMemberRepository
     {
-        public BookRepository(AppDbContext context):base(context)
+        public MemberRepository(AppDbContext context) : base(context)
         {
-
         }
-
-        public async Task<IEnumerable<Book>> GetBooksWithAllDetailsAsync()
+        public async Task<IEnumerable<Member>> GetMembersWithAllDetailsAsync()
         {
-            return await _context.Books
-                .Include(b=>b.Category)
-                .Include(b=>b.Author)
+            return await _context.Members
+                .Include(m => m.Loans)
+                    .ThenInclude(l => l.Book)
+                .Include(m => m.Penalties)
                 .Where(m => !m.IsDeleted)
                 .ToListAsync();
         }
