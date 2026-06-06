@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryManagement.WebAPI.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class AuthorController : ControllerBase
@@ -21,6 +22,7 @@ namespace LibraryManagement.WebAPI.Controllers
             _validator= validator;
         }
 
+        [Authorize(Policy = "StaffOrMember")]
         [HttpGet]
         public async Task<IActionResult> GetAuthors()
         {
@@ -28,6 +30,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok(authors);
         }
 
+        [Authorize(Policy = "StaffOrMember")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAuthorById(int id)
         {
@@ -38,6 +41,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok(author);
         }
 
+        [Authorize(Policy = "LibraryStaffOnly")]
         [HttpPost]
         public async Task<IActionResult> AddAuthor(AuthorDto dto)
         {     
@@ -53,6 +57,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return CreatedAtAction(nameof(GetAuthors), new { id = author.Id }, author);
         }
 
+        [Authorize(Policy = "LibraryStaffOnly")]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateAuthor(int id, AuthorDto dto)
         {
@@ -69,6 +74,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok();
         }
 
+        [Authorize(Policy = "LibraryStaffOnly")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAuthor(int id)
         {

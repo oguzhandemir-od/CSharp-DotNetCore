@@ -2,11 +2,13 @@
 using LibraryManagement.Application.DTOs.Book;
 using LibraryManagement.Application.Interfaces;
 using LibraryManagement.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryManagement.WebAPI.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class BookController : ControllerBase
@@ -17,6 +19,7 @@ namespace LibraryManagement.WebAPI.Controllers
             _bookRepository = bookRepository;
         }
 
+        [Authorize(Policy = "StaffOrMember")]
         [HttpGet]
         public async Task<IActionResult> GetBooks()
         {
@@ -36,6 +39,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok(bookDtos);
         }
 
+        [Authorize(Policy = "StaffOrMember")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetBookById(int id)
         {
@@ -57,6 +61,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok(bookDto);
         }
 
+        [Authorize(Policy = "LibraryStaffOnly")]
         [HttpPost]
         public async Task<IActionResult> AddBook(CreateBookDto dto)
         {
@@ -74,6 +79,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return CreatedAtAction(nameof(GetBookById), new { id = book.Id }, book);
         }
 
+        [Authorize(Policy = "LibraryStaffOnly")]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateBook(int id, CreateBookDto dto)
         {
@@ -93,6 +99,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok(existingBook);
         }
 
+        [Authorize(Policy = "LibraryStaffOnly")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBook(int id)
         {

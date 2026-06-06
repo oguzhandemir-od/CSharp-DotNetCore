@@ -1,11 +1,13 @@
 ﻿using LibraryManagement.Application.DTOs;
 using LibraryManagement.Application.Interfaces;
 using LibraryManagement.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryManagement.WebAPI.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class CategoryController : ControllerBase
@@ -17,6 +19,7 @@ namespace LibraryManagement.WebAPI.Controllers
             _categoryRepository = categoryRepository;
         }
 
+        [Authorize(Policy = "StaffOrMember")]
         [HttpGet]
         public async Task<IActionResult> GetCategories()
         {
@@ -24,6 +27,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok(categories);
         }
 
+        [Authorize(Policy = "StaffOrMember")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCategoryById(int id)
         {
@@ -34,6 +38,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok(category);
         }
 
+        [Authorize(Policy = "LibraryStaffOnly")]
         [HttpPost]
         public async Task<IActionResult> AddCategory(CategoryDto dto)
         {
@@ -46,6 +51,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return CreatedAtAction(nameof(GetCategories), new { id = category.Id }, category);
         }
 
+        [Authorize(Policy = "LibraryStaffOnly")]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCategory(int id, CategoryDto dto)
         {
@@ -60,6 +66,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok(new { message = "Kategori başarıyla güncellendi.", data = existingCategory });
         }
 
+        [Authorize(Policy = "LibraryStaffOnly")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {

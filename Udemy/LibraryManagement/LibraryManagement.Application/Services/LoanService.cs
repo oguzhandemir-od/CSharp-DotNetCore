@@ -87,16 +87,15 @@ namespace LibraryManagement.Application.Services
             DateTime today = DateTime.UtcNow;
             string message = "Kitap zamanında iade edildi. Teşekkürler.";
 
-            if (today > loan.DueDate)
+            if (today.Date > loan.DueDate.Date)
             {
-                int delayedDays = (today - loan.DueDate).Days;
+                int delayedDays = (today.Date - loan.DueDate.Date).Days;
 
                 if (delayedDays > 0)
                 {
                     decimal dailyPenaltyAmount = 5.0m; 
                     decimal totalPenalty = delayedDays * dailyPenaltyAmount;
 
-                    // 3. Ceza tablosuna yeni kayıt oluştur
                     var penalty = new Penalty
                     {
                         LoanId = loan.Id,

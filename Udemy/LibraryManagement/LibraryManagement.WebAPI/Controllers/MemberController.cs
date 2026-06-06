@@ -1,11 +1,13 @@
 ﻿using LibraryManagement.Application.DTOs.Member;
 using LibraryManagement.Application.Interfaces;
 using LibraryManagement.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryManagement.WebAPI.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class MemberController : ControllerBase
@@ -16,6 +18,7 @@ namespace LibraryManagement.WebAPI.Controllers
             _memberRepository = memberRepository;
         }
 
+        [Authorize(Policy = "LibraryStaffOnly")]
         [HttpGet]
         public async Task<IActionResult> GetMembers()
         {
@@ -46,6 +49,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok(memberDtos);
         }
 
+        [Authorize(Policy = "LibraryStaffOnly")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetMemberById(int id)
         {
@@ -64,23 +68,46 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok(memberDto);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> AddMember(MemberCreateDto dto)
+        [HttpGet("profile")]
+        [Authorize(Policy = "LibraryMemberOnly")] 
+        public async Task<IActionResult> GetMyProfile()
         {
-            var member = new Member
-            {
-                Name = dto.Name,
-                Surname = dto.Surname,
-                Email = dto.Email,
+            var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+            if (userIdClaim == null) return Unauthorized();
 
-                PasswordHash=Array.Empty<byte>(),
-                PasswordSalt=Array.Empty<byte>()
+            int memberId = int.Parse(userIdClaim.Value);
+
+            var member = await _memberRepository.GetEntityByIdAsync(memberId);
+            if (member == null) return NotFound("Profil bulunamadı.");
+
+            var memberDto = new MemberResultDto
+            {
+                Name = member.Name,
+                Surname = member.Surname,
+                Email = member.Email
             };
 
-            await _memberRepository.AddEntityAsync(member);
-            return Ok();
+            return Ok(memberDto);
         }
 
+        //[HttpPost]
+        //public async Task<IActionResult> AddMember(MemberCreateDto dto)
+        //{
+        //    var member = new Member
+        //    {
+        //        Name = dto.Name,
+        //        Surname = dto.Surname,
+        //        Email = dto.Email,
+
+        //        PasswordHash=Array.Empty<byte>(),
+        //        PasswordSalt=Array.Empty<byte>()
+        //    };
+
+        //    await _memberRepository.AddEntityAsync(member);
+        //    return Ok();
+        //}
+
+        [Authorize(Policy = "StaffOrMember")]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateMember(int id, MemberCreateDto dto)
         {
@@ -97,6 +124,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok();
         }
 
+        [Authorize(Policy = "LibraryStaffOnly")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMember(int id)
         {

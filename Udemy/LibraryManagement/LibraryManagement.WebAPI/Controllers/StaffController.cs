@@ -3,12 +3,14 @@ using FluentValidation;
 using LibraryManagement.Application.DTOs.Staff;
 using LibraryManagement.Application.Interfaces;
 using LibraryManagement.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
 namespace LibraryManagement.WebAPI.Controllers
 {
+    [Authorize(Policy = "LibraryStaffOnly")]
     [Route("api/[controller]")]
     [ApiController]
     public class StaffController : ControllerBase
