@@ -18,7 +18,7 @@ namespace LibraryManagement.WebAPI.Controllers
             _memberRepository = memberRepository;
         }
 
-        [Authorize(Policy = "LibraryStaffOnly")]
+        [Authorize(Policy = "AllStaff")]
         [HttpGet]
         public async Task<IActionResult> GetMembers()
         {
@@ -26,6 +26,7 @@ namespace LibraryManagement.WebAPI.Controllers
 
             var memberDtos = members.Select(m => new MemberResultDto
             {
+                Id = m.Id,
                 Name = m.Name,
                 Surname = m.Surname,
                 Email = m.Email,
@@ -49,7 +50,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok(memberDtos);
         }
 
-        [Authorize(Policy = "LibraryStaffOnly")]
+        [Authorize(Policy = "AllStaff")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetMemberById(int id)
         {
@@ -124,12 +125,40 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok();
         }
 
-        [Authorize(Policy = "LibraryStaffOnly")]
+        [Authorize(Policy = "AllStaff")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMember(int id)
         {
             await _memberRepository.DeleteEntityAsync(id);
             return NoContent();
+        }
+
+        [Authorize(Policy = "AllStaff")]
+        [HttpPost("pay-penalty/{penaltyId}")]
+        public async Task<IActionResult> PayPenalty(int penaltyId)
+        {
+            var isUpdated = await _memberRepository.PaySinglePenaltyAsync(penaltyId);
+
+            if (!isUpdated)
+            {
+                return BadRequest(new { message = "Ceza bulunamadı veya zaten ödenmiş." });
+            }
+
+            return Ok(new { message = "Seçilen ceza başarıyla tahsil edildi." });
+        }
+
+        [Authorize(Policy = "AllStaff")] 
+        [HttpPost("pay-all/{id}")]
+        public async Task<IActionResult> PayAllPenalties(int id)
+        {
+            var isUpdated = await _memberRepository.PayAllPenaltiesAsync(id);
+
+            if (!isUpdated)
+            {
+                return BadRequest(new { message = "Bu üyeye ait aktif (ödenmemiş) bir ceza kaydı bulunamadı." });
+            }
+
+            return Ok(new { message = "Üyenin tüm cezaları başarıyla tahsil edildi ve sıfırlandı." });
         }
     }
 }

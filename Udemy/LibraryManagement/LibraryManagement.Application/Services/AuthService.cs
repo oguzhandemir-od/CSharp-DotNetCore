@@ -31,14 +31,19 @@ namespace LibraryManagement.Application.Services
             }
         }
 
-        public string CreateToken(int id, string email, string role)
+        public string CreateToken(int id, string email, string role, string staffType = null)
         {
             var claims = new List<Claim>
         {
             new Claim(ClaimTypes.NameIdentifier, id.ToString()),
             new Claim(ClaimTypes.Email, email),
-            new Claim(ClaimTypes.Role, role) 
+            new Claim(ClaimTypes.Role, role)
         };
+
+            if (!string.IsNullOrEmpty(staffType))
+            {
+                claims.Add(new Claim("StaffType", staffType));
+            }
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ThisIsASecretKeyFormedAtLeast32CharsForLibraryProject!"));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature);

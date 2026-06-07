@@ -6,6 +6,7 @@ namespace LibraryManagement.Application.DTOs.Member
 {
     public class MemberResultDto
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Email { get; set; }

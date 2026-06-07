@@ -70,6 +70,7 @@ namespace LibraryManagement.WebAPI.Controllers
 
         #region Staff Auth (Personel Giriş/Kayıt)
 
+        [Authorize(Policy = "ManagerOnly")]
         [HttpPost("register/staff")]
         public async Task<IActionResult> RegisterStaff(StaffRegisterDto request)
         {
@@ -101,7 +102,9 @@ namespace LibraryManagement.WebAPI.Controllers
             if (!isPasswordValid)
                 return BadRequest("Hatalı şifre.");
 
-            var token = _authService.CreateToken(staff.Id, staff.Email, "Staff");
+            string staffType = (staff.Id == 6 || staff.Email == "admin@kutuphane.com") ? "Manager" : "Officer";
+
+            var token = _authService.CreateToken(staff.Id, staff.Email, "Staff", staffType);
             return Ok(new { Token = token });
         }
 
@@ -113,19 +116,15 @@ namespace LibraryManagement.WebAPI.Controllers
         [Authorize(Policy = "LibraryMemberOnly")]
         public async Task<IActionResult> ChangeMemberPassword(ChangePasswordDto request)
         {
-            // 1. Token'dan giriş yapmış üyenin ID'sini al
             var memberId = int.Parse(User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value);
 
-            // 2. Üyeyi veri tabanından getir
             var member = await _memberRepository.GetEntityByIdAsync(memberId);
             if (member == null) return NotFound("Üye bulunamadı.");
 
-            // 3. Eski şifre doğru mu? (VerifyPasswordHash)
             var isOldPasswordValid = _authService.VerifyPasswordHash(request.OldPassword, member.PasswordHash, member.PasswordSalt);
             if (!isOldPasswordValid)
                 return BadRequest("Mevcut şifrenizi hatalı girdiniz.");
 
-            // 4. Yeni şifreyi hash'le ve kaydet
             _authService.CreatePasswordHash(request.NewPassword, out byte[] newHash, out byte[] newSalt);
             member.PasswordHash = newHash;
             member.PasswordSalt = newSalt;
@@ -138,19 +137,15 @@ namespace LibraryManagement.WebAPI.Controllers
         [Authorize(Policy = "LibraryStaffOnly")]
         public async Task<IActionResult> ChangeStaffPassword(ChangePasswordDto request)
         {
-            // 1. Token'dan giriş yapmış personelin ID'sini al
             var staffId = int.Parse(User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value);
 
-            // 2. Personeli veri tabanından getir
             var staff = await _staffRepository.GetEntityByIdAsync(staffId);
             if (staff == null) return NotFound("Personel bulunamadı.");
 
-            // 3. Eski şifre doğru mu?
             var isOldPasswordValid = _authService.VerifyPasswordHash(request.OldPassword, staff.PasswordHash, staff.PasswordSalt);
             if (!isOldPasswordValid)
                 return BadRequest("Mevcut şifrenizi hatalı girdiniz.");
 
-            // 4. Yeni şifreyi hash'le ve kaydet
             _authService.CreatePasswordHash(request.NewPassword, out byte[] newHash, out byte[] newSalt);
             staff.PasswordHash = newHash;
             staff.PasswordSalt = newSalt;

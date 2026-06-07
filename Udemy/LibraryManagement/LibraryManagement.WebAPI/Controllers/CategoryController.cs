@@ -38,7 +38,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok(category);
         }
 
-        [Authorize(Policy = "LibraryStaffOnly")]
+        [Authorize(Policy = "AllStaff")]
         [HttpPost]
         public async Task<IActionResult> AddCategory(CategoryDto dto)
         {
@@ -51,7 +51,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return CreatedAtAction(nameof(GetCategories), new { id = category.Id }, category);
         }
 
-        [Authorize(Policy = "LibraryStaffOnly")]
+        [Authorize(Policy = "AllStaff")]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCategory(int id, CategoryDto dto)
         {
@@ -66,7 +66,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok(new { message = "Kategori başarıyla güncellendi.", data = existingCategory });
         }
 
-        [Authorize(Policy = "LibraryStaffOnly")]
+        [Authorize(Policy = "AllStaff")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {

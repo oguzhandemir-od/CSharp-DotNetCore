@@ -18,6 +18,8 @@ namespace LibraryManagement.Domain.Entities
         public int AuthorId { get; set; }
         public Author Author { get; set; }
 
+        public bool IsAvailable { get; set; } = true;
+
         public ICollection<Loan> Loans { get; set; } = new List<Loan>();
     }
 }

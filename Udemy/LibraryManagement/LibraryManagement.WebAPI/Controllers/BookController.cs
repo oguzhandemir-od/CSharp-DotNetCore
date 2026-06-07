@@ -5,6 +5,7 @@ using LibraryManagement.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagement.WebAPI.Controllers
 {
@@ -19,7 +20,7 @@ namespace LibraryManagement.WebAPI.Controllers
             _bookRepository = bookRepository;
         }
 
-        [Authorize(Policy = "StaffOrMember")]
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetBooks()
         {
@@ -33,7 +34,8 @@ namespace LibraryManagement.WebAPI.Controllers
                 PublicationYear = b.PublicationYear,
                 PageCount = b.PageCount,
                 CategoryName = b.Category?.Name,
-                AuthorFullName = b.Author != null ? $"{b.Author.Name} {b.Author.Surname}" : "Yazar Belirtilmemiş"
+                AuthorFullName = b.Author != null ? $"{b.Author.Name} {b.Author.Surname}" : "Yazar Belirtilmemiş",
+                IsAvailable=b.IsAvailable
             });
 
             return Ok(bookDtos);
@@ -61,7 +63,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok(bookDto);
         }
 
-        [Authorize(Policy = "LibraryStaffOnly")]
+        [Authorize(Policy = "AllStaff")]
         [HttpPost]
         public async Task<IActionResult> AddBook(CreateBookDto dto)
         {
@@ -79,7 +81,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return CreatedAtAction(nameof(GetBookById), new { id = book.Id }, book);
         }
 
-        [Authorize(Policy = "LibraryStaffOnly")]
+        [Authorize(Policy = "AllStaff")]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateBook(int id, CreateBookDto dto)
         {
@@ -99,12 +101,21 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok(existingBook);
         }
 
-        [Authorize(Policy = "LibraryStaffOnly")]
+        [Authorize(Policy = "AllStaff")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBook(int id)
         {
             await _bookRepository.DeleteEntityAsync(id);
             return NoContent();
+        }
+
+        [HttpGet("catalog")]
+        [Authorize(Policy = "StaffOrMember")] 
+        public async Task<IActionResult> GetCatalogBooks()
+        {
+            var catalogBooks = await _bookRepository.GetCatalogBooksAsync();
+
+            return Ok(catalogBooks);
         }
     }
 }

@@ -32,6 +32,14 @@ builder.Services.AddScoped<IStaffRepository, StaffRepository>();
 builder.Services.AddScoped<ILoanService, LoanService>();
 builder.Services.AddScoped<ILoanRepository, LoanRepository>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp",
+        policy => policy.WithOrigins("http://localhost:5173") // React portun
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
+});
+
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
@@ -69,7 +77,15 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("LibraryStaffOnly", policy => policy.RequireRole("Staff"));
+    options.AddPolicy("ManagerOnly", policy =>
+        policy.RequireRole("Staff")
+              .RequireClaim("StaffType", "Manager"));
+
+    options.AddPolicy("AllStaff", policy =>
+        policy.RequireRole("Staff")
+              .RequireClaim("StaffType", "Manager", "Officer"));
+
+    //options.AddPolicy("LibraryStaffOnly", policy => policy.RequireRole("Staff"));
 
     options.AddPolicy("LibraryMemberOnly", policy => policy.RequireRole("Member"));
 
@@ -100,6 +116,8 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+app.UseCors("AllowReactApp");
 
 app.MapControllers();
 

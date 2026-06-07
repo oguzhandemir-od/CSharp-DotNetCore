@@ -27,16 +27,11 @@ namespace LibraryManagement.Application.Services
 
         public async Task<string> CreateLoanAsync(LoanCreateDto dto)
         {
-            var book = (await _bookRepository.GetEntitiesAsync(b => b.Loans))
-                    .FirstOrDefault(b => b.Id == dto.BookId);
+            var book = await _bookRepository.GetEntityByIdAsync(dto.BookId);
 
             if (book == null) return "Kitap bulunamadı.";
 
-            var allLoans = await _loanRepository.GetEntitiesAsync();
-
-            bool isBookAlreadyLoaned = book.Loans.Any(l => !l.IsReturned);
-
-            if (isBookAlreadyLoaned)
+            if (!book.IsAvailable)
             {
                 return "Bu kitap şu an başka bir üyede, ödünç verilemez!";
             }
@@ -59,13 +54,16 @@ namespace LibraryManagement.Application.Services
                 IsReturned = false
             };
 
+            book.IsAvailable = false;
+            await _bookRepository.UpdateEntityAsync(book);
+
             await _loanRepository.AddEntityAsync(loan);
             return "Kitap başarıyla ödünç verildi. Son teslim tarihi: " + loan.DueDate.ToShortDateString();
         }
 
         public async Task<IEnumerable<LoanResultDto>> GetAllLoansWithDetailsAsync()
         {
-            var loans = await _loanRepository.GetEntitiesAsync(l => l.Book, l => l.Member);
+            var loans = await _loanRepository.GetEntitiesAsync(l => l.Book, l => l.Member, l=>l.Staff);
 
             return loans.Select(l => new LoanResultDto
             {
@@ -73,7 +71,8 @@ namespace LibraryManagement.Application.Services
                 MemberFullName = l.Member != null ? $"{l.Member.Name} {l.Member.Surname}" : "Bilinmeyen Üye",
                 LoanDate = l.LoanDate,
                 DueDate = l.DueDate,
-                IsReturned = l.IsReturned
+                IsReturned = l.IsReturned,
+                StaffName = l.Staff != null ? $"{l.Staff.Name} {l.Staff.Surname}" : "Bilinmeyen Personel"
             }).ToList();
         }
 
@@ -84,6 +83,13 @@ namespace LibraryManagement.Application.Services
             if (loan == null) return "Ödünç kaydı bulunamadı.";
             if (loan.IsReturned) return "Bu kitap zaten daha önce iade edilmiş.";
 
+            var book = await _bookRepository.GetEntityByIdAsync(loan.BookId);
+            if (book != null)
+            {
+                book.IsAvailable = true;
+                await _bookRepository.UpdateEntityAsync(book);
+            }
+
             DateTime today = DateTime.UtcNow;
             string message = "Kitap zamanında iade edildi. Teşekkürler.";
 
@@ -93,7 +99,7 @@ namespace LibraryManagement.Application.Services
 
                 if (delayedDays > 0)
                 {
-                    decimal dailyPenaltyAmount = 5.0m; 
+                    decimal dailyPenaltyAmount = 5.0m;
                     decimal totalPenalty = delayedDays * dailyPenaltyAmount;
 
                     var penalty = new Penalty

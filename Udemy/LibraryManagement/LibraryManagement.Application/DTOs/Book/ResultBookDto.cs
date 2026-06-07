@@ -15,5 +15,7 @@ namespace LibraryManagement.Application.DTOs.Book
         
         public string CategoryName { get; set; }
         public string AuthorFullName { get; set; }
+
+        public bool IsAvailable { get; set; }
     }
 }

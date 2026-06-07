@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagement.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -11,5 +12,7 @@ namespace LibraryManagement.Application.DTOs.Loan
         public DateTime LoanDate { get; set; }
         public DateTime DueDate { get; set; }
         public bool IsReturned { get; set; }
+
+        public string StaffName { get; set; }
     }
 }

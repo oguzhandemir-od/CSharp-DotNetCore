@@ -41,7 +41,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok(author);
         }
 
-        [Authorize(Policy = "LibraryStaffOnly")]
+        [Authorize(Policy = "AllStaff")]
         [HttpPost]
         public async Task<IActionResult> AddAuthor(AuthorDto dto)
         {     
@@ -57,7 +57,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return CreatedAtAction(nameof(GetAuthors), new { id = author.Id }, author);
         }
 
-        [Authorize(Policy = "LibraryStaffOnly")]
+        [Authorize(Policy = "AllStaff")]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateAuthor(int id, AuthorDto dto)
         {
@@ -74,7 +74,7 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok();
         }
 
-        [Authorize(Policy = "LibraryStaffOnly")]
+        [Authorize(Policy = "AllStaff")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAuthor(int id)
         {
