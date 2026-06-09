@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="AutoMapperPrototype.Tests/AutoMapperPrototype.Tests.csproj" />
+  <Project Path="AutoMapperPrototype/AutoMapperPrototype.csproj" />
+</Solution>
