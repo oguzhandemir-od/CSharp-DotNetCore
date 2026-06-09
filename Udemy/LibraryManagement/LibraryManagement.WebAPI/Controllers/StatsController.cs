@@ -32,21 +32,17 @@ namespace LibraryManagement.WebAPI.Controllers
         [HttpGet("dashboard")]
         public async Task<IActionResult> GetDashboardStats()
         {
-            // 1. Tüm listeleri asenkron olarak veritabanından çekiyoruz
             var books = await _bookRepository.GetEntitiesAsync();
             var members = await _memberRepository.GetEntitiesAsync();
             var loans = await _loanRepository.GetEntitiesAsync();
             var penalties = await _penaltyRepository.GetEntitiesAsync();
 
-            // 2. Üst Sayaç Kartlarının Hesaplamaları
             int totalBooks = books.Count();
             int totalMembers = members.Count();
             int activeLoans = loans.Count(l => !l.IsReturned);
 
-            // Ödenmemiş (IsPaid == false) cezaların toplam tutarı
             decimal totalUnpaidPenalties = penalties.Where(p => !p.IsPaid).Sum(p => p.Amount);
 
-            // 3. Son Ödünç Verilen 5 Kitap (İlişkisel verileri güvenli bağlama)
             var recentLoans = loans
                 .OrderByDescending(l => l.LoanDate)
                 .Take(5)
@@ -60,7 +56,6 @@ namespace LibraryManagement.WebAPI.Controllers
                 })
                 .ToList();
 
-            // 4. Süresi Geciken ve Henüz Teslim Edilmeyen Kitaplar
             var now = DateTime.UtcNow;
             var overdueLoans = loans
                 .Where(l => !l.IsReturned && l.DueDate < now)
@@ -70,12 +65,11 @@ namespace LibraryManagement.WebAPI.Controllers
                     BookName = l.Book?.Name ?? "Bilinmeyen Kitap",
                     MemberFullName = l.Member != null ? $"{l.Member.Name} {l.Member.Surname}" : "Bilinmeyen Üye",
                     DueDate = l.DueDate,
-                    DelayDays = (now - l.DueDate).Days // Gecikme gün sayısı hesabı
+                    DelayDays = (now - l.DueDate).Days 
                 })
-                .OrderByDescending(o => o.DelayDays) // En çok gecikenden en aza
+                .OrderByDescending(o => o.DelayDays) 
                 .ToList();
 
-            // 5. Hazırladığımız DTO'yu Frontend'e tek bir paket halinde fırlatıyoruz
             var dashboardData = new DashboardStatsDto
             {
                 TotalBooks = totalBooks,

@@ -35,12 +35,10 @@ namespace LibraryManagement.WebAPI.Controllers
                 Surname = author.Surname,
                 Detail = author.Detail,
 
-                // 🛠️ Yazarın silinmemiş kitaplarının sayısını alıyoruz
                 TotalBooks = author.Books != null
             ? author.Books.Count(b => !b.IsDeleted)
             : 0,
 
-                // 🛠️ Yazarın silinmemiş kitaplarının isimlerini listeliyoruz
                 BookNames = author.Books != null
             ? author.Books.Where(b => !b.IsDeleted).Select(b => b.Name).ToList()
             : new List<string>()
