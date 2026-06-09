@@ -11,7 +11,7 @@ Proje, backend tarafında **Onion Architecture** üzerine kurulu gelişmiş bir 
 ### Backend (API Katmanı)
 *   **Mimari:** Onion Architecture (Core, Domain, Application, Infrastructure, WebAPI)
 *   **Tasarım Desenleri (Patterns):** Repository Pattern, Dependency Injection (DI)
-*   **Güvenlik & Yetkilendirme:** JWT (JSON Web Token) tabanlı Politika Bazlı Erişim Kontrolü (Policy-Based Access Control - RBAC)
+*   **Güvenlik & Yetkilendirme:** JWT (JSON Web Token) tabanlı Rol Bazlı Erişim Kontrolü (Role-Based Access Control - RBAC)
 *   **Veri Doğrulama:** FluentValidation
 *   **Dokümantasyon & UI:** MS OpenAPI & Scalar UI
 *   **ORM / Veri Tabanı:** Entity Framework Core, MS SQL Server
