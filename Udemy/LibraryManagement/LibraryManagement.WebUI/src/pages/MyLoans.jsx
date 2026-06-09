@@ -50,6 +50,7 @@ export default function MyLoans() {
                 <th className="px-6 py-3 text-xs font-bold text-slate-500 uppercase tracking-wider">Alış Tarihi</th>
                 <th className="px-6 py-3 text-xs font-bold text-slate-500 uppercase tracking-wider">Son Teslim Tarihi</th>
                 <th className="px-6 py-3 text-xs font-bold text-slate-500 uppercase tracking-wider">Durum</th>
+                <th className="px-6 py-3 text-xs font-bold text-slate-500 uppercase tracking-wider">İade Tarihi</th>
                 <th className="px-6 py-3 text-xs font-bold text-slate-500 uppercase tracking-wider text-right">Ceza Tutarı</th>
               </tr>
             </thead>
@@ -80,6 +81,7 @@ export default function MyLoans() {
                         </span>
                       )}
                     </td>
+                    <td className="px-6 py-4 text-sm text-slate-600">{formatDate(loan.returnDate ?? loan.ReturnDate)}</td>
                     <td className="px-6 py-4 text-sm font-bold text-right">
                       {penaltyAmount > 0 ? (
                         <span className="text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-100">₺{penaltyAmount.toFixed(2)}</span>

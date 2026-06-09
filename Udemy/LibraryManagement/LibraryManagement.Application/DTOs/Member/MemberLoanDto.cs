@@ -5,6 +5,7 @@ using System.Text;
 
 namespace LibraryManagement.Application.DTOs.Member
 {
+    // Üye listesinde, ödünç bilgisi
     public class MemberLoanDto
     {
         public string BookTitle { get; set; } 

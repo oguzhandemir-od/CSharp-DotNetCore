@@ -21,6 +21,7 @@ namespace LibraryManagement.WebAPI.Controllers
             _loanRepository = loanRepository;
         }
 
+        // Personelin göreceği ödünç listesi
         [Authorize(Policy = "AllStaff")]
         [HttpGet]
         public async Task<IActionResult> GetAllLoans()
@@ -29,8 +30,9 @@ namespace LibraryManagement.WebAPI.Controllers
             return Ok(result);
         }
 
+        // Üyenin, kendi ödünç geçmişi
         [HttpGet("my-loans")]
-        [Authorize(Policy = "LibraryMemberOnly")] 
+        [Authorize(Policy = "LibraryMemberOnly")]
         public async Task<IActionResult> GetMyLoans()
         {
             var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
@@ -39,21 +41,24 @@ namespace LibraryManagement.WebAPI.Controllers
 
             int currentMemberId = int.Parse(userIdClaim.Value);
 
-            var allLoans = await _loanRepository.GetEntitiesAsync(l=>l.Book);
+            var allLoans = await _loanRepository.GetEntitiesAsync(l => l.Book, l => l.Staff, l => l.Penalties);
 
             var myLoans = allLoans
                 .Where(l => l.MemberId == currentMemberId)
-                .OrderByDescending(l => l.LoanDate) 
+                .OrderByDescending(l => l.LoanDate)
                 .Select(l => new
                 {
                     l.Id,
                     l.BookId,
-                    BookName= l.Book != null ? l.Book.Name : "Bilinmeyen Kitap",
+                    BookName = l.Book != null ? l.Book.Name : "Bilinmeyen Kitap",
                     LoanDate = l.LoanDate.ToString("yyyy-MM-dd"),
                     DueDate = l.DueDate.ToString("yyyy-MM-dd"),
                     ReturnDate = l.ReturnDate.HasValue ? l.ReturnDate.Value.ToString("yyyy-MM-dd") : "Teslim Edilmedi",
                     l.IsReturned,
-                    StaffName=$"{l.Staff.Name} {l.Staff.Surname}"
+                    StaffName = $"{l.Staff.Name} {l.Staff.Surname}",
+                    PenaltyAmount = l.Penalties != null
+                ? l.Penalties.Where(p => !p.IsDeleted).Sum(p => p.Amount)
+                : 0
                 })
                 .ToList();
 

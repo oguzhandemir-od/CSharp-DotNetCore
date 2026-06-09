@@ -82,7 +82,6 @@ export default function Members() {
           Email: formData.email
         });
       } else {
-        // Yeni Kayıt (POST)
         await api.post('/Member', {
           Name: formData.name,
           Surname: formData.surname,

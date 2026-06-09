@@ -23,8 +23,17 @@ namespace LibraryManagement.WebAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCategories()
         {
-            var categories = await _categoryRepository.GetEntitiesAsync();
-            return Ok(categories);
+            var categories = await _categoryRepository.GetEntitiesAsync(c=>c.Books);
+
+            var categoryDtos = categories.Select(ctg => new CategoryDto
+            {
+                Id=ctg.Id,
+                Name = ctg.Name,
+                TotalBooks = ctg.Books != null ? ctg.Books.Count(b => !b.IsDeleted) : 0,
+
+                BookNames = ctg.Books != null ? ctg.Books.Where(b => !b.IsDeleted).Select(b => b.Name).ToList() : new List<string>()
+            }).ToList();
+            return Ok(categoryDtos);
         }
 
         [Authorize(Policy = "StaffOrMember")]

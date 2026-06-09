@@ -13,12 +13,18 @@ import Categories from './pages/Categories';
 import LendingTransactions from './pages/LendingTransactions';
 import Members from './pages/Members';
 import Staff from './pages/Staff'
+import Dashboard from './pages/Dashboard';
 
 function App() {
   const token = localStorage.getItem('library_token');
   const role = localStorage.getItem('user_role'); 
 
-  if (!token) {
+  console.log("--- ROTA KONTROLÜ ---");
+  console.log("Mevcut Adres:", window.location.pathname);
+  console.log("Token Var mı?:", !!token);
+  console.log("Okunan Rol:", role);
+
+ /*  if (!token) {
     return (
       <Router>
         <Routes>
@@ -27,9 +33,9 @@ function App() {
         </Routes>
       </Router>
     );
-  }
+  } */
 
-  if (role === 'staff') {
+  /* if (role === 'staff') {
     return (
       <Router>
         <StaffLayout>
@@ -65,7 +71,48 @@ function App() {
           
       </Router>
     );
-  }
+  } */
+
+    return (
+    <Router>
+      <Routes>
+        {/* PERSONEL GİRİŞİ (GİZLİ) */}
+        <Route path="/staff-login" element={!token ? <Login /> : <Navigate to="/" />} />
+
+        {/* 🌍 HERKESE AÇIK ANA SAYFA (KATALOG) */}
+        <Route path="/" element={
+          role === 'staff' ? (
+            <StaffLayout><Dashboard /></StaffLayout>
+          ) : (
+            <MemberLayout><Catalog /></MemberLayout>
+          )
+        } />
+
+        {/* SADECE ÜYELER */}
+        {token && role === 'member' && (
+          <>
+            <Route path="/my-loans" element={<MemberLayout><MyLoans /></MemberLayout>} />
+            <Route path="/profile" element={<MemberLayout><Profile /></MemberLayout>} />
+          </>
+        )}
+
+        {/* SADECE PERSONEL */}
+        {token && role === 'staff' && (
+          <>
+            <Route path="/books" element={<StaffLayout><BookList /></StaffLayout>} />
+            <Route path="/authors" element={<StaffLayout><Authors /></StaffLayout>} />
+            <Route path="/categories" element={<StaffLayout><Categories /></StaffLayout>} />
+            <Route path="/loans" element={<StaffLayout><LendingTransactions /></StaffLayout>} />
+            <Route path="/members" element={<StaffLayout><Members /></StaffLayout>} />
+            <Route path="/staff" element={<StaffLayout><Staff /></StaffLayout>} />
+          </>
+        )}
+
+        {/* JOKER */}
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;

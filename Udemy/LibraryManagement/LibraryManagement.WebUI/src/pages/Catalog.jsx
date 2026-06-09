@@ -1,34 +1,39 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import api from '../api/axiosInstance';
 
 export default function Catalog() {
+  const navigate = useNavigate();
   const [books, setBooks] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Tüm Kategoriler');
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const token = localStorage.getItem('library_token');
+  const isLoggedIn = !!token;
+
   const fetchCatalog = async () => {
-  try {
-    setLoading(true);
-    
-    const response = await api.get('/Book');
-    const catalogData = response.data || [];
+    try {
+      setLoading(true);
+      
+      const response = await api.get('/Book');
+      const catalogData = response.data || [];
 
-    setBooks(catalogData);
+      setBooks(catalogData);
 
-    const uniqueCategories = [
-      'Tüm Categories',
-      ...new Set(catalogData.map(b => b.categoryName ?? b.CategoryName).filter(Boolean))
-    ];
-    setCategories(uniqueCategories);
+      const uniqueCategories = [
+        'Tüm Kategoriler',
+        ...new Set(catalogData.map(b => b.categoryName ?? b.CategoryName).filter(Boolean))
+      ];
+      setCategories(uniqueCategories);
 
-  } catch (err) {
-    console.error("Katalog yüklenirken hata oluştu:", err);
-  } finally {
-    setLoading(false);
-  }
-};
+    } catch (err) {
+      console.error("Katalog yüklenirken hata oluştu:", err);
+    } finally {
+      loading && setLoading(false);
+    }
+  };
 
   useEffect(() => {
     fetchCatalog();
@@ -41,13 +46,33 @@ export default function Catalog() {
 
     const matchesCategory = 
       selectedCategory === 'Tüm Kategoriler' || 
-      book.categoryName === selectedCategory;
+      (book.categoryName ?? book.CategoryName) === selectedCategory;
 
     return matchesSearch && matchesCategory;
   });
 
   return (
     <div>
+      {!isLoggedIn && (
+        <div className="mb-8 p-6 bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-2xl text-white shadow-md relative overflow-hidden">
+          <div className="relative z-10 max-w-xl">
+            <h2 className="text-xl font-bold mb-2">Kütüphanemize Hoş Geldiniz!</h2>
+            <p className="text-indigo-100 text-xs leading-relaxed mb-4">
+              Giriş yapmadan katalogda dilediğiniz gibi arama yapabilir ve kitapların durumunu inceleyebilirsiniz. Kitap ödünç almak ve cezalarınızı takip etmek için üye girişi yapmanız gerekmektedir.
+            </p>
+            {/* <button 
+              onClick={() => navigate('/login')}
+              className="px-4 py-2 bg-white text-indigo-700 font-semibold rounded-lg text-xs hover:bg-indigo-50 transition-colors shadow-sm cursor-pointer"
+            >
+              Hemen Giriş Yap / Üye Ol
+            </button> */}
+          </div>
+          <svg className="w-48 h-48 text-indigo-500/20 absolute -right-8 -bottom-8 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+        </div>
+      )}
+
       {/* Arama ve Filtreleme */}
       <div className="mb-8 flex flex-col sm:flex-row gap-4">
         <input 
@@ -88,7 +113,7 @@ export default function Catalog() {
                     </svg>
                     
                     <span className="text-[10px] font-bold uppercase tracking-wider bg-white/20 text-white px-2 py-1 rounded w-max backdrop-blur-xs">
-                      {book.categoryName || 'Genel'}
+                      {book.categoryName || book.CategoryName || 'Genel'}
                     </span>
                     
                     <h4 className="text-base font-bold tracking-tight line-clamp-3 mb-2 drop-shadow-sm uppercase">

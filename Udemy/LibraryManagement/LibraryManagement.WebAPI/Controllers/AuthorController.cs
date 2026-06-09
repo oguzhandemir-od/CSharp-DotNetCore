@@ -26,8 +26,27 @@ namespace LibraryManagement.WebAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAuthors()
         {
-            var authors= await _authorRepository.GetEntitiesAsync();
-            return Ok(authors);
+            var authors= await _authorRepository.GetEntitiesAsync(a=>a.Books);
+
+            var authorListDtos = authors.Select(author => new AuthorDto
+            {
+                Id=author.Id,
+                Name = author.Name,
+                Surname = author.Surname,
+                Detail = author.Detail,
+
+                // 🛠️ Yazarın silinmemiş kitaplarının sayısını alıyoruz
+                TotalBooks = author.Books != null
+            ? author.Books.Count(b => !b.IsDeleted)
+            : 0,
+
+                // 🛠️ Yazarın silinmemiş kitaplarının isimlerini listeliyoruz
+                BookNames = author.Books != null
+            ? author.Books.Where(b => !b.IsDeleted).Select(b => b.Name).ToList()
+            : new List<string>()
+            }).ToList();
+
+            return Ok(authorListDtos);
         }
 
         [Authorize(Policy = "StaffOrMember")]

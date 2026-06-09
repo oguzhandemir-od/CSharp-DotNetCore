@@ -192,6 +192,7 @@ export default function LendingTransactions() {
                   <th className="px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">Ödünç / Son Teslim Tarihi</th>
                   <th className="px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wider text-center">Durum</th>
                   <th className="px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">Ödünç Veren</th>
+                  <th className="px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wider text-center">İade Tarihi</th>
                   <th className="px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wider text-right">İşlem</th>
                 </tr>
               </thead>
@@ -206,6 +207,12 @@ export default function LendingTransactions() {
                     const dueDate = new Date(t.dueDate ?? t.DueDate).toLocaleDateString('tr-TR');
                     const isReturned = t.isReturned ?? t.IsReturned;
                     const staffName=t.staffName??t.StaffName;
+                    const returnDate=t.returnDate??t.ReturnDate;
+
+                    const formatDate = (dateString) => {
+  if (!dateString) return "Teslim Edilmedi"; 
+  return dateString.split('T')[0]; 
+};
 
                     return (
                       <tr key={t.id} className="hover:bg-slate-50 transition-colors">
@@ -222,6 +229,7 @@ export default function LendingTransactions() {
                           <StatusBadge isReturned={isReturned} dueDateStr={t.dueDate ?? t.DueDate} />
                         </td>
                         <td className="px-6 py-4 text-sm text-slate-600 max-w-xs truncate">{staffName}</td>
+                        <td className="px-6 py-4 text-sm text-slate-600 max-w-xs truncate">{formatDate(returnDate)}</td>
                         <td className="px-6 py-4 text-sm text-right">
                           {!isReturned ? (
                             <button 

@@ -8,10 +8,10 @@ export default function Authors() {
   const [editingAuthor, setEditingAuthor] = useState(null);
   const [isManager, setIsManager] = useState(false); 
 
+  const [expandedAuthorId, setExpandedAuthorId] = useState(null);
+
   const [formData, setFormData] = useState({ Name: '', Surname: '', Detail: '' });
   const [formError, setFormError] = useState('');
-
-  
 
   const fetchAuthors = async () => {
     setIsLoading(true);
@@ -78,14 +78,19 @@ export default function Authors() {
     try {
       await api.delete(`/Author/${id}`);
       setAuthors(prev => prev.filter(a => a.id !== id));
+      if (expandedAuthorId === id) setExpandedAuthorId(null); 
     } catch (error) {
       console.error("Silme hatası:", error);
       alert(error.response?.data || 'Yazar silinirken bir hata oluştu. Muhtemelen ilişkili kitapları var.');
     }
   };
 
+  const toggleExpand = (id) => {
+    setExpandedAuthorId(expandedAuthorId === id ? null : id);
+  };
+
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 select-none animate-in fade-in duration-200">
       {/* Üst Başlık ve Aksiyonlar */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
@@ -126,31 +131,85 @@ export default function Authors() {
                 <tr><td colSpan="5" className="px-6 py-8 text-center text-slate-500">Henüz yazar bulunmamaktadır.</td></tr>
               ) : (
                 authors.map((author) => {
+                  const currentId = author.id ?? author.Id;
                   const name = author.name ?? author.Name;
                   const surname = author.surname ?? author.Surname;
                   const detail = author.detail ?? author.Detail;
-                  const bookCount = author.books?.length ?? author.Books?.length ?? 0;
+                  
+                  const booksList = author.books ?? author.Books ?? author.bookNames ?? author.BookNames ?? [];
+                  const bookCount = author.totalBooks ?? author.TotalBooks ?? booksList.length ?? 0;
+                  
+                  const isExpanded = expandedAuthorId === currentId;
 
                   return (
-                    <tr key={author.id} className="hover:bg-slate-50 transition-colors">
-                      <td className="px-6 py-4 text-sm font-semibold text-slate-900">{name}</td>
-                      <td className="px-6 py-4 text-sm font-semibold text-slate-900">{surname}</td>
-                      <td className="px-6 py-4 text-sm text-slate-600 max-w-xs truncate">{detail || 'Bilgi yok'}</td>
-                      <td className="px-6 py-4 text-sm text-slate-600 text-center">
-                        <span className="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-full text-xs font-semibold">{bookCount} Eser</span>
-                      </td>
-                      <td className="px-6 py-4 text-sm text-right space-x-2">
-                        <button onClick={() => openModal(author)} className="text-amber-600 hover:text-amber-700 hover:bg-amber-50 p-2 rounded-lg transition-colors cursor-pointer" title="Düzenle">
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-                        </button>
+                    <React.Fragment key={author.id}>
+                      {/* 📌 ANA SATIR */}
+                      <tr className={`hover:bg-slate-50/80 transition-colors ${isExpanded ? 'bg-indigo-50/20' : ''}`}>
+                        <td className="px-6 py-4 text-sm font-semibold text-slate-900">{name}</td>
+                        <td className="px-6 py-4 text-sm font-semibold text-slate-900">{surname}</td>
+                        <td className="px-6 py-4 text-sm text-slate-600 max-w-xs truncate">{detail || 'Bilgi yok'}</td>
                         
-                        
+                        <td className="px-6 py-4 text-sm text-center">
+                          <button 
+                            onClick={() => toggleExpand(author.id)}
+                            className={`px-3 py-1 rounded-full text-xs font-bold transition-all cursor-pointer border flex items-center gap-1.5 mx-auto ${
+                              isExpanded 
+                                ? 'bg-indigo-600 text-white border-indigo-600 shadow-xs' 
+                                : 'bg-indigo-50 text-indigo-700 border-indigo-100 hover:bg-indigo-100'
+                            }`}
+                          >
+                            <span>{bookCount} Eser</span>
+                            <svg 
+                              className={`w-3 h-3 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} 
+                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                          </button>
+                        </td>
+
+                        <td className="px-6 py-4 text-sm text-right space-x-1">
+                          <button onClick={() => openModal(author)} className="text-amber-600 hover:text-amber-700 hover:bg-amber-50 p-2 rounded-lg transition-colors cursor-pointer" title="Düzenle">
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                          </button>
                           <button onClick={() => handleDelete(author.id)} className="text-rose-600 hover:text-rose-700 hover:bg-rose-50 p-2 rounded-lg transition-colors cursor-pointer" title="Sil">
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                           </button>
-                        
-                      </td>
-                    </tr>
+                        </td>
+                      </tr>
+
+                      {/* 📚 ACCORDION PANEL SATIRI */}
+                      {isExpanded && (
+                        <tr className="bg-slate-50/50">
+                          <td colSpan="5" className="px-8 py-4 border-t border-b border-dashed border-slate-200 animate-in slide-in-from-top-2 duration-200">
+                            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2.5">
+                              📚 {name} {surname} Tarafından Yazılan Kitaplar
+                            </div>
+                            
+                            {booksList.length === 0 ? (
+                              <p className="text-xs text-slate-400 italic py-1">Bu yazarın henüz sistemde kayıtlı bir eseri bulunmamaktadır.</p>
+                            ) : (
+                              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 max-h-60 overflow-y-auto pr-2">
+                                {booksList.map((book, index) => {
+                                  
+                                  const title = book?.name ?? book?.Name ?? (typeof book === 'string' ? book : 'İsimsiz Kitap');
+                                  
+                                  return (
+                                    <div 
+                                      key={index} 
+                                      className="flex items-center gap-2 bg-white px-3 py-2.5 rounded-xl border border-slate-200 shadow-2xs text-xs text-slate-700 font-semibold uppercase transition-all hover:border-indigo-200"
+                                    >
+                                      <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full shrink-0"></span>
+                                      <span className="truncate">{title}</span>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            )}
+                          </td>
+                        </tr>
+                      )}
+                    </React.Fragment>
                   );
                 })
               )}

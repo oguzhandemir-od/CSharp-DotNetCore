@@ -72,7 +72,8 @@ namespace LibraryManagement.Application.Services
                 LoanDate = l.LoanDate,
                 DueDate = l.DueDate,
                 IsReturned = l.IsReturned,
-                StaffName = l.Staff != null ? $"{l.Staff.Name} {l.Staff.Surname}" : "Bilinmeyen Personel"
+                StaffName = l.Staff != null ? $"{l.Staff.Name} {l.Staff.Surname}" : "Bilinmeyen Personel",
+                ReturnDate = l.ReturnDate
             }).ToList();
         }
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import api from '../api/axiosInstance'; 
 
 export default function Categories() {
@@ -11,7 +12,7 @@ export default function Categories() {
   const [formData, setFormData] = useState({ Name: '' });
   const [formError, setFormError] = useState('');
 
-  
+  const navigate = useNavigate(); 
 
   const fetchCategories = async () => {
     setIsLoading(true);
@@ -28,6 +29,10 @@ export default function Categories() {
   useEffect(() => {
     fetchCategories();
   }, []);
+
+  const handleViewBooks = (categoryName) => {
+    navigate('/books', { state: { selectedCategory: categoryName } });
+  };
 
   const openModal = (category = null) => {
     setEditingCategory(category);
@@ -75,7 +80,7 @@ export default function Categories() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 select-none animate-in fade-in duration-200">
       {/* Üst Başlık ve Aksiyonlar */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
@@ -114,25 +119,39 @@ export default function Categories() {
                 <tr><td colSpan="3" className="px-6 py-8 text-center text-slate-500">Henüz kategori bulunmamaktadır.</td></tr>
               ) : (
                 categories.map((category) => {
+                  const id = category.id ?? category.Id;
                   const name = category.name ?? category.Name;
-                  const bookCount = category.books?.length ?? category.Books?.length ?? 0;
+                  const bookCount = category.totalBooks ?? category.TotalBooks ?? category.books?.length ?? category.Books?.length ?? 0;
+                  const booksList = category.bookNames ?? category.BookNames ?? [];
 
                   return (
-                    <tr key={category.id} className="hover:bg-slate-50 transition-colors group">
-                      <td className="px-6 py-4 text-sm font-semibold text-slate-900">{name}</td>
-                      <td className="px-6 py-4 text-sm text-slate-600 text-center">
-                        <span className="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-full text-xs font-semibold">{bookCount} Kitap</span>
+                    <tr key={id} className="hover:bg-slate-50 transition-colors group">
+                      <td className="px-6 py-4 text-sm font-semibold text-slate-900 uppercase tracking-wide">{name}</td>
+                      
+                      <td className="px-6 py-4 text-sm text-center">
+                        <div className="flex items-center justify-center gap-3">
+                          <span className="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-full text-xs font-bold border border-indigo-100">
+                            {bookCount} Kitap
+                          </span>
+                          
+                          <button
+                            onClick={() => handleViewBooks(name)}
+                            className="text-[11px] font-bold text-indigo-600 bg-white hover:bg-indigo-50 border border-slate-200 hover:border-indigo-200 px-2.5 py-1 rounded-lg transition-all cursor-pointer opacity-100 sm:opacity-0 group-hover:opacity-100 inline-flex items-center gap-1 shadow-2xs"
+                            title={`${name} kategorisindeki tüm kitapları gör`}
+                          >
+                            <span>Kitapları Listele</span>
+                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                          </button>
+                        </div>
                       </td>
-                      <td className="px-6 py-4 text-sm text-right space-x-2">
+
+                      <td className="px-6 py-4 text-sm text-right space-x-1">
                         <button onClick={() => openModal(category)} className="text-amber-600 hover:text-amber-700 hover:bg-amber-50 p-2 rounded-lg transition-colors cursor-pointer" title="Düzenle">
                           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
                         </button>
-
-                        
-                          <button onClick={() => handleDelete(category.id)} className="text-rose-600 hover:text-rose-700 hover:bg-rose-50 p-2 rounded-lg transition-colors cursor-pointer" title="Sil">
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
-                          </button>
-                        
+                        <button onClick={() => handleDelete(id)} className="text-rose-600 hover:text-rose-700 hover:bg-rose-50 p-2 rounded-lg transition-colors cursor-pointer" title="Sil">
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                        </button>
                       </td>
                     </tr>
                   );

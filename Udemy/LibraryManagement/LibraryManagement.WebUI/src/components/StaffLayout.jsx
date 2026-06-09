@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
 
 export default function StaffLayout({ children }) {
   const navigate = useNavigate();
@@ -13,7 +14,8 @@ export default function StaffLayout({ children }) {
   };
 
   const menuItems = [
-    { name: "Kitap Yönetimi", path: "/" },
+    { name: "Dashboard", path: "/" },
+    { name: "Kitap Yönetimi", path: "/books" },
     { name: "Yazar Yönetimi", path: "/authors" },
     { name: "Kategori Yönetimi", path: "/categories" },
     { name: "Ödünç İşlemleri", path: "/loans" },
@@ -120,9 +122,8 @@ export default function StaffLayout({ children }) {
           </div>
         </header>
 
-        {/* Dinamik İçerik */}
         <main className="flex-1 overflow-y-auto p-8 bg-slate-50">
-          {children}
+          {children || <Outlet />}
         </main>
       </div>
     </div>
