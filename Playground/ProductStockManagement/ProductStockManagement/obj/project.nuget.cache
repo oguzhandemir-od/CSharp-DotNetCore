@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "FNdz6GHkI0Q=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\oğuzhan\\Desktop\\CSharp-DotNetCore\\Playground\\ProductStockManagement\\ProductStockManagement\\ProductStockManagement.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\oğuzhan\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.8\\microsoft.aspnetcore.openapi.10.0.8.nupkg.sha512",
+    "C:\\Users\\oğuzhan\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
