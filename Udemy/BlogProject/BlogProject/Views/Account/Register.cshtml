@@ -1,0 +1,68 @@
+﻿@using BlogProject.Features.Account.DTOs
+@model RegisterDto
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Panel - Kayıt Ol</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light d-flex align-items-center" style="height: 100vh;">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h3 class="text-center mb-4">Yeni Yazar Kaydı</h3>
+
+                        <form asp-action="Register" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Ad Soyad</label>
+                                <input asp-for="FullName" class="form-control" placeholder="Ahmet Yılmaz" required />
+                                <span asp-validation-for="FullName" class="text-danger small"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Kullanıcı Adı</label>
+                                <input asp-for="Username" class="form-control" placeholder="ahmetyilmaz" required />
+                                <span asp-validation-for="Username" class="text-danger small"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">E-posta Adresi</label>
+                                <input asp-for="Email" type="email" class="form-control" placeholder="ahmet@blog.com" required />
+                                <span asp-validation-for="Email" class="text-danger small"></span>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Şifre</label>
+                                    <input asp-for="Password" type="password" class="form-control" placeholder="******" required />
+                                    <span asp-validation-for="Password" class="text-danger small"></span>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Şifre Tekrar</label>
+                                    <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="******" required />
+                                    <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-success w-100 py-2 mb-3">Kayıt Ol</button>
+
+                            <div class="text-center">
+                                <a asp-action="Login" class="text-decoration-none small">Zaten hesabın var mı? Giriş Yap</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

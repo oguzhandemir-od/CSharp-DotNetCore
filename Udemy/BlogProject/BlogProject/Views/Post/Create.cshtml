@@ -1,0 +1,84 @@
+﻿@using BlogProject.Features.Posts.DTOs
+@model PostDto
+
+@{
+    bool isEditMode = Model?.Id.HasValue ?? false;
+    ViewData["Title"] = isEditMode ? "Makaleyi Düzenle" : "Yeni Makale Oluştur";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-9">
+            <div class="card shadow-sm border-0">
+                <div class="card-header @(isEditMode ? "bg-warning text-dark" : "bg-primary text-white") py-3">
+                    <h4 class="mb-0 fw-bold">
+                        <i class="bi @(isEditMode ? "bi-pencil-square" : "bi-plus-circle")"></i>
+                        @ViewData["Title"]
+                    </h4>
+                </div>
+                <div class="card-body p-4">
+
+                    <form asp-controller="Post" asp-action="Save" method="post">
+                        @Html.AntiForgeryToken()
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="Title" class="form-label fw-bold">Makale Başlığı</label>
+                                    <input asp-for="Title" class="form-control" placeholder="Örn: .NET Core Security Prensipleri" />
+                                    <span asp-validation-for="Title" class="text-danger small"></span>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label asp-for="CategoryId" class="form-label fw-bold">Kategori</label>
+                                    <select asp-for="CategoryId" asp-items="ViewBag.Categories" class="form-select">
+                                        <option value="">-- Lütfen Kategori Seçin --</option>
+                                    </select>
+                                    <span asp-validation-for="CategoryId" class="text-danger small"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="Image" class="form-label fw-bold">Görsel URL</label>
+                                    <input asp-for="Image" class="form-control" placeholder="https://site.com/resim.jpg" />
+                                    <span asp-validation-for="Image" class="text-danger small"></span>
+                                </div>
+
+                                <div class="mb-3 text-center bg-light rounded d-flex align-items-center justify-content-center border" style="height: 105px;">
+                                    <span class="text-muted small p-2" id="imgPreviewText">Görsel adresi girildiğinde burada listelenir.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Content" class="form-label fw-bold">Makale İçeriği</label>
+                            <textarea asp-for="Content" class="form-control" rows="10" placeholder="Blog yazınızı buraya dökün..."></textarea>
+                            <span asp-validation-for="Content" class="text-danger small"></span>
+                        </div>
+
+                        <div class="d-flex justify-content-between border-top pt-3">
+                            <a asp-action="Index" class="btn btn-outline-secondary px-4 fw-bold">
+                                <i class="bi bi-x-circle"></i> İptal
+                            </a>
+                            <button type="submit" class="btn @(isEditMode ? "btn-warning" : "btn-primary") px-5 fw-bold text-dark">
+                                <i class="bi bi-save"></i> @(isEditMode ? "Değişiklikleri Kaydet" : "Makaleyi Yayınla")
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+}

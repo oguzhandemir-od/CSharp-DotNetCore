@@ -1,0 +1,153 @@
+﻿@using BlogProject.Features.Posts.DTOs
+@model PostViewDto
+
+@{
+    ViewData["Title"] = Model.Title;
+    Layout = "_Layout";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <article>
+                <header class="mb-4">
+                    <h1 class="fw-bolder mb-1">@Model.Title</h1>
+
+                    <div class="text-muted fst-italic mb-2">
+                        <i class="bi bi-calendar3"></i> @Model.CreatedDate.ToString("dd MMMM yyyy HH:mm") tarihinde
+                        <i class="bi bi-person-circle ms-2"></i> <strong>@Model.AuthorName</strong> tarafından yayınlandı.
+                    </div>
+
+                    <span class="badge bg-primary text-decoration-none link-light">@Model.CategoryName</span>
+                </header>
+
+                <figure class="mb-4">
+                    @if (!string.IsNullOrEmpty(Model.Image))
+                    {
+                        <img class="img-fluid rounded w-100" src="@Model.Image" alt="@Model.Title" style="max-height: 400px; object-fit: cover;" />
+                    }
+                    else
+                    {
+                        <img class="img-fluid rounded w-100" src="https://placeholder.pics/svg/900x400/ECECEC/D2D2D2-626262/Gorsel-Yok" alt="Görsel Yok" />
+                    }
+                </figure>
+
+                <section class="mb-5" style="line-height: 1.8; font-size: 1.1rem; text-align: justify;">
+                    <p class="fs-5 mb-4">@Model.Content</p>
+                </section>
+            </article>
+
+            <section class="mb-5">
+                <div class="card bg-light border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="fw-bold mb-4"><i class="bi bi-chat-left-text-fill text-primary"></i> Yorumlar (@Model.CommentCount)</h4>
+
+                        <form id="commentForm" class="mb-4">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" id="postId" value="@Model.Id" />
+
+                            <div class="mb-3">
+                                <textarea id="commentContent" class="form-control" rows="3" placeholder="Fikirlerinizi topluluk kurallarına uygun şekilde paylaşın..."></textarea>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">
+                                    <i class="bi bi-info-circle"></i> Gönderilen yorumlar moderasyon onayından sonra yayınlanır.
+                                </small>
+                                <button type="button" id="btnSubmitComment" class="btn btn-primary fw-bold">Yorum Yap</button>
+                            </div>
+                        </form>
+
+                        <hr class="my-4" />
+
+                        <div id="commentsList">
+                            @if (Model.Comments == null || !Model.Comments.Any())
+                            {
+                                <div id="noCommentAlert" class="alert alert-light text-center text-muted border-dashed py-4">
+                                    <i class="bi bi-chat-quote fs-2"></i>
+                                    <p class="mb-0 mt-2">İlk yorumu siz yapın!</p>
+                                </div>
+                            }
+                            else
+                            {
+                                @foreach (var comment in Model.Comments)
+                                {
+                                    <div class="d-flex mb-4 p-3 bg-white rounded shadow-sm">
+                                        <div class="flex-shrink-0">
+                                            <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 40px; height: 40px;">
+                                                @comment.Username.Substring(0, 1).ToUpper()
+                                            </div>
+                                        </div>
+                                        <div class="ms-3 w-100">
+                                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                                <div class="fw-bold text-dark">@comment.Username</div>
+                                                <small class="text-muted text-end" style="font-size: 0.8rem;">
+                                                    <i class="bi bi-clock"></i> @comment.CreatedDate.ToString("dd.MM.yyyy HH:mm")
+                                                </small>
+                                            </div>
+                                            <div class="text-muted" style="white-space: pre-line;">@comment.Content</div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card mb-4 border-0 shadow-sm">
+                <div class="card-body text-center py-4">
+                    <h5 class="card-title fw-bold">Bu Makaleyi Beğendiniz mi?</h5>
+                    <p class="text-muted small">Diğer içeriklerimize göz atmak veya listeye dönmek için aşağıdaki butonu kullanabilirsiniz.</p>
+                    <a href="/Home/Index" class="btn btn-outline-dark w-100 fw-bold">
+                        <i class="bi bi-arrow-left"></i> Ana Sayfaya Dön
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+        $('#btnSubmitComment').click(function () {
+        let content = $('#commentContent').val().trim();
+        let postId = $('#postId').val();
+        let token = $('input[name="__RequestVerificationToken"]').val();
+
+        if (!content) {
+        alert("Yorum içeriği boş bırakılamaz.");
+        return;
+        }
+
+        $.ajax({
+        type: "POST",
+        url: "/Comment/Create",
+        data: {
+        postId: parseInt(postId),
+        content: content,
+        __RequestVerificationToken: token
+        },
+        success: function (response) {
+        if (response.success) {
+        $('#commentContent').val('');
+
+        alert("Yorumunuz başarıyla gönderildi! Topluluk kurallarına uygunluğu kontrol edildikten sonra yayınlanacaktır.");
+        } else {
+        alert(response.message);
+        }
+        },
+        error: function () {
+        alert("Yorum gönderilirken teknik bir hata oluştu.");
+        }
+        });
+        });
+        });
+    </script>
+}

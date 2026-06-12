@@ -1,0 +1,144 @@
+﻿@using BlogProject.Features.Categories.DTOs
+@model List<CategoryDto>
+
+@{
+    ViewData["Title"] = "Kategori Yönetimi";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Kategori Yönetimi</h2>
+        <button class="btn btn-primary" id="btnCreateCategory">
+            <i class="bi bi-plus-circle"></i> Yeni Kategori Ekle
+        </button>
+    </div>
+    <hr />
+
+    <table class="table table-hover table-striped align-middle">
+        <thead>
+            <tr>
+                <th style="width: 10%">ID</th>
+                <th style="width: 60%">Kategori Adı</th>
+                <th style="width: 30%">İşlemler</th>
+            </tr>
+        </thead>
+        <tbody id="categoryTableBody">
+            @foreach (var item in Model)
+            {
+                <tr id="category-row-@item.Id">
+                    <td><strong>#@item.Id</strong></td>
+                    <td class="category-name">@item.Name</td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-warning edit-category-btn" data-id="@item.Id" data-name="@item.Name">
+                            Düzenle
+                        </button>
+                        <button class="btn btn-sm btn-outline-danger delete-category-btn" data-id="@item.Id">
+                            Sil
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="categoryModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="categoryModalTitle">Kategori İşlemi</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="categoryId" />
+
+                <div class="mb-3">
+                    <label for="categoryName" class="form-label">Kategori Adı</label>
+                    <input type="text" class="form-control" id="categoryName" autocomplete="off" placeholder="Örn: Yazılım, Seyahat...">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                <button type="button" class="btn btn-success" id="btnSaveCategory">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+                $(document).ready(function () {
+
+            // --- YENİ KATEGORİ EKLE  ---
+            $('#btnCreateCategory').click(function () {
+                $('#categoryModalTitle').text("Yeni Kategori Ekle");
+                $('#categoryId').val(''); 
+                $('#categoryName').val(''); 
+                $('#categoryModal').modal('show');
+            });
+
+            // --- DÜZENLE  ---
+            $('.edit-category-btn').click(function () {
+                let id = $(this).data('id');
+                let name = $(this).data('name');
+
+                $('#categoryModalTitle').text("Kategoriyi Düzenle");
+                $('#categoryId').val(id); 
+                $('#categoryName').val(name); 
+                $('#categoryModal').modal('show');
+            });
+
+            // --- (SAVE/UPDATE)  ---
+            $('#btnSaveCategory').click(function () {
+                let id = $('#categoryId').val();
+                let name = $('#categoryName').val().trim();
+
+                if (!name) {
+                    alert("Kategori adı boş olamaz!");
+                    return;
+                }
+
+                let categoryDto = {
+                    Id: id ? parseInt(id) : null, 
+                    Name: name
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Category/Save",
+                    data: categoryDto,
+                    success: function (response) {
+                        if (response.success) {
+                            $('#categoryModal').modal('hide');
+                            alert(response.message);
+
+                            location.reload();
+                        } else {
+                            alert(response.message);
+                        }
+                    }
+                });
+            });
+
+            // --- SİLME  ---
+            $('.delete-category-btn').click(function () {
+                let id = $(this).data('id');
+
+                if (confirm("Bu kategoriyi silmek istediğinize emin misiniz? Bu kategoriye ait postlar kategorisiz kalabilir.")) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Category/Delete",
+                        data: { id: id },
+                        success: function (response) {
+                            if (response.success) {
+                                $(`#category-row-${id}`).fadeOut(500, function() { $(this).remove(); });
+                            } else {
+                                alert(response.message);
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

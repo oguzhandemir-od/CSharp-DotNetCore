@@ -1,0 +1,229 @@
+﻿@using BlogProject.Features.Comments.DTOs
+@model List<AdminCommentDto>
+
+@{
+    ViewData["Title"] = "Yorum Yönetimi";
+}
+
+<div class="container mt-4">
+    <h2>Yorum Yönetim Paneli</h2>
+    <hr />
+
+    <table class="table table-hover table-striped align-middle">
+        <thead>
+            <tr>
+                <th>Kullanıcı</th>
+                <th>Yazı Başlığı</th>
+                <th>Yorum</th>
+                <th>Durum</th>
+                <th>Tarih</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr id="row-@item.Id">
+                    <td><strong>@item.Username</strong></td>
+                    <td>@item.PostTitle</td>
+                    <td>
+                        @if (item.Content.Length > 50)
+                        {
+                            <div class="comment-preview">
+                                <span>@item.Content.Substring(0, 50)...</span>
+                                <a href="#collapseComment-@item.Id"
+                                   class="badge bg-light text-primary text-decoration-none ms-1"
+                                   data-bs-toggle="collapse"
+                                   role="button"
+                                   aria-expanded="false">
+                                    <i class="bi bi-chevron-down"></i> Detay
+                                </a>
+                            </div>
+
+                            <div class="collapse mt-2 text-wrap text-muted" id="collapseComment-@item.Id" style="max-width: 500px;">
+                                <div class="card card-body bg-light p-2 comment-text">
+                                    @item.Content
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="comment-text">@item.Content</div>
+                        }
+                    </td>
+                    <td>
+                        @if (item.Status == "Approved" || item.Status == "Onaylandı")
+                        {
+                            <span class="badge bg-success">@item.Status</span>
+                        }
+                        else if (item.Status == "Pending" || item.Status == "Beklemede")
+                        {
+                            <span class="badge bg-warning text-dark">@item.Status</span>
+                        }
+                        else if (item.Status == "Rejected" || item.Status == "Reddedildi")
+                        {
+                            <span class="badge bg-danger">@item.Status</span>
+                        }
+                    </td>
+                    <td>@item.CreatedDate.ToString("dd.MM.yyyy HH:mm")</td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-success status-btn" data-id="@item.Id" data-status="Approved" title="Onayla">
+                            Onayla
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-secondary reject-btn" data-id="@item.Id" data-status="Rejected" title="Reddet">
+                            Reddet
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary edit-btn" data-id="@item.Id" title="Düzenle">
+                            Düzenle
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-danger delete-btn" data-id="@item.Id" title="Sil">
+                            Sil
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmModalTitle">İşlem Onayı</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p id="confirmModalBody"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vazgeç</button>
+                <button type="button" class="btn" id="btnConfirmAction">Evet, Devam Et</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Yorumu Düzenle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="editCommentId" />
+                <div class="mb-3">
+                    <label for="editCommentContent" class="form-label">Yorum İçeriği</label>
+                    <textarea class="form-control" id="editCommentContent" rows="4"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                <button type="button" class="btn btn-primary" id="btnSaveComment">Değişiklikleri Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            let targetId = 0;
+            let targetUrl = "";
+            let requestData = {};
+
+            $('.status-btn').click(function () {
+                targetId = $(this).data('id');
+                let status = $(this).data('status');
+                targetUrl = "/Comment/UpdateStatus";
+                requestData = { id: targetId, status: status };
+
+                $('#confirmModalTitle').text("Yorum Durumu Güncelleme");
+                $('#confirmModalBody').text("Bu yorumu onaylamak istediğinize emin misiniz?");
+                $('#btnConfirmAction').removeClass().addClass('btn btn-success').text("Evet, Onayla");
+                $('#confirmModal').modal('show');
+            });
+
+                // --- REDDET  ---
+        $('.reject-btn').click(function () {
+            targetId = $(this).data('id');
+            let status = $(this).data('status');
+            targetUrl = "/Comment/UpdateStatus"; 
+            requestData = { id: targetId, status: status }; 
+
+            $('#confirmModalTitle').text("Yorumu Reddet");
+            $('#confirmModalBody').text("Bu yorumu reddetmek istediğinize emin misiniz? (Yorum siteden kaldırılacak ancak panelde kalmaya devam edecek)");
+
+            $('#btnConfirmAction').removeClass().addClass('btn btn-warning text-dark').text("Evet, Reddet");
+            $('#confirmModal').modal('show');
+        });
+
+            // Sil Butonu
+            $('.delete-btn').click(function () {
+                targetId = $(this).data('id');
+                targetUrl = "/Comment/DeleteComment";
+                requestData = { id: targetId };
+
+                $('#confirmModalTitle').text("Yorumu Sil");
+                $('#confirmModalBody').text("Bu yorumu silmek istediğinize emin misiniz?");
+                $('#btnConfirmAction').removeClass().addClass('btn btn-danger').text("Evet, Sil");
+                $('#confirmModal').modal('show');
+            });
+
+            // Onay/Sil 
+            $('#btnConfirmAction').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: targetUrl,
+                    data: requestData,
+                    success: function (response) {
+                        $('#confirmModal').modal('hide');
+                        if (response.success) {
+                            if (targetUrl.includes("DeleteComment")) {
+                                $(`#row-${targetId}`).fadeOut(500, function() { $(this).remove(); });
+                            } else {
+                                location.reload();
+                            }
+                        } else {
+                            alert(response.message);
+                        }
+                    }
+                });
+            });
+
+            // Düzenle 
+            $('.edit-btn').click(function () {
+                let id = $(this).data('id');
+                let currentContent = $(`#row-${id} .comment-text`).text().trim();
+
+                $('#editCommentId').val(id);
+                $('#editCommentContent').val(currentContent);
+                $('#editModal').modal('show');
+            });
+
+            // Düzenle Kaydet 
+            $('#btnSaveComment').click(function () {
+                let id = $('#editCommentId').val();
+                let newContent = $('#editCommentContent').val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Comment/EditComment",
+                    data: { id: id, content: newContent },
+                    success: function (response) {
+                        $('#editModal').modal('hide');
+                        if (response.success) {
+                            $(`#row-${id} .comment-text`).text(newContent);
+                        } else {
+                            alert(response.message);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+}

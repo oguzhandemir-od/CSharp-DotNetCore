@@ -1,0 +1,40 @@
+﻿@using BlogProject.Domain.Entities
+@using BlogProject.Features.Posts.DTOs
+@model PostViewDto 
+
+<div class="container mt-5">
+    <h1>@Model.Title</h1>
+    <p>@Model.Content</p>
+    <hr />
+
+    <h3 class="mt-4">Yorumlar (@Model.CommentCount)</h3>
+
+    @foreach (var comment in Model.Comments)
+    {
+        <div class="card mb-2 shadow-sm">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">
+                    @comment.Username
+                    <span class="small float-end">@comment.CreatedDate.ToShortDateString()</span>
+                </h6>
+                <p class="card-text">@comment.Content</p>
+            </div>
+        </div>
+    }
+
+    <div class="card mt-4">
+        <div class="card-header bg-light">Bir Yorum Bırak</div>
+        <div class="card-body">
+            <form asp-controller="Comment" asp-action="Create" method="post">
+                @Html.AntiForgeryToken()
+
+                <input type="hidden" name="PostId" value="@Model.Id" />
+
+                <div class="mb-3">
+                    <textarea name="Content" class="form-control" rows="3" placeholder="Yorumunuzu buraya yazın..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Yorum Gönder</button>
+            </form>
+        </div>
+    </div>
+</div>
