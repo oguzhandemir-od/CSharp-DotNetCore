@@ -1,6 +1,6 @@
 # Decoupled Multi-Tier Library Management & Loan System 📚
 
-Bu proje; Murat Yücedağ'ın monolitik .NET MVC kütüphane kurgusu temel alınarak; modern yazılım mimarilerine, **API-First (Decoupled)** prensibine ve katı iş kurallarına (Strict Business Rules) uygun olarak sıfırdan inşa edilmiş, full-stack bir sistem otomasyonudur. 
+Bu proje; [Murat Yücedağ](https://www.udemy.com/course/mvc5-ile-3-panelli-kutuphane-yonetim-sistemi)'ın monolitik .NET MVC kütüphane kurgusu temel alınarak; modern yazılım mimarilerine, **API-First (Decoupled)** prensibine ve katı iş kurallarına (Strict Business Rules) uygun olarak sıfırdan inşa edilmiş, full-stack bir sistem otomasyonudur. 
 
 Proje, backend tarafında **Onion Architecture** üzerine kurulu gelişmiş bir .NET Core Web API altyapısına, frontend tarafında ise asenkron veri akışına sahip modern bir **React** uygulamasına sahiptir.
 
