@@ -1,6 +1,8 @@
 # FBS-BlogProject (Feature-Based Clean MVC Blog)
 
-Bu proje, geleneksel spagetti MVC yapılarının ve katman enflasyonunun ötesine geçerek, **Feature-Based Structure (Özellik Tabanlı Yapı)** ve **Clean MVC** prensipleriyle geliştirilmiş modern bir Blog platformudur. Proje, mimari sürdürülebilirlik, veri gizliliği ve yüksek kullanıcı deneyimi (UX) odaklı hibrit bir SPA yaklaşımı sunmaktadır.
+Bu proje geliştirilirken, değerli eğitmen [**Murat Yücedağ**](https://www.udemy.com/course/kurumsal-mimaride-mvc5-ile-blog-projesi-gelistirelim)'ın güncel kurumsal mimari eğitimindeki temel veri şeması, ilişkisel kurgu ve iş senaryoları referans alınmıştır.
+
+Geleneksel spagetti MVC yapılarının ve katman enflasyonunun ötesine geçerek, **Feature-Based Structure (Özellik Tabanlı Yapı)** ve **Clean MVC** prensipleriyle geliştirilmiş modern bir Blog platformudur. Proje, mimari sürdürülebilirlik, veri gizliliği ve yüksek kullanıcı deneyimi (UX) odaklı hibrit bir SPA yaklaşımı sunmaktadır.
 
 <img width="2535" height="1345" alt="resim" src="https://github.com/user-attachments/assets/aad974a0-84e5-4dac-b53a-ad38f4b7ed74" />
 
