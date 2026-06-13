@@ -3,15 +3,19 @@ using BlogProject.Features.Account;
 using BlogProject.Features.Categories;
 using BlogProject.Features.Categories.DTOs;
 using BlogProject.Features.Comments;
+using BlogProject.Features.Dashboard;
 using BlogProject.Features.Posts;
 using BlogProject.Features.Users;
 using BlogProject.Infrastructure.Data;
+using BlogProject.Middlewares;
 using FluentValidation;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddValidatorsFromAssemblyContaining<CategoryDto>();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -25,6 +29,9 @@ builder.Services.AddScoped<PostService>();
 builder.Services.AddScoped<CommentService>();
 builder.Services.AddScoped<AccountService>();
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<IDashboardService, DashboardService>();
+
+
 
 builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 {
@@ -36,7 +43,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 
     options.User.RequireUniqueEmail = true;
 })
-.AddEntityFrameworkStores<AppDbContext>() /
+.AddEntityFrameworkStores<AppDbContext>()
 .AddDefaultTokenProviders();
 
 builder.Services.ConfigureApplicationCookie(options =>
@@ -52,7 +59,7 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 
 var app = builder.Build();
-
+app.UseMiddleware<GlobalExceptionMiddleware>();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

@@ -2,6 +2,7 @@
 using BlogProject.Features.Account;
 using BlogProject.Features.Comments;
 using BlogProject.Features.Comments.DTOs;
+using BlogProject.Features.Page.DTOs;
 using BlogProject.Features.Posts.DTOs;
 using BlogProject.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
@@ -210,5 +211,42 @@ namespace BlogProject.Features.Posts
 
             return new ServiceResult { IsSuccess = true, Message = "Makale başarıyla silindi." };
         }
+
+        public async Task<PagedResult<PostViewDto>> GetPagedPostsAsync(int page, int pageSize = 10)
+        {
+            var query = _context.Posts
+                .Where(p => !p.IsDeleted)
+                .OrderByDescending(p => p.CreatedDate);
+
+            var totalItems = await query.CountAsync();
+
+            var totalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
+
+            var items = await query
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .Select(p => new PostViewDto
+                {
+                    Id = p.Id,
+                    Title = p.Title,
+                    Content = p.Content,
+                    Image = p.Image,
+                    CreatedDate = p.CreatedDate,
+                    AuthorName = p.AppUser.FullName ?? "Anonim",
+                    CategoryName = p.Category.Name,
+                    CommentCount = p.Comments.Count(c => !c.IsDeleted && c.Status == CommentStatus.Approved)
+                })
+                .ToListAsync();
+
+            return new PagedResult<PostViewDto>
+            {
+                Items = items,
+                CurrentPage = page,
+                PageSize = pageSize,
+                TotalItems = totalItems,
+                TotalPages = totalPages
+            };
+        }
+
     }
 }

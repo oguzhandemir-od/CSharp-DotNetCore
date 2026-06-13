@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿@* <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -45,6 +45,209 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+ *@
+
+@using System.Security.Claims
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+    <script>
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Defter</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <a class="site-logo" asp-controller="Home" asp-action="Index">Defter</a>
+
+            <nav class="site-nav">
+                <a asp-controller="Home" asp-action="Index" class="@(ViewContext.RouteData.Values["action"]?.ToString() == "Index" && ViewContext.RouteData.Values["controller"]?.ToString() == "Home" ? "active" : "")">anasayfa</a>
+                <a href="/Home/AllPosts" class="@(ViewContext.RouteData.Values["action"]?.ToString() == "AllPosts" ? "active" : "")">yazılar</a>
+                <a asp-controller="Category" asp-action="Index">kategoriler</a>
+                <a asp-controller="Home" asp-action="About">hakkında</a>
+
+                @if (User.IsInRole("Admin")||User.IsInRole("Author"))
+                {
+                    <a href="/Dashboard">panel</a>
+
+                }
+
+                <button type="button" id="themeToggleBtn" class="theme-toggle" title="Temayı Değiştir">🌓</button>
+            </nav>
+
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <a asp-controller="Account" asp-action="Logout" class="user-badge" title="Çıkış yap" onclick="return confirm('Çıkış yapmak istiyor musunuz?')">
+                    @(User.Identity.Name?.Substring(0, 1).ToUpper())
+                </a>
+            }
+            else
+            {
+                <a href="#" id="openAuthModalBtn" class="user-badge" title="Giriş yap / Kayıt ol">
+                    👤
+                </a>
+            }
+        </header>
+
+        <main>
+            @RenderBody()
+        </main>
+
+        <footer class="site-footer">
+            <span>&copy; @DateTime.Now.Year defter</span>
+            <span>.net core ile yazıldı</span>
+        </footer>
+
+        <div class="auth-modal-overlay" id="authModal">
+            <div class="auth-modal-box">
+                <button type="button" class="auth-modal-close" id="closeAuthModal">&times;</button>
+
+                <div class="auth-tabs">
+                    <button class="auth-tab-btn active" id="tabLoginBtn">giriş yap</button>
+                    <button class="auth-tab-btn" id="tabRegisterBtn">kayıt ol</button>
+                </div>
+
+                <div class="auth-error-msg" id="authErrorPanel"></div>
+
+                <form id="ajaxLoginForm">
+                    @Html.AntiForgeryToken()
+                    <div class="auth-form-group">
+                        <label>kullanıcı adı veya e-posta</label>
+                        <input type="text" name="UsernameOrEmail" class="auth-input" required placeholder="admin@blog.com" autocomplete="username">
+                    </div>
+                    <div class="auth-form-group" style="margin-bottom: 1.5rem;">
+                        <label>şifre</label>
+                        <input type="password" name="Password" class="auth-input" required placeholder="******" autocomplete="current-password">
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Giriş Yap</button>
+                </form>
+
+                <form id="ajaxRegisterForm" style="display: none;">
+                    @Html.AntiForgeryToken()
+                    <div class="auth-form-group">
+                        <label>ad soyad</label>
+                        <input type="text" name="FullName" class="auth-input" required>
+                    </div>
+                    <div class="auth-form-group">
+                        <label>kullanıcı adı</label>
+                        <input type="text" name="Username" class="auth-input" required autocomplete="username">
+                    </div>
+                    <div class="auth-form-group">
+                        <label>e-posta adresi</label>
+                        <input type="email" name="Email" class="auth-input" required>
+                    </div>
+                    <div class="auth-form-group" style="margin-bottom: 1.5rem;">
+                        <label>şifre</label>
+                        <input type="password" name="Password" class="auth-input" required autocomplete="new-password">
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Kayıt Ol ve Giriş Yap</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+            const toggleBtn = document.getElementById('themeToggleBtn');
+
+            toggleBtn.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+        const $modal = $('#authModal');
+        const $errorPanel = $('#authErrorPanel');
+
+        $('#openAuthModalBtn').click(function(e) {
+        e.preventDefault();
+        $errorPanel.hide().text('');
+        $modal.addClass('open');
+        });
+
+        $('#closeAuthModal, #authModal').click(function (e) {
+        if (e.target === this) { $modal.removeClass('open'); }
+        });
+
+        $('#tabLoginBtn').click(function () {
+        $('.auth-tab-btn').removeClass('active'); $(this).addClass('active');
+        $('#ajaxRegisterForm').hide(); $('#ajaxLoginForm').show();
+        $errorPanel.hide();
+        });
+
+        $('#tabRegisterBtn').click(function () {
+        $('.auth-tab-btn').removeClass('active'); $(this).addClass('active');
+        $('#ajaxLoginForm').hide(); $('#ajaxRegisterForm').show();
+        $errorPanel.hide();
+        });
+
+        $('#ajaxLoginForm').submit(function (e) {
+        e.preventDefault();
+        $errorPanel.hide();
+
+        $.ajax({
+        type: "POST",
+        url: "/Account/Login",
+        data: $(this).serialize(),
+        success: function (response) {
+        if (response.isSuccess || response.success || typeof response === 'string') {
+        $errorPanel.css('color', 'green').text('Giriş başarılı! Sayfa yenileniyor...').show();
+        setTimeout(() => { location.reload(); }, 800);
+        } else {
+        let msg = response.message || response.error || "Kullanıcı adı/e-posta veya şifre hatalı!";
+        $errorPanel.css('color', 'var(--accent)').text(msg).show();
+        }
+        },
+        error: function(xhr) {
+        if(xhr.status === 200) {
+        location.reload();
+        } else {
+        $errorPanel.css('color', 'var(--accent)').text('Giriş bilgileri doğrulanamadı. Lütfen kontrol edin.').show();
+        }
+        }
+        });
+        });
+
+        $('#ajaxRegisterForm').submit(function (e) {
+        e.preventDefault();
+        $errorPanel.hide();
+
+        $.ajax({
+        type: "POST",
+        url: "/Account/Register",
+        data: $(this).serialize(),
+        success: function (response) {
+        if (response.isSuccess) {
+        $errorPanel.css('color', 'green').text(response.message).show();
+        setTimeout(() => { location.reload(); }, 1000);
+        } else {
+        $errorPanel.css('color', 'var(--accent)').text(response.message).show();
+        }
+        }
+        });
+        });
+        });
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

@@ -1,0 +1,84 @@
+﻿@using System.Security.Claims
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+    <script>
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Defter Admin</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+</head>
+<body>
+
+    <div class="admin-wrapper">
+        <aside class="admin-sidebar">
+            <div class="sidebar-brand">
+                <a href="/Dashboard">defter.<span>panel</span></a>
+            </div>
+
+            <div class="sidebar-user">
+                <div class="avatar">@(User.Identity?.Name?.Substring(0, 1).ToUpper() ?? "A")</div>
+                <div class="user-info">
+                    <strong>@User.Identity?.Name</strong>
+                    <span>@(User.IsInRole("Admin") ? "Yönetici" : "Yazar")</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <p class="nav-label">kumanda merkezi</p>
+                <a href="/Dashboard" class="@(ViewContext.RouteData.Values["controller"]?.ToString() == "Dashboard" ? "active" : "")">📊 panel özet</a>
+
+                <p class="nav-label">i̇çerik yöneti̇mi̇</p>
+                <a href="/Post">✍️ makalelerim</a>
+
+                @if (User.IsInRole("Admin"))
+                {
+                    <p class="nav-label">si̇stem</p>
+                    <a href="/Category">📁 kategoriler</a>
+                    <a href="/User">👥 kullanıcılar</a>
+                    
+                }
+                <a href="/Comment">💬 yorum denetimi</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button type="button" id="adminThemeToggle" class="admin-theme-btn" title="Temayı Değiştir">🌓 modu değiştir</button>
+                <a href="/Home/Index" class="back-site-btn">&larr; siteye dön</a>
+            </div>
+        </aside>
+
+        <main class="admin-content">
+            <header class="content-header">
+                <h1 class="page-title">@ViewData["Title"]</h1>
+                <div class="header-actions">
+                    <a href="/Account/Logout" class="admin-logout-link" onclick="return confirm('Çıkış yapmak istiyor musunuz?')">güvenli çıkış &rarr;</a>
+                </div>
+            </header>
+
+            <div class="content-body">
+                @RenderBody()
+            </div>
+        </main>
+    </div>
+
+    <script>
+            const adminToggleBtn = document.getElementById('adminThemeToggle');
+            adminToggleBtn.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

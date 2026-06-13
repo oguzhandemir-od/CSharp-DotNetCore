@@ -1,0 +1,96 @@
+﻿@using BlogProject.Features.Dashboard.DTOs
+@model DashboardHeaderDto
+
+@{
+    ViewData["Title"] = "panel özet";
+    Layout = "_AdminLayout";
+}
+
+<div style="margin-bottom: 2.5rem;">
+    <h2 style="font-family: var(--font-serif); font-size: 28px; font-weight: 600; color: var(--admin-text); margin: 0;">
+        merhaba, @Model.UserFullName.ToLower()
+    </h2>
+    <p style="font-size: 13px; color: var(--admin-text-muted); font-family: var(--font-mono); margin-top: 6px;">
+        @if (Model.IsAdmin)
+        {
+            <span style="color: var(--admin-accent);">👑 yönetici yetkisiyle</span> 
+            @("bağlandınız. tüm sistem kontrolünüz altında.")
+        }
+        else
+        {
+            <span style="color: var(--admin-success);">✍️ yazar yetkisiyle</span> 
+            @("bağlandınız. kendi içeriklerinizi yönetiyorsunuz.")
+        }
+    </p>
+</div>
+
+<div class="admin-stats-grid">
+
+    @if (Model.IsAdmin)
+    {
+        <div class="stat-card">
+            <span>toplam makale</span>
+            <h2>@Model.TotalPosts</h2>
+        </div>
+
+        <div class="stat-card">
+            <span>kayıtlı yazar / okur</span>
+            <h2>@Model.TotalUsers</h2>
+        </div>
+
+        <div class="stat-card" style="border-left: 3px solid var(--admin-accent);">
+            <span style="color: var(--admin-accent);">onay bekleyen yorum</span>
+            <h2 style="color: var(--admin-accent);">@Model.PendingCommentsCount</h2>
+        </div>
+    }
+    else
+    {
+        <div class="stat-card">
+            <span>yayınladığım makaleler</span>
+            <h2>@Model.MyPostsCount</h2>
+        </div>
+
+        <div class="stat-card" style="border-left: 3px solid var(--admin-success);">
+            <span style="color: var(--admin-success);">yazılarıma gelen yorumlar</span>
+            <h2 style="color: var(--admin-success);">@Model.MyTotalCommentsCount</h2>
+        </div>
+    }
+
+</div>
+
+<div style="margin-top: 3rem; background: var(--admin-card-bg); border: 1px solid var(--admin-border); border-radius: 14px; padding: 24px;">
+    <h3 style="font-family: var(--font-serif); font-size: 18px; font-weight: 600; margin-bottom: 1.5rem; border-bottom: 1px solid var(--admin-border); padding-bottom: 12px;">
+        @if (Model.IsAdmin)
+        {
+            @("sistem günlükleri / son hareketler")
+        }
+        else
+        {
+
+            @("son paylaşımlarınız")
+        }
+    </h3>
+
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+        @if (Model.RecentActivities == null || !Model.RecentActivities.Any())
+        {
+            <p style="font-family: var(--font-mono); font-size: 12px; color: var(--admin-text-muted);">Henüz bir hareket kaydedilmedi.</p>
+        }
+        else
+        {
+            foreach (var activity in Model.RecentActivities)
+            {
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px dashed var(--admin-border);">
+                    <div>
+                        <span class="admin-badge" style="background: rgba(0,0,0,0.04); color: var(--admin-text); font-size: 10px; margin-right: 8px; text-transform: uppercase;">
+                            @activity.Type.ToLower()
+                        </span>
+                        <strong style="font-size: 13px; color: var(--admin-text);">@activity.Title</strong>
+                        <span style="font-size: 13px; color: var(--admin-text-muted); margin-left: 6px;">- @activity.Description</span>
+                    </div>
+                    <span style="font-family: var(--font-mono); font-size: 11px; color: var(--admin-text-muted);">@activity.TimeAgo</span>
+                </div>
+            }
+        }
+    </div>
+</div>

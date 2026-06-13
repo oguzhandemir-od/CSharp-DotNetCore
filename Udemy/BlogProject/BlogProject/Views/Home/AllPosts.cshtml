@@ -1,0 +1,81 @@
+﻿@using BlogProject.Features.Page.DTOs
+@using BlogProject.Features.Posts.DTOs
+@model PagedResult<PostViewDto>
+
+@{
+    ViewData["Title"] = "Tüm Yazılar - Arşiv";
+    Layout = "_Layout";
+}
+
+<div style="padding-top: 2rem;">
+    <h1 style="font-family: var(--font-serif); font-size: 32px; margin-bottom: 0.5rem;">yazı arşivi</h1>
+    <p style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); margin-bottom: 2rem;">
+        toplam @Model.TotalItems makale listeleniyor
+    </p>
+</div>
+
+<div class="post-list">
+    @if (Model.Items == null || !Model.Items.Any())
+    {
+        <div style="padding: 4rem 0; text-align: center; color: var(--muted); font-family: var(--font-mono); font-size: 14px;">
+            <p>Arşivde henüz kayıtlı bir yazı bulunamadı.</p>
+        </div>
+    }
+    else
+    {
+        @foreach (var post in Model.Items)
+        {
+            <a class="post-row" href="/Home/PostDetails/@post.Id">
+                <div class="post-thumb">
+                    @if (!string.IsNullOrEmpty(post.Image))
+                    {
+                        <img src="@post.Image" alt="@post.Title" />
+                    }
+                    else
+                    {
+                        <span style="font-size: 20px; font-style: normal;">📝</span>
+                    }
+                </div>
+                <div class="post-content">
+                    <p class="post-meta">
+                        <strong>@post.CategoryName</strong> &middot;
+                        @post.CreatedDate.ToString("dd MMM yyyy") &middot;
+                        by @post.AuthorName &middot;
+                        💬 @post.CommentCount
+                    </p>
+                    <h3>@post.Title</h3>
+                    <p>
+                        @(post.Content.Length > 140 ? post.Content.Substring(0, 140) + "..." : post.Content)
+                    </p>
+                </div>
+            </a>
+        }
+    }
+</div>
+
+@if (Model.TotalPages > 1)
+{
+    <div class="pagination">
+        @if (Model.HasPreviousPage)
+        {
+            <a href="/Home/AllPosts?page=@(Model.CurrentPage - 1)">&larr;</a>
+        }
+
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            if (i == Model.CurrentPage)
+            {
+                <span class="active">@i</span>
+            }
+            else
+            {
+                <a href="/Home/AllPosts?page=@i">@i</a>
+            }
+        }
+
+        @if (Model.HasNextPage)
+        {
+            <a href="/Home/AllPosts?page=@(Model.CurrentPage + 1)">&rarr;</a>
+        }
+    </div>
+}

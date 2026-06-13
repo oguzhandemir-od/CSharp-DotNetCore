@@ -45,7 +45,7 @@ namespace BlogProject.Features.Account
                 }
 
                 
-                return RedirectToAction("Index", "Comment");
+                return RedirectToAction("Index", "Dashboard");
             }
 
             ModelState.AddModelError("", "Geçersiz kullanıcı adı veya şifre.");
@@ -55,13 +55,9 @@ namespace BlogProject.Features.Account
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Login", "Account");
+            return RedirectToAction("Index", "Home");
         }
 
-        public async Task LogoutAsync()
-        {
-            await _signInManager.SignOutAsync();
-        }
 
         [HttpGet]
         public IActionResult Register()

@@ -26,5 +26,17 @@ namespace BlogProject.Features
             if (post == null) return NotFound();
             return View(post); 
         }
+
+        [HttpGet]
+        public async Task<IActionResult> AllPosts(int page = 1)
+        {
+            if (page < 1) page = 1;
+
+            int pageSize = 6;
+
+            var pagedPosts = await _postService.GetPagedPostsAsync(page, pageSize);
+
+            return View(pagedPosts);
+        }
     }
 }

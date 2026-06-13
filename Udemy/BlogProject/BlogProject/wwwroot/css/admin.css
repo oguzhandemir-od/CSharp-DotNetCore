@@ -1,0 +1,547 @@
+﻿/* ==========================================================================
+   🎯 DEFTER BLOG - PREMIUM MINIMALIST ADMIN CSS (SIFIRDAN BÜTÜNSEL TASARIM)
+   ========================================================================== */
+
+/* --- 1. GLOBAL DEĞİŞKENLER VE PANEL RENK PALETİ --- */
+:root {
+    --admin-bg: #F8F9FA; /* Sağ içerik alanı için temiz, soft gri arka plan */
+    --admin-card-bg: #FFFFFF; /* Bloklar ve kartlar için saf beyaz */
+    --admin-sidebar-bg: #111113; /* Sol menü için o çok beğendiğin derin siyah */
+    --admin-text: #111111; /* Net okunabilir ana yazı rengi */
+    --admin-text-muted: #6B7280; /* İkincil açıklamalar ve tarihler için füme */
+    --admin-border: rgba(0, 0, 0, 0.08); /* Minimalist ince sınırlar */
+    --admin-accent: #E05A47; /* İmzamız olan kiremit/turuncu tonu */
+    --admin-success: #10B981; /* Onay durumları için zümrüt yeşili */
+    --admin-warning: #F59E0B; /* Beklemede durumları için kehribar sarısı */
+    /* Premium Yazı Tipi Ailesi */
+    --font-serif: 'Fraunces', serif;
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* --- 🌙 TAM ENTEGRE KARANLIK MOD (DARK MODE) --- */
+[data-theme="dark"] {
+    --admin-bg: #09090B;
+    --admin-card-bg: #141417;
+    --admin-sidebar-bg: #18181C;
+    --admin-text: #F4F4F5;
+    --admin-text-muted: #A1A1AA;
+    --admin-border: rgba(255, 255, 255, 0.06);
+}
+
+/* --- 2. TEMEL SIFIRLAMALAR (RESET & BASE) --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--admin-bg) !important;
+    color: var(--admin-text) !important;
+    font-family: var(--font-sans) !important;
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- 3. ANA SKELET YERLEŞİMİ (LAYOUT WRAPPER) --- */
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* --- 4. SOL MENÜ EVRENİ (SIDEBAR - EKSİKSİZ) --- */
+.admin-sidebar {
+    width: 260px;
+    background: var(--admin-sidebar-bg);
+    color: #FFFFFF !important;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 1.5rem;
+    flex-shrink: 0;
+    border-right: 1px solid var(--admin-border);
+}
+
+.sidebar-brand {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+}
+
+    .sidebar-brand a {
+        color: #FFFFFF !important;
+        text-decoration: none;
+    }
+
+    .sidebar-brand span {
+        color: var(--admin-accent);
+        font-size: 13px;
+        font-family: var(--font-mono);
+        font-weight: 400;
+        margin-left: 4px;
+    }
+
+.sidebar-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+    .sidebar-user .avatar {
+        width: 40px;
+        height: 40px;
+        background: var(--admin-accent);
+        color: #FFFFFF;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-family: var(--font-mono);
+        font-size: 15px;
+    }
+
+.user-info strong {
+    display: block;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.user-info span {
+    font-size: 11px;
+    color: #A1A1AA;
+    font-family: var(--font-mono);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex-grow: 1;
+}
+
+.nav-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: #52525B;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 1.5rem 0 0.5rem 0;
+}
+
+.sidebar-nav a {
+    color: #A1A1AA !important;
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 6px;
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+    .sidebar-nav a:hover,
+    .sidebar-nav a.active {
+        background: rgba(255, 255, 255, 0.06);
+        color: #FFFFFF !important;
+    }
+
+.sidebar-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 1.5rem;
+}
+
+.admin-theme-btn,
+.back-site-btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: var(--font-mono);
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s ease;
+}
+
+.admin-theme-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #A1A1AA;
+}
+
+    .admin-theme-btn:hover {
+        color: #FFFFFF;
+        border-color: #FFFFFF;
+    }
+
+.back-site-btn {
+    background: rgba(255, 255, 255, 0.06);
+    color: #FFFFFF;
+    border: none;
+}
+
+    .back-site-btn:hover {
+        background: rgba(255, 255, 255, 0.12);
+    }
+
+/* --- 5. SAĞ İÇERİK EVRENİ (MAIN CONTENT - BAŞTAN AŞAĞI YENİLENDİ) --- */
+.admin-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 3.5rem;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+/* Üst Başlık ve Aksiyon Alanı Kontrolü */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 2rem;
+    margin-bottom: 2.5rem;
+    background: var(--admin-card-bg);
+    border: 1px solid var(--admin-border);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.page-title {
+    font-family: var(--font-serif) !important;
+    font-size: 26px !important;
+    font-weight: 600 !important;
+    color: var(--admin-text) !important;
+}
+
+.admin-logout-link {
+    font-family: var(--font-mono);
+    color: var(--admin-text-muted) !important;
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.15s ease;
+}
+
+    .admin-logout-link:hover {
+        color: var(--admin-accent) !important;
+    }
+
+/* Tüm render edilen sayfaların gövdesi */
+.content-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+    /* --- 6. JİLET GİBİ TABLOLAR VE VERİ LİSTELERİ --- */
+    /* Render body'den gelen tüm tabloları ve kapsayıcıları otomatik hizala */
+    .table-responsive,
+    .content-body table {
+        width: 100% !important;
+        background: var(--admin-card-bg) !important;
+        border: 1px solid var(--admin-border) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02) !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        overflow: hidden !important;
+        margin-bottom: 1.5rem;
+    }
+
+        /* Tablo Başlık Alanları */
+        .content-body table th {
+            background: rgba(0, 0, 0, 0.015) !important;
+            color: var(--admin-text-muted) !important;
+            font-family: var(--font-mono) !important;
+            font-size: 11px !important;
+            font-weight: 600 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.8px !important;
+            padding: 16px 24px !important;
+            border-bottom: 1px solid var(--admin-border) !important;
+        }
+
+[data-theme="dark"] .content-body table th {
+    background: rgba(255, 255, 255, 0.015) !important;
+}
+
+/* Tablo Hücreleri */
+.content-body table td {
+    padding: 16px 24px !important;
+    border-bottom: 1px solid var(--admin-border) !important;
+    color: var(--admin-text) !important;
+    font-size: 13px !important;
+    vertical-align: middle !important;
+    background: var(--admin-card-bg);
+}
+
+.content-body table tr:last-child td {
+    border-bottom: none !important;
+}
+
+/* Satır Üzerine Gelindiğinde Akıcı Arka Plan Değişimi */
+.content-body table tr:hover td {
+    background: rgba(0, 0, 0, 0.008) !important;
+}
+
+[data-theme="dark"] .content-body table tr:hover td {
+    background: rgba(255, 255, 255, 0.008) !important;
+}
+
+/* --- 7. SİYAH, NET VE PREMİUM BUTONLAR (HİÇBİR CSS EZEMEZ) --- */
+.content-body button,
+.content-body .btn,
+.content-body input[type="submit"],
+.content-body .admin-btn-sm {
+    font-family: var(--font-sans) !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    padding: 8px 16px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    transition: all 0.15s ease-in-out !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    -webkit-appearance: none !important;
+}
+
+/* Siyah Ana Buton (Ön yüzdeki şık buton karakteri - Düzenle/Yeni Ekle) */
+.content-body .btn-primary,
+.content-body .btn-dark,
+.content-body .btn-admin-dark {
+    background: #111113 !important;
+    color: #FFFFFF !important;
+}
+
+    .content-body .btn-primary:hover,
+    .content-body .btn-dark:hover,
+    .content-body .btn-admin-dark:hover {
+        background: var(--admin-accent) !important;
+        transform: translateY(-1px) !important;
+    }
+
+/* Yumuşak Yeşil Buton (Onayla) */
+.content-body .btn-success,
+.content-body .btn-admin-success {
+    background: rgba(16, 185, 129, 0.12) !important;
+    color: #10B981 !important;
+}
+
+    .content-body .btn-success:hover,
+    .content-body .btn-admin-success:hover {
+        background: #10B981 !important;
+        color: #FFFFFF !important;
+    }
+
+/* Yumuşak Kırmızı Buton (Sil/Reddet) */
+.content-body .btn-danger,
+.content-body .btn-admin-danger {
+    background: rgba(224, 90, 71, 0.12) !important;
+    color: var(--admin-accent) !important;
+}
+
+    .content-body .btn-danger:hover,
+    .content-body .btn-admin-danger:hover {
+        background: #E05A47 !important;
+        color: #FFFFFF !important;
+    }
+
+/* --- 8. EMİLİM VE ROZET SİSTEMLERİ (BADGES) --- */
+.content-body .badge,
+.content-body .admin-badge {
+    font-family: var(--font-mono) !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    padding: 4px 10px !important;
+    border-radius: 6px !important;
+    display: inline-block !important;
+    text-transform: lowercase !important;
+    letter-spacing: 0.3px !important;
+    border: none !important;
+}
+
+/* Durum Renkleri */
+.content-body .badge-success, .content-body .status-approved {
+    background: rgba(16, 185, 129, 0.12) !important;
+    color: #10B981 !important;
+}
+
+.content-body .badge-warning, .content-body .status-pending {
+    background: rgba(245, 158, 11, 0.12) !important;
+    color: #D97706 !important;
+}
+
+/* --- 9. MODERM FORM ELEMENTLERİ (YAZI EKLEME / EDİT ALANLARI) --- */
+.content-body input[type="text"],
+.content-body input[type="email"],
+.content-body input[type="password"],
+.content-body textarea,
+.content-body select {
+    width: 100% !important;
+    padding: 12px 16px !important;
+    background: var(--admin-card-bg) !important;
+    border: 1px solid var(--admin-border) !important;
+    color: var(--admin-text) !important;
+    font-family: var(--font-sans) !important;
+    font-size: 14px !important;
+    border-radius: 8px !important;
+    outline: none !important;
+    transition: border-color 0.15s ease !important;
+}
+
+    .content-body input:focus,
+    .content-body textarea:focus,
+    .content-body select:focus {
+        border-color: var(--admin-text) !important;
+    }
+
+/* --- 10. İSTATİSTİK PANELİ KARTLARI (DASHBOARD GRIDS) --- */
+.admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.stat-card {
+    background: var(--admin-card-bg);
+    border: 1px solid var(--admin-border);
+    border-radius: 14px;
+    padding: 1.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.005);
+}
+
+    .stat-card span {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        color: var(--admin-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .stat-card h2 {
+        font-family: var(--font-serif);
+        font-size: 36px;
+        margin-top: 8px;
+        font-weight: 600;
+        color: var(--admin-text);
+    }
+
+/* --- 🗔 PREMIUM ADMİN MODAL KATMANLARI (SAF CSS) --- */
+.admin-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Arkaya hafif sinematik bir karartı */
+    backdrop-filter: blur(4px); /* Ön yüzdeki gibi tatlı buzlu cam efekti */
+    display: none; /* JS ile flex yapılacak */
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+[data-theme="dark"] .admin-modal-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.admin-modal-card {
+    background: var(--admin-card-bg);
+    border: 1px solid var(--admin-border);
+    border-radius: 14px;
+    width: 100%;
+    max-width: 500px;
+    padding: 1.75rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    animation: modalSlideUp 0.2s ease-out;
+}
+
+@keyframes modalSlideUp {
+    from {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.admin-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--admin-border);
+}
+
+    .admin-modal-header h3 {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+.admin-modal-close {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--admin-text-muted);
+    line-height: 1;
+}
+
+    .admin-modal-close:hover {
+        color: var(--admin-text);
+    }
+
+.admin-modal-body {
+    font-size: 14px;
+    color: var(--admin-text);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.admin-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 1rem;
+    border-top: 1px solid var(--admin-border);
+}
+
+/* Hücre içi detay butonları */
+.admin-detail-toggle-btn {
+    background: transparent !important;
+    border: none !important;
+    font-family: var(--font-mono) !important;
+    font-size: 11px !important;
+    color: var(--admin-accent) !important;
+    cursor: pointer;
+    padding: 2px 0 !important;
+    font-weight: 500 !important;
+    text-decoration: underline !important;
+    display: inline-block;
+    margin-left: 5px;
+}

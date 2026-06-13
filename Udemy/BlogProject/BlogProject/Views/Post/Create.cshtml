@@ -3,82 +3,110 @@
 
 @{
     bool isEditMode = Model?.Id.HasValue ?? false;
-    ViewData["Title"] = isEditMode ? "Makaleyi Düzenle" : "Yeni Makale Oluştur";
+    ViewData["Title"] = isEditMode ? "makaleyi düzenle" : "yeni makale oluştur";
+    Layout = "_AdminLayout"; 
 }
 
-<div class="container mt-4">
-    <div class="row justify-content-center">
-        <div class="col-md-9">
-            <div class="card shadow-sm border-0">
-                <div class="card-header @(isEditMode ? "bg-warning text-dark" : "bg-primary text-white") py-3">
-                    <h4 class="mb-0 fw-bold">
-                        <i class="bi @(isEditMode ? "bi-pencil-square" : "bi-plus-circle")"></i>
-                        @ViewData["Title"]
-                    </h4>
+<div class="table-responsive" style="max-width: 900px; margin: 0 auto; padding: 2.5rem;">
+
+    <div style="margin-bottom: 2rem; border-bottom: 1px solid var(--admin-border); padding-bottom: 1rem;">
+        <h2 style="font-family: var(--font-serif); font-size: 24px; font-weight: 600; color: var(--admin-text); margin: 0;">
+            @ViewData["Title"]
+        </h2>
+        <p style="font-size: 12px; color: var(--admin-text-muted); font-family: var(--font-mono); margin-top: 4px;">
+            @(isEditMode ? "mevcut makale içeriğini güncelliyorsunuz" : "düşüncelerinizi deftere dökün")
+        </p>
+    </div>
+
+    <form asp-area="Admin" asp-controller="Post" asp-action="Save" method="post" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+
+        <div asp-validation-summary="ModelOnly" style="color: var(--admin-accent); font-family: var(--font-mono); font-size: 12px; margin-bottom: 1.5rem;"></div>
+
+        <input type="hidden" asp-for="Id" id="postHiddenId" />
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 1.5rem;">
+
+            <div>
+                <div style="margin-bottom: 1.25rem;">
+                    <label asp-for="Title" style="display:block; margin-bottom:8px; font-weight:500; font-family:var(--font-mono); font-size:11px; text-transform:uppercase; color:var(--admin-text-muted);">makale başlığı</label>
+                    <input asp-for="Title" placeholder="Örn: .NET Core Security Prensipleri" />
+                    <span asp-validation-for="Title" style="color: var(--admin-accent); font-size: 11px; font-family: var(--font-mono); display: block; margin-top: 4px;"></span>
                 </div>
-                <div class="card-body p-4">
 
-                    <form asp-controller="Post" asp-action="Save" method="post">
-                        @Html.AntiForgeryToken()
-
-                        <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
-
-                        <input type="hidden" asp-for="Id" />
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label asp-for="Title" class="form-label fw-bold">Makale Başlığı</label>
-                                    <input asp-for="Title" class="form-control" placeholder="Örn: .NET Core Security Prensipleri" />
-                                    <span asp-validation-for="Title" class="text-danger small"></span>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label asp-for="CategoryId" class="form-label fw-bold">Kategori</label>
-                                    <select asp-for="CategoryId" asp-items="ViewBag.Categories" class="form-select">
-                                        <option value="">-- Lütfen Kategori Seçin --</option>
-                                    </select>
-                                    <span asp-validation-for="CategoryId" class="text-danger small"></span>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label asp-for="Image" class="form-label fw-bold">Görsel URL</label>
-                                    <input asp-for="Image" class="form-control" placeholder="https://site.com/resim.jpg" />
-                                    <span asp-validation-for="Image" class="text-danger small"></span>
-                                </div>
-
-                                <div class="mb-3 text-center bg-light rounded d-flex align-items-center justify-content-center border" style="height: 105px;">
-                                    <span class="text-muted small p-2" id="imgPreviewText">Görsel adresi girildiğinde burada listelenir.</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mb-4">
-                            <label asp-for="Content" class="form-label fw-bold">Makale İçeriği</label>
-                            <textarea asp-for="Content" class="form-control" rows="10" placeholder="Blog yazınızı buraya dökün..."></textarea>
-                            <span asp-validation-for="Content" class="text-danger small"></span>
-                        </div>
-
-                        <div class="d-flex justify-content-between border-top pt-3">
-                            <a asp-action="Index" class="btn btn-outline-secondary px-4 fw-bold">
-                                <i class="bi bi-x-circle"></i> İptal
-                            </a>
-                            <button type="submit" class="btn @(isEditMode ? "btn-warning" : "btn-primary") px-5 fw-bold text-dark">
-                                <i class="bi bi-save"></i> @(isEditMode ? "Değişiklikleri Kaydet" : "Makaleyi Yayınla")
-                            </button>
-                        </div>
-
-                    </form>
-
+                <div style="margin-bottom: 1.25rem;">
+                    <label asp-for="CategoryId" style="display:block; margin-bottom:8px; font-weight:500; font-family:var(--font-mono); font-size:11px; text-transform:uppercase; color:var(--admin-text-muted);">kategori</label>
+                    <select asp-for="CategoryId" asp-items="ViewBag.Categories">
+                        <option value="">-- lütfen kategori seçin --</option>
+                    </select>
+                    <span asp-validation-for="CategoryId" style="color: var(--admin-accent); font-size: 11px; font-family: var(--font-mono); display: block; margin-top: 4px;"></span>
                 </div>
             </div>
+
+            <div>
+                <div style="margin-bottom: 1.25rem;">
+                    <label asp-for="Image" style="display:block; margin-bottom:8px; font-weight:500; font-family:var(--font-mono); font-size:11px; text-transform:uppercase; color:var(--admin-text-muted);">görsel url</label>
+                    <input asp-for="Image" id="postImageUrlInput" placeholder="https://site.com/resim.jpg" />
+                    <span asp-validation-for="Image" style="color: var(--admin-accent); font-size: 11px; font-family: var(--font-mono); display: block; margin-top: 4px;"></span>
+                </div>
+
+                <div id="postImagePreviewContainer" style="height: 108px; background: rgba(0,0,0,0.02); border: 1px solid var(--admin-border); border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                    @if (!string.IsNullOrEmpty(Model?.Image))
+                    {
+                        <img src="@Model.Image" id="postImagePreview" style="width: 100%; height: 100%; object-fit: cover;" />
+                    }
+                    else
+                    {
+                        <img src="" id="postImagePreview" style="width: 100%; height: 100%; object-fit: cover; display: none;" />
+                        <span id="imgPreviewText" style="color: var(--admin-text-muted); font-size: 12px; font-family: var(--font-mono); padding: 1rem; text-align: center;">görsel url girildiğinde burada önizlenir.</span>
+                    }
+                </div>
+            </div>
+
         </div>
-    </div>
+
+        <div style="margin-bottom: 2rem;">
+            <label asp-for="Content" style="display:block; margin-bottom:8px; font-weight:500; font-family:var(--font-mono); font-size:11px; text-transform:uppercase; color:var(--admin-text-muted);">makale içeriği</label>
+            <textarea asp-for="Content" rows="12" placeholder="Blog yazınızı buraya dökün..." style="font-family: var(--font-sans); line-height: 1.6; resize: vertical;"></textarea>
+            <span asp-validation-for="Content" style="color: var(--admin-accent); font-size: 11px; font-family: var(--font-mono); display: block; margin-top: 4px;"></span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--admin-border); padding-top: 1.5rem;">
+            <a asp-action="Index" class="admin-btn-sm" style="background: rgba(0,0,0,0.05); color: var(--admin-text); text-decoration: none;">
+                iptal
+            </a>
+            <button type="submit" class="admin-btn-sm btn-admin-dark" style="padding: 10px 32px !important;">
+                @(isEditMode ? "değişiklikleri kaydet" : "makaleyi yayınla")
+            </button>
+        </div>
+
+    </form>
 </div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+        function handleImagePreview(url) {
+        const $previewImg = $('#postImagePreview');
+        const $previewText = $('#imgPreviewText');
+
+        if (url && (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('/'))) {
+        $previewImg.attr('src', url).show();
+        $previewText.hide();
+        } else {
+        $previewImg.attr('src', '').hide();
+        $previewText.show();
+        }
+        }
+
+        handleImagePreview($('#postImageUrlInput').val().trim());
+
+        $('#postImageUrlInput').on('input propertychange paste', function () {
+        handleImagePreview($(this).val().trim());
+        });
+        });
+    </script>
 }

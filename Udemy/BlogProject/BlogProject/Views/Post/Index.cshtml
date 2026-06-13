@@ -2,104 +2,114 @@
 @model List<PostViewDto>
 
 @{
-    ViewData["Title"] = "Makale Yönetimi";
-    Layout = "_Layout"; 
+    ViewData["Title"] = "makale yönetimi";
+    Layout = "_AdminLayout"; 
 }
 
-<div class="d-flex justify-content-between align-items-center mb-4">
-    <h2><i class="bi bi-journal-text text-primary"></i> Makale Yönetim Paneli</h2>
-    <a href="/Post/Create" class="btn btn-success fw-bold">
-        <i class="bi bi-plus-circle"></i> Yeni Makale Oluştur
-    </a>
-</div>
+<div class="table-responsive">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; border-bottom: 1px solid var(--admin-border);">
+        <h3 style="font-family: var(--font-serif); font-size: 20px; font-weight: 600; margin: 0;">tüm makaleler</h3>
+        <a href="/Post/Create" class="admin-btn-sm btn-admin-dark" style="text-decoration: none;">
+            + yeni makale oluştur
+        </a>
+    </div>
 
-<div class="card shadow-sm border-0">
-    <div class="card-body p-0">
-        <table class="table table-hover align-middle mb-0">
-            <thead class="table-dark">
+    <table class="modern-table">
+        <thead>
+            <tr>
+                <th style="width: 80px;">görsel</th>
+                <th>başlık</th>
+                <th>kategori</th>
+                <th>yazar</th>
+                <th>tarih</th>
+                <th style="text-align: center;">yorumlar</th>
+                <th style="text-align: right; width: 220px;">işlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model == null || !Model.Any())
+            {
                 <tr>
-                    <th style="width: 80px;">Görsel</th>
-                    <th>Başlık</th>
-                    <th>Kategori</th>
-                    <th>Yazar</th>
-                    <th>Tarih</th>
-                    <th class="text-center">Yorumlar</th>
-                    <th class="text-end" style="width: 200px;">İşlemler</th>
+                    <td colspan="7" style="text-align: center; padding: 40px 0; color: var(--admin-text-muted); font-family: var(--font-mono); font-size: 13px;">
+                        Henüz listelenecek bir makale bulunamadı.
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                @if (Model == null || !Model.Any())
+            }
+            else
+            {
+                foreach (var post in Model)
                 {
-                    <tr>
-                        <td colspan="7" class="text-center py-4 text-muted">
-                            Henüz listelenecek bir makale bulunamadı.
+                    <tr id="post-row-@post.Id">
+                        <td>
+                            @if (!string.IsNullOrEmpty(post.Image))
+                            {
+                                <img src="@post.Image" style="width: 44px; height: 44px; object-fit: cover; border-radius: 6px; border: 1px solid var(--admin-border);" />
+                            }
+                            else
+                            {
+                                <div style="width: 44px; height: 44px; background: rgba(0,0,0,0.03); color: var(--admin-text-muted); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-family: var(--font-mono); border: 1px solid var(--admin-border);">yok</div>
+                            }
+                        </td>
+
+                        <td>
+                            <a href="/Post/Edit/@post.Id" style="font-weight: 600; color: var(--admin-text); text-decoration: none; transition: color 0.15s ease;">
+                                @post.Title
+                            </a>
+                        </td>
+
+                        <td>
+                            <span class="admin-badge" style="background: rgba(0,0,0,0.04); color: var(--admin-text); border: 1px solid var(--admin-border) !important;">
+                                @post.CategoryName
+                            </span>
+                        </td>
+
+                        <td>
+                            <strong style="font-size: 13px;">@post.AuthorName</strong>
+                        </td>
+
+                        <td style="font-family: var(--font-mono); font-size: 12px; color: var(--admin-text-muted);">
+                            @post.CreatedDate.ToString("dd.MM.yyyy")
+                        </td>
+
+                        <td style="text-align: center;">
+                            <span class="admin-badge badge-warning" style="font-weight: 600;">
+                                @post.CommentCount
+                            </span>
+                        </td>
+
+                        <td style="text-align: right;">
+                            <div class="admin-btn-group" style="justify-content: flex-end;">
+                                <a href="/Post/Edit/@post.Id" class="admin-btn-sm" style="background: rgba(0,0,0,0.03); border: 1px solid var(--admin-border) !important; color: var(--admin-text); text-decoration: none;">
+                                    düzenle
+                                </a>
+                                <a href="/Home/PostDetails/@post.Id" target="_blank" class="admin-btn-sm" style="background: transparent; color: var(--admin-text-muted); text-decoration: none; font-size: 11px;">
+                                    görüntüle ↗
+                                </a>
+                                <button type="button" class="admin-btn-sm btn-admin-danger btn-delete-post" data-id="@post.Id" data-title="@post.Title">
+                                    sil
+                                </button>
+                            </div>
                         </td>
                     </tr>
                 }
-                else
-                {
-                    foreach (var post in Model)
-                    {
-                        <tr>
-                            <td>
-                                @if (!string.IsNullOrEmpty(post.Image))
-                                {
-                                    <img src="@post.Image" class="rounded" style="width: 50px; height: 50px; object-fit: cover;" />
-                                }
-                                else
-                                {
-                                    <div class="bg-light text-muted rounded d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-size: 0.8rem;">Yok</div>
-                                }
-                            </td>
-                            <td>
-                                <a href="/Post/Edit/@post.Id" class="fw-bold text-decoration-none text-dark">
-                                    @post.Title
-                                </a>
-                            </td>
-                            <td><span class="badge bg-secondary">@post.CategoryName</span></td>
-                            <td><strong>@post.AuthorName</strong></td>
-                            <td><small class="text-muted">@post.CreatedDate.ToString("dd.MM.yyyy")</small></td>
-                            <td class="text-center">
-                                <span class="badge bg-info text-dark fw-bold">@post.CommentCount</span>
-                            </td>
-                            <td class="text-end">
-                                <div class="btn-group btn-group-sm">
-                                    <a href="/Post/Edit/@post.Id" class="btn btn-outline-primary" title="Düzenle">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-
-                                    <a href="/Home/PostDetails/@post.Id" target="_blank" class="btn btn-outline-secondary" title="Sitede Gör">
-                                        <i class="bi bi-eye"></i>
-                                    </a>
-
-                                    <button type="button" class="btn btn-outline-danger btn-delete-post" data-id="@post.Id" data-title="@post.Title" title="Sil">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                    }
-                }
-            </tbody>
-        </table>
-    </div>
+            }
+        </tbody>
+    </table>
 </div>
 
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header bg-danger text-white">
-                <h5 class="modal-title"><i class="bi bi-exclamation-triangle-fill"></i> Makale Silme Onayı</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p><strong>"<span id="deletePostTitle"></span>"</strong> başlıklı makaleyi silmek istediğinize emin misiniz?</p>
-                <p class="text-muted small mb-0">Not: Bu işlem makaleyi tamamen silmez, arşivler (IsDeleted = true).</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vazgeç</button>
-                <button type="button" id="btnConfirmDelete" class="btn btn-danger fw-bold">Evet, Sil</button>
-            </div>
+<div class="admin-modal-overlay" id="deleteModal">
+    <div class="admin-modal-card">
+        <div class="admin-modal-header">
+            <h3>makaleyi arşivle / sil</h3>
+            <button type="button" class="admin-modal-close" onclick="closeAdminModal('deleteModal')">&times;</button>
+        </div>
+        <div class="admin-modal-body">
+            <p><strong>"<span id="deletePostTitle" style="color: var(--admin-accent);"></span>"</strong> başlıklı makaleyi silmek istediğinize emin misiniz?</p>
+            <p style="font-size: 12px; color: var(--admin-text-muted); margin-top: 8px;">⚠️ Not: Bu işlem makaleyi tamamen yok etmez, arşive kaldırır (`IsDeleted = true`).</p>
+        </div>
+        <div class="admin-modal-footer">
+            <button type="button" class="admin-btn-sm" style="background: rgba(0,0,0,0.05);" onclick="closeAdminModal('deleteModal')">vazgeç</button>
+            <button type="button" id="btnConfirmDelete" class="admin-btn-sm btn-admin-danger">evet, arşivle</button>
         </div>
     </div>
 </div>
@@ -109,40 +119,49 @@
 @section Scripts {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        function openAdminModal(modalId) {
+        $(`#${modalId}`).css('display', 'flex').hide().fadeIn(150);
+        }
+        function closeAdminModal(modalId) {
+        $(`#${modalId}`).fadeOut(150);
+        }
+
         $(document).ready(function () {
         let selectedPostId = 0;
         let currentRow = null;
 
+        const baseRoute = "/Post";
+
         $('.btn-delete-post').click(function () {
         selectedPostId = $(this).data('id');
         let postTitle = $(this).data('title');
-        currentRow = $(this).closest('tr'); 
+        currentRow = $(this).closest('tr');
 
         $('#deletePostTitle').text(postTitle);
-        $('#deleteModal').modal('show');
+        openAdminModal('deleteModal');
         });
 
         $('#btnConfirmDelete').click(function () {
-        let token = $('input[name="__RequestVerificationToken"]').val(); 
+        let token = $('input[name="__RequestVerificationToken"]').val();
 
         $.ajax({
         type: "POST",
-        url: "/Post/Delete/" + selectedPostId,
+        url: `${baseRoute}/Delete/${selectedPostId}`,
         data: {
         __RequestVerificationToken: token
         },
         success: function (response) {
-        $('#deleteModal').modal('hide'); 
-        if (response.success) {
-        currentRow.fadeOut(500, function () {
+        closeAdminModal('deleteModal');
+        if (response.success || response.isSuccess) {
+        currentRow.fadeOut(400, function () {
         $(this).remove();
         });
         } else {
-        alert(response.message); 
+        alert(response.message || "Makale silinemedi.");
         }
         },
         error: function () {
-        $('#deleteModal').modal('hide');
+        closeAdminModal('deleteModal');
         alert("Silme işlemi sırasında teknik bir hata oluştu.");
         }
         });

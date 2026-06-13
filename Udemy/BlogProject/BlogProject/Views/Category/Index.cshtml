@@ -2,39 +2,49 @@
 @model List<CategoryDto>
 
 @{
-    ViewData["Title"] = "Kategori Yönetimi";
+    ViewData["Title"] = "kategori yönetimi";
+    Layout = "_AdminLayout";
 }
 
-<div class="container mt-4">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2>Kategori Yönetimi</h2>
-        <button class="btn btn-primary" id="btnCreateCategory">
-            <i class="bi bi-plus-circle"></i> Yeni Kategori Ekle
+<div class="table-responsive">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; border-bottom: 1px solid var(--admin-border);">
+        <h3 style="font-family: var(--font-serif); font-size: 20px; font-weight: 600; margin: 0;">tüm kategoriler</h3>
+        <button class="admin-btn-sm btn-admin-dark" id="btnCreateCategory">
+            + yeni kategori ekle
         </button>
     </div>
-    <hr />
 
-    <table class="table table-hover table-striped align-middle">
+    <table class="modern-table">
         <thead>
             <tr>
-                <th style="width: 10%">ID</th>
-                <th style="width: 60%">Kategori Adı</th>
-                <th style="width: 30%">İşlemler</th>
+                <th style="width: 15%">id</th>
+                <th style="width: 60%">kategori adı</th>
+                <th style="width: 25%; text-align: right;">işlemler</th>
             </tr>
         </thead>
         <tbody id="categoryTableBody">
             @foreach (var item in Model)
             {
                 <tr id="category-row-@item.Id">
-                    <td><strong>#@item.Id</strong></td>
-                    <td class="category-name">@item.Name</td>
-                    <td>
-                        <button class="btn btn-sm btn-outline-warning edit-category-btn" data-id="@item.Id" data-name="@item.Name">
-                            Düzenle
-                        </button>
-                        <button class="btn btn-sm btn-outline-danger delete-category-btn" data-id="@item.Id">
-                            Sil
-                        </button>
+                    <td style="font-family: var(--font-mono); font-size: 12px; color: var(--admin-text-muted);">
+                        #@item.Id
+                    </td>
+                    <td class="category-name" style="font-weight: 600;">
+                        @item.Name
+                    </td>
+                    <td style="text-align: right;">
+                        <div class="admin-btn-group" style="justify-content: flex-end;">
+                            <button class="admin-btn-sm edit-category-btn"
+                                    data-id="@item.Id"
+                                    data-name="@item.Name"
+                                    style="background: rgba(0,0,0,0.03); border: 1px solid var(--admin-border) !important;">
+                                düzenle
+                            </button>
+                            <button class="admin-btn-sm btn-admin-danger delete-category-btn"
+                                    data-id="@item.Id">
+                                sil
+                            </button>
+                        </div>
                     </td>
                 </tr>
             }
@@ -42,103 +52,138 @@
     </table>
 </div>
 
-<div class="modal fade" id="categoryModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="categoryModalTitle">Kategori İşlemi</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <input type="hidden" id="categoryId" />
+<div class="admin-modal-overlay" id="categoryModal">
+    <div class="admin-modal-card">
+        <div class="admin-modal-header">
+            <h3 id="categoryModalTitle">Kategori İşlemi</h3>
+            <button type="button" class="admin-modal-close" onclick="closeAdminModal('categoryModal')">&times;</button>
+        </div>
+        <div class="admin-modal-body">
+            <input type="hidden" id="categoryId" />
 
-                <div class="mb-3">
-                    <label for="categoryName" class="form-label">Kategori Adı</label>
-                    <input type="text" class="form-control" id="categoryName" autocomplete="off" placeholder="Örn: Yazılım, Seyahat...">
-                </div>
+            <div style="margin-bottom: 1rem;">
+                <label for="categoryName" style="display:block; margin-bottom:8px; font-weight:500; font-family:var(--font-mono); font-size:11px; text-transform:uppercase; color:var(--admin-text-muted);">kategori adı</label>
+                <input type="text" id="categoryName" autocomplete="off" placeholder="Örn: Yazılım, Seyahat...">
+                <span id="categoryError" style="color: var(--admin-accent); font-size: 11px; font-family: var(--font-mono); display: none; margin-top: 6px;"></span>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
-                <button type="button" class="btn btn-success" id="btnSaveCategory">Kaydet</button>
-            </div>
+        </div>
+        <div class="admin-modal-footer">
+            <button type="button" class="admin-btn-sm" style="background: rgba(0,0,0,0.05);" onclick="closeAdminModal('categoryModal')">iptal</button>
+            <button type="button" class="admin-btn-sm btn-admin-dark" id="btnSaveCategory">kaydet</button>
         </div>
     </div>
 </div>
 
-@section Scripts{
+<div class="admin-modal-overlay" id="deleteConfirmModal">
+    <div class="admin-modal-card">
+        <div class="admin-modal-header">
+            <h3>kategoriyi sil</h3>
+            <button type="button" class="admin-modal-close" onclick="closeAdminModal('deleteConfirmModal')">&times;</button>
+        </div>
+        <div class="admin-modal-body">
+            <p>Bu kategoriyi silmek istediğinize emin misiniz?</p>
+            <p style="font-size: 12px; color: var(--admin-text-muted); margin-top: 8px;">⚠️ Not: Bu kategoriye ait makaleler "Kategorisiz" durumuna düşebilir.</p>
+        </div>
+        <div class="admin-modal-footer">
+            <button type="button" class="admin-btn-sm" style="background: rgba(0,0,0,0.05);" onclick="closeAdminModal('deleteConfirmModal')">vazgeç</button>
+            <button type="button" class="admin-btn-sm btn-admin-danger" id="btnConfirmDelete">evet, sil</button>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-                $(document).ready(function () {
+        function openAdminModal(modalId) {
+        $(`#${modalId}`).css('display', 'flex').hide().fadeIn(150);
+        }
+        function closeAdminModal(modalId) {
+        $(`#${modalId}`).fadeOut(150);
+        $('#categoryError').hide(); 
+        }
 
-            // --- YENİ KATEGORİ EKLE  ---
-            $('#btnCreateCategory').click(function () {
-                $('#categoryModalTitle').text("Yeni Kategori Ekle");
-                $('#categoryId').val(''); 
-                $('#categoryName').val(''); 
-                $('#categoryModal').modal('show');
-            });
+        $(document).ready(function () {
+        const baseRoute = "/Category";
 
-            // --- DÜZENLE  ---
-            $('.edit-category-btn').click(function () {
-                let id = $(this).data('id');
-                let name = $(this).data('name');
+        let deleteTargetId = 0;
 
-                $('#categoryModalTitle').text("Kategoriyi Düzenle");
-                $('#categoryId').val(id); 
-                $('#categoryName').val(name); 
-                $('#categoryModal').modal('show');
-            });
+        $('#btnCreateCategory').click(function () {
+        $('#categoryModalTitle').text("yeni kategori ekle");
+        $('#categoryId').val('');
+        $('#categoryName').val('');
+        openAdminModal('categoryModal');
+        setTimeout(() => $('#categoryName').focus(), 200);
+        });
 
-            // --- (SAVE/UPDATE)  ---
-            $('#btnSaveCategory').click(function () {
-                let id = $('#categoryId').val();
-                let name = $('#categoryName').val().trim();
+        $(document).on('click', '.edit-category-btn', function () {
+        let id = $(this).data('id');
+        let name = $(this).data('name');
 
-                if (!name) {
-                    alert("Kategori adı boş olamaz!");
-                    return;
-                }
+        $('#categoryModalTitle').text("kategoriyi düzenle");
+        $('#categoryId').val(id);
+        $('#categoryName').val(name);
+        openAdminModal('categoryModal');
+        setTimeout(() => $('#categoryName').focus(), 200);
+        });
 
-                let categoryDto = {
-                    Id: id ? parseInt(id) : null, 
-                    Name: name
-                };
+        $('#btnSaveCategory').click(function () {
+        let id = $('#categoryId').val();
+        let name = $('#categoryName').val().trim();
 
-                $.ajax({
-                    type: "POST",
-                    url: "/Category/Save",
-                    data: categoryDto,
-                    success: function (response) {
-                        if (response.success) {
-                            $('#categoryModal').modal('hide');
-                            alert(response.message);
+        if (!name) {
+        $('#categoryError').text("⚠️ kategori adı boş bırakılamaz!").show();
+        return;
+        }
 
-                            location.reload();
-                        } else {
-                            alert(response.message);
-                        }
-                    }
-                });
-            });
+        let categoryDto = {
+        Id: id ? parseInt(id) : null,
+        Name: name
+        };
 
-            // --- SİLME  ---
-            $('.delete-category-btn').click(function () {
-                let id = $(this).data('id');
+        $.ajax({
+        type: "POST",
+        url: `${baseRoute}/Save`, 
+        data: categoryDto,
+        success: function (response) {
+        if (response.success || response.isSuccess) {
+        closeAdminModal('categoryModal');
+        location.reload(); 
+        } else {
+        $('#categoryError').text("⚠️ " + response.message).show();
+        }
+        },
+        error: function() {
+        $('#categoryError').text("⚠️ Sunucu ile iletişim kurulurken bir hata oluştu.").show();
+        }
+        });
+        });
 
-                if (confirm("Bu kategoriyi silmek istediğinize emin misiniz? Bu kategoriye ait postlar kategorisiz kalabilir.")) {
-                    $.ajax({
-                        type: "POST",
-                        url: "/Category/Delete",
-                        data: { id: id },
-                        success: function (response) {
-                            if (response.success) {
-                                $(`#category-row-${id}`).fadeOut(500, function() { $(this).remove(); });
-                            } else {
-                                alert(response.message);
-                            }
-                        }
-                    });
-                }
-            });
+        $(document).on('click', '.delete-category-btn', function () {
+        deleteTargetId = $(this).data('id');
+        openAdminModal('deleteConfirmModal');
+        });
+
+        $('#btnConfirmDelete').click(function () {
+        $.ajax({
+        type: "POST",
+        url: `${baseRoute}/Delete`, 
+        data: { id: deleteTargetId },
+        success: function (response) {
+        closeAdminModal('deleteConfirmModal');
+        if (response.success || response.isSuccess) {
+        $(`#category-row-${deleteTargetId}`).fadeOut(400, function() {
+        $(this).remove();
+        });
+        } else {
+        alert(response.message || "Kategori silinemedi.");
+        }
+        },
+        error: function() {
+        closeAdminModal('deleteConfirmModal');
+        alert("Teknik bir hata nedeniyle işlem başarısız oldu.");
+        }
+        });
+        });
         });
     </script>
 }

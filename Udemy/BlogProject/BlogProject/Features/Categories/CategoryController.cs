@@ -1,5 +1,7 @@
 ﻿using BlogProject.Domain.Entities;
 using BlogProject.Features.Categories.DTOs;
+using BlogProject.Features.Posts;
+using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,9 +11,14 @@ namespace BlogProject.Features.Categories
     public class CategoryController : Controller
     {
         private readonly CategoryService _categoryService;
-        public CategoryController(CategoryService categoryService)
+        private readonly PostService _postService;
+        private readonly IValidator<CategoryDto> _categoryValidator;
+
+        public CategoryController(CategoryService categoryService, PostService postService, IValidator<CategoryDto> categoryValidator)
         {
             _categoryService = categoryService;
+            _postService = postService;
+            _categoryValidator = categoryValidator;
         }
 
         [HttpGet]
@@ -104,6 +111,5 @@ namespace BlogProject.Features.Categories
             var result = await _categoryService.DeleteCategoryAsync(id);
             return Json(new { success = result.IsSuccess, message = result.Message });
         }
-
     }
 }

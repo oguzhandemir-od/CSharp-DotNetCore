@@ -92,5 +92,6 @@ namespace BlogProject.Features.Categories
                 await _context.SaveChangesAsync();
             return new ServiceResult { IsSuccess = true, Message = "Kategori silindi." };
         }
+
     }
 }

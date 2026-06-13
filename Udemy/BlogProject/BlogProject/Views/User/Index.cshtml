@@ -2,61 +2,76 @@
 @model List<UserViewDto>
 
 @{
-    ViewData["Title"] = "Kullanıcı Yönetimi";
+    ViewData["Title"] = "kullanıcı yönetimi";
+    Layout = "_AdminLayout";
 }
 
-<div class="container mt-4">
-    <h2>Kullanıcı Yönetim Paneli</h2>
-    <hr />
+<div class="table-responsive">
+    <div style="padding: 20px 24px; border-bottom: 1px solid var(--admin-border);">
+        <h3 style="font-family: var(--font-serif); font-size: 20px; font-weight: 600; margin: 0;">sistemdeki kullanıcılar</h3>
+    </div>
 
-    <table class="table table-hover table-striped align-middle">
+    <table class="modern-table">
         <thead>
             <tr>
-                <th>Kullanıcı Adı</th>
-                <th>Ad Soyad</th>
-                <th>E-posta</th>
-                <th>Rol / Yetki</th>
-                <th>Toplam Yazı</th>
-                <th>İşlemler</th>
+                <th>kullanıcı adı</th>
+                <th>ad soyad</th>
+                <th>e-posta</th>
+                <th>rol / yetki</th>
+                <th>toplam yazı</th>
+                <th style="text-align: right; width: 180px;">işlemler</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
                 <tr id="row-@item.Id">
-                    <td><strong>@item.Username</strong></td>
+                    <td>
+                        <div style="font-weight: 600;">@@@item.Username</div>
+                    </td>
+
                     <td class="user-fullname">@item.FullName</td>
-                    <td>@item.Email</td>
+
+                    <td style="color: var(--admin-text-muted);">@item.Email</td>
+
                     <td>
                         @if (item.Role == "Admin")
                         {
-                            <span class="badge bg-danger user-role">@item.Role</span>
+                            <span class="admin-badge" style="background: rgba(224, 90, 71, 0.12); color: var(--admin-accent); font-weight: 600;">yönetici</span>
                         }
-                        else if (item.Role == "Author")
+                        else if (item.Role == "Author" || item.Role == "Yazar")
                         {
-                            <span class="badge bg-primary user-role">Yazar (@item.Role)</span>
+                            <span class="admin-badge badge-success">yazar</span>
                         }
                         else
                         {
-                            <span class="badge bg-secondary user-role">Okuyucu (@item.Role)</span>
+                            <span class="admin-badge" style="background: rgba(0,0,0,0.04); color: var(--admin-text-muted); border: 1px solid var(--admin-border) !important;">okuyucu</span>
                         }
                     </td>
-                    <td><span class="badge bg-light text-dark">@item.PostCount Yazı</span></td>
-                    <td>
-                        
 
-                        @if (item.Role != "Admin") 
+                    <td>
+                        <span class="admin-badge badge-warning" style="font-weight: 600;">@item.PostCount yazı</span>
+                    </td>
+
+                    <td style="text-align: right;">
+                        @if (item.Role != "Admin")
                         {
-                            <button class="btn btn-sm btn-outline-primary edit-btn"
-                                    data-id="@item.Id"
-                                    data-fullname="@item.FullName"
-                                    data-role="@item.Role"
-                                    title="Düzenle">
-                                Düzenle
-                            </button>
-                            <button class="btn btn-sm btn-outline-danger delete-btn" data-id="@item.Id" title="Sil">
-                                Sil
-                            </button>
+                            <div class="admin-btn-group" style="justify-content: flex-end;">
+                                <button class="admin-btn-sm edit-btn"
+                                        data-id="@item.Id"
+                                        data-fullname="@item.FullName"
+                                        data-role="@item.Role"
+                                        style="background: rgba(0,0,0,0.03); border: 1px solid var(--admin-border) !important;">
+                                    düzenle
+                                </button>
+                                <button class="admin-btn-sm btn-admin-danger delete-btn" data-id="@item.Id">
+                                    sil
+                                </button>
+                            </div>
+                        }
+                        else
+                        {
+                            <span style="font-family: var(--font-mono); font-size: 11px; color: var(--admin-text-muted); padding-right: 12px;">sistem koruması</span>
                         }
                     </td>
                 </tr>
@@ -65,126 +80,138 @@
     </table>
 </div>
 
-<div class="modal fade" id="confirmModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="confirmModalTitle">İşlem Onayı</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p id="confirmModalBody"></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vazgeç</button>
-                <button type="button" class="btn" id="btnConfirmAction">Evet, Devam Et</button>
-            </div>
+<div class="admin-modal-overlay" id="confirmModal">
+    <div class="admin-modal-card">
+        <div class="admin-modal-header">
+            <h3 id="confirmModalTitle">Kullanıcı İşlemi</h3>
+            <button type="button" class="admin-modal-close" onclick="closeAdminModal('confirmModal')">&times;</button>
+        </div>
+        <div class="admin-modal-body">
+            <p id="confirmModalBody"></p>
+        </div>
+        <div class="admin-modal-footer">
+            <button type="button" class="admin-btn-sm" style="background: rgba(0,0,0,0.05);" onclick="closeAdminModal('confirmModal')">vazgeç</button>
+            <button type="button" class="admin-btn-sm btn-admin-danger" id="btnConfirmAction">Evet, Kullanıcıyı Sil</button>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Kullanıcı Düzenle</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <input type="hidden" id="editUserId" />
+<div class="admin-modal-overlay" id="editModal">
+    <div class="admin-modal-card">
+        <div class="admin-modal-header">
+            <h3>kullanıcı yetki ve bilgilerini düzenle</h3>
+            <button type="button" class="admin-modal-close" onclick="closeAdminModal('editModal')">&times;</button>
+        </div>
+        <div class="admin-modal-body">
+            <input type="hidden" id="editUserId" />
 
-                <div class="mb-3">
-                    <label for="editFullName" class="form-label">Ad Soyad</label>
-                    <input type="text" class="form-control" id="editFullName" />
-                </div>
+            <div style="margin-bottom: 1.25rem;">
+                <label for="editFullName" style="display:block; margin-bottom:8px; font-weight:500; font-family:var(--font-mono); font-size:11px; text-transform:uppercase; color:var(--admin-text-muted);">ad soyad</label>
+                <input type="text" id="editFullName" autocomplete="off" />
+            </div>
 
-                <div class="mb-3">
-                    <label for="editRole" class="form-label">Kullanıcı Rolü</label>
-                    <select class="form-select" id="editRole">
-                        <option value="Member">Member (Okuyucu)</option>
-                        <option value="Author">Author (Yazar)</option>
-                        <option value="Admin">Admin (Yönetici)</option>
-                    </select>
-                </div>
+            <div style="margin-bottom: 1rem;">
+                <label for="editRole" style="display:block; margin-bottom:8px; font-weight:500; font-family:var(--font-mono); font-size:11px; text-transform:uppercase; color:var(--admin-text-muted);">kullanıcı rolü</label>
+                <select id="editRole">
+                    <option value="Member">Member (Okuyucu)</option>
+                    <option value="Author">Author (Yazar)</option>
+                    <option value="Admin">Admin (Yönetici)</option>
+                </select>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
-                <button type="button" class="btn btn-primary" id="btnSaveUser">Değişiklikleri Kaydet</button>
-            </div>
+        </div>
+        <div class="admin-modal-footer">
+            <button type="button" class="admin-btn-sm" style="background: rgba(0,0,0,0.05);" onclick="closeAdminModal('editModal')">iptal</button>
+            <button type="button" class="admin-btn-sm btn-admin-dark" id="btnSaveUser">değişiklikleri kaydet</button>
         </div>
     </div>
 </div>
 
 @section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        function openAdminModal(modalId) {
+        $(`#${modalId}`).css('display', 'flex').hide().fadeIn(150);
+        }
+        function closeAdminModal(modalId) {
+        $(`#${modalId}`).fadeOut(150);
+        }
+
         $(document).ready(function () {
-            let targetId = "";
-            let targetUrl = "";
+        let targetId = "";
+        let targetUrl = "";
 
-            // --- SİLME  ---
-            $('.delete-btn').click(function () {
-                targetId = $(this).data('id');
-                targetUrl = "/User/DeleteUser";
+        const baseRoute = "/User";
 
-                $('#confirmModalTitle').text("Kullanıcıyı Sil");
-                $('#confirmModalBody').text("Bu kullanıcıyı silmek istediğinize emin misiniz? Kullanıcı sisteme giriş yapamayacaktır.");
-                $('#btnConfirmAction').removeClass().addClass('btn btn-danger').text("Evet, Kullanıcıyı Sil");
-                $('#confirmModal').modal('show');
-            });
+        $('.delete-btn').click(function () {
+        targetId = $(this).data('id');
+        targetUrl = `${baseRoute}/DeleteUser`;
 
-                    $('#btnConfirmAction').click(function () {
-            $.ajax({
-                type: "POST",
-                url: targetUrl,
-                data: { id: targetId },
-                success: function (response) {
-                    $('#confirmModal').modal('hide');
-
-                    if (response.isSuccess) {
-                        $(`#row-${targetId}`).fadeOut(500, function() { $(this).remove(); });
-                    } else {
-                        alert(response.message);
-                    }
-                }
-            });
+        $('#confirmModalTitle').text("kullanıcı kaydını sil");
+        $('#confirmModalBody').text("Bu kullanıcıyı sistemden tamamen silmek istediğinize emin misiniz? Kullanıcının tüm oturumları sonlandırılacak ve panele erişimi engellenecektir.");
+        $('#btnConfirmAction').removeClass().addClass('admin-btn-sm btn-admin-danger').text("evet, kullanıcıyı sil");
+        openAdminModal('confirmModal');
         });
 
-            // --- DÜZENLE  ---
-            $('.edit-btn').click(function () {
-                let id = $(this).data('id');
-                let fullName = $(this).data('fullname');
-                let role = $(this).data('role');
+        $('#btnConfirmAction').click(function () {
+        $.ajax({
+        type: "POST",
+        url: targetUrl,
+        data: { id: targetId },
+        success: function (response) {
+        closeAdminModal('confirmModal');
+        if (response.isSuccess || response.success) {
+        $(`#row-${targetId}`).fadeOut(400, function() { $(this).remove(); });
+        } else {
+        alert(response.message || "İşlem sırasında bir hata oluştu.");
+        }
+        },
+        error: function() {
+        closeAdminModal('confirmModal');
+        alert("Teknik bir sorun nedeniyle kullanıcı silinemedi.");
+        }
+        });
+        });
 
-                $('#editUserId').val(id);
-                $('#editFullName').val(fullName);
-                $('#editRole').val(role);
-                $('#editModal').modal('show');
-            });
+        $('.edit-btn').click(function () {
+        let id = $(this).data('id');
+        let fullName = $(this).data('fullname');
+        let role = $(this).data('role');
 
-            // --- DÜZENLE KAYDET 
-            $('#btnSaveUser').click(function () {
-                let id = $('#editUserId').val();
-                let fullName = $('#editFullName').val();
-                let role = $('#editRole').val();
+        $('#editUserId').val(id);
+        $('#editFullName').val(fullName);
+        $('#editRole').val(role);
+        openAdminModal('editModal');
+        setTimeout(() => $('#editFullName').focus(), 200);
+        });
 
-                $.ajax({
-                    type: "POST",
-                    url: "/User/EditUser",
-                    data: { id: id, fullName: fullName, role: role },
-                    success: function (response) {
-                        $('#editModal').modal('hide');
-                        if (response.success) {
-                            $(`#row-${id} .user-fullname`).text(fullName);
+        $('#btnSaveUser').click(function () {
+        let id = $('#editUserId').val();
+        let fullName = $('#editFullName').val().trim();
+        let role = $('#editRole').val();
 
-                            $(`#row-${id} .edit-btn`).data('fullname', fullName).data('role', role);
+        if (!fullName) {
+        alert("Ad Soyad alanı boş bırakılamaz!");
+        return;
+        }
 
-                            location.reload();
-                        } else {
-                            alert(response.message);
-                        }
-                    }
-                });
-            });
+        $.ajax({
+        type: "POST",
+        url: `${baseRoute}/EditUser`,
+        data: { id: id, fullName: fullName, role: role },
+        success: function (response) {
+        closeAdminModal('editModal');
+        if (response.success || response.isSuccess) {
+        location.reload();
+        } else {
+        alert(response.message || "Güncelleme başarısız.");
+        }
+        },
+        error: function() {
+        closeAdminModal('editModal');
+        alert("Sunucu hatası nedeniyle bilgiler güncellenemedi.");
+        }
+        });
+        });
         });
     </script>
 }
