@@ -7,6 +7,8 @@ Projenin ana motivasyonu, günümüz sektör standartlarının gerisinde kalan m
 
 Bu süreçte, .NET MVC'de kullanılan eski veri erişim ve arayüz taşıma yöntemleri yerine, .NET Core'un modern ve güvenli yaklaşımları entegre edilmiştir.
 
+<img width="2559" height="1344" alt="Ekran görüntüsü 2025-09-05 185629" src="https://github.com/user-attachments/assets/29a78994-a2df-4498-941a-eadf2cb2e935" />
+
 ---
 
 ## 🛠️ Teknolojik Stack & Mimari Bileşenler
@@ -16,6 +18,8 @@ Bu süreçte, .NET MVC'de kullanılan eski veri erişim ve arayüz taşıma yön
 *   **Sorgu Optimizasyonu:** Gelişmiş LINQ (Language Integrated Query) Sorguları
 *   **Veri Yönetimi & Güvenlik:** DTO (Data Transfer Object), ViewModel Yapıları, Rol Tabanlı Yetkilendirme (Role-Based Authorization)
 *   **UI Modülerliği:** .NET Core ViewComponents
+  
+<img width="2559" height="1343" alt="Ekran görüntüsü 2025-09-05 185816" src="https://github.com/user-attachments/assets/e0dc5ce7-62eb-4ce8-89ae-887c95ad3725" />
 
 ---
 
@@ -35,6 +39,8 @@ Bu süreçte, .NET MVC'de kullanılan eski veri erişim ve arayüz taşıma yön
 ### 4. Geniş Kapsamlı Kimlik Doğrulama & Yetkilendirme (Auth)
 *   Basit düzeydeki giriş mekanizmaları genişletilerek; ticari sistemin güvenliğini sağlayacak, rol tabanlı (Admin, Personel, Cari) gelişmiş erişim kontrol mekanizmaları kurgulandı.
 
+<img width="2559" height="1341" alt="Ekran görüntüsü 2025-09-05 185836" src="https://github.com/user-attachments/assets/b1a5e30a-d54a-4e92-88b2-ce80e8db3d90" />
+
 ---
 
 ## 📐 Veri Tabanı İlişki Mimarisi
@@ -44,5 +50,6 @@ Proje kapsamında Entity Framework Core kod entegrasyonu ile yönetilen temel mo
 *   **Fatura & Detay Takip Mekanizması**
 *   **Departman & Rol Tanımlamaları**
 *   **Gelişmiş Raporlama Panelleri**
-3. Package Manager Console veya CLI üzerinden `Update-Database` komutunu çalıştırarak veri tabanını ayağa kaldırın.
-4. Projeyi çalıştırın (Run).
+
+  <img width="2559" height="1338" alt="Ekran görüntüsü 2025-09-05 190007" src="https://github.com/user-attachments/assets/6e092150-aece-49f9-877f-e1f2a8383272" />
+
