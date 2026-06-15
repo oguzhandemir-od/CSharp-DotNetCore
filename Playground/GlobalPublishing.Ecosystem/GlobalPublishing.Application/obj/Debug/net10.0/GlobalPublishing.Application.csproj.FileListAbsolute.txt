@@ -1,0 +1,12 @@
+C:\Users\oğuzhan\Projeler\Yazılım\github\CSharp-DotNetCore\Playground\GlobalPublishing.Ecosystem\GlobalPublishing.Application\bin\Debug\net10.0\GlobalPublishing.Application.deps.json
+C:\Users\oğuzhan\Projeler\Yazılım\github\CSharp-DotNetCore\Playground\GlobalPublishing.Ecosystem\GlobalPublishing.Application\bin\Debug\net10.0\GlobalPublishing.Application.dll
+C:\Users\oğuzhan\Projeler\Yazılım\github\CSharp-DotNetCore\Playground\GlobalPublishing.Ecosystem\GlobalPublishing.Application\bin\Debug\net10.0\GlobalPublishing.Application.pdb
+C:\Users\oğuzhan\Projeler\Yazılım\github\CSharp-DotNetCore\Playground\GlobalPublishing.Ecosystem\GlobalPublishing.Application\obj\Debug\net10.0\GlobalPublishing.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oğuzhan\Projeler\Yazılım\github\CSharp-DotNetCore\Playground\GlobalPublishing.Ecosystem\GlobalPublishing.Application\obj\Debug\net10.0\GlobalPublishing.Application.AssemblyInfoInputs.cache
+C:\Users\oğuzhan\Projeler\Yazılım\github\CSharp-DotNetCore\Playground\GlobalPublishing.Ecosystem\GlobalPublishing.Application\obj\Debug\net10.0\GlobalPublishing.Application.AssemblyInfo.cs
+C:\Users\oğuzhan\Projeler\Yazılım\github\CSharp-DotNetCore\Playground\GlobalPublishing.Ecosystem\GlobalPublishing.Application\obj\Debug\net10.0\GlobalPublishing.Application.csproj.CoreCompileInputs.cache
+C:\Users\oğuzhan\Projeler\Yazılım\github\CSharp-DotNetCore\Playground\GlobalPublishing.Ecosystem\GlobalPublishing.Application\obj\Debug\net10.0\GlobalPublishing.Application.sourcelink.json
+C:\Users\oğuzhan\Projeler\Yazılım\github\CSharp-DotNetCore\Playground\GlobalPublishing.Ecosystem\GlobalPublishing.Application\obj\Debug\net10.0\GlobalPublishing.Application.dll
+C:\Users\oğuzhan\Projeler\Yazılım\github\CSharp-DotNetCore\Playground\GlobalPublishing.Ecosystem\GlobalPublishing.Application\obj\Debug\net10.0\refint\GlobalPublishing.Application.dll
+C:\Users\oğuzhan\Projeler\Yazılım\github\CSharp-DotNetCore\Playground\GlobalPublishing.Ecosystem\GlobalPublishing.Application\obj\Debug\net10.0\GlobalPublishing.Application.pdb
+C:\Users\oğuzhan\Projeler\Yazılım\github\CSharp-DotNetCore\Playground\GlobalPublishing.Ecosystem\GlobalPublishing.Application\obj\Debug\net10.0\ref\GlobalPublishing.Application.dll

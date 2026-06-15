@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="GlobalPublishing.Application/GlobalPublishing.Application.csproj" />
+  <Project Path="GlobalPublishing.Domain/GlobalPublishing.Domain.csproj" />
+  <Project Path="GlobalPublishing.Ecosystem/GlobalPublishing.Ecosystem.csproj" />
+  <Project Path="GlobalPublishing.Infrastructure/GlobalPublishing.Infrastructure.csproj" />
+  <Project Path="GlobalPublishing.WebAPI/GlobalPublishing.WebAPI.csproj" />
+</Solution>
