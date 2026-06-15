@@ -9,7 +9,7 @@ namespace GlobalPublishing.Infrastructure.Context
     public class AppDbContext:DbContext
     {
         private readonly int _currentTenantId;
-        public AppDbContext(DbContextOptions<AppDbContext> options>) : base(options) 
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) 
         {
             _currentTenantId = 1;
         }
@@ -40,7 +40,7 @@ namespace GlobalPublishing.Infrastructure.Context
             modelBuilder.Entity<Author>(builder =>
             {
                 builder.HasQueryFilter(a => !a.IsDeleted && a.TenantId == _currentTenantId);
-            })
+            });
 
 
         }

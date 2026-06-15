@@ -10,7 +10,7 @@ namespace GlobalPublishing.Domain.Entities
 
         public BookTranslation(int bookId,int languageId,string title, string description,int tenantId)
         {
-            if (title == null) throw new ArgumentNullException(nameof(title)"Başlık boş olamaz");
+            if (title == null) throw new ArgumentNullException(nameof(title),"Başlık boş olamaz");
             if (description == null) throw new ArgumentNullException(nameof(description),"Açıklama boş olamaz");
 
             BookId = bookId;
