@@ -8,7 +8,11 @@ namespace GlobalPublishing.Infrastructure.Context
 {
     public class AppDbContext:DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options>) : base(options) { }
+        private readonly int _currentTenantId;
+        public AppDbContext(DbContextOptions<AppDbContext> options>) : base(options) 
+        {
+            _currentTenantId = 1;
+        }
 
         public DbSet<Tenant> Tenants { get; set; }
         public DbSet<Book> Books { get; set; }
@@ -24,12 +28,21 @@ namespace GlobalPublishing.Infrastructure.Context
                 builder.ToTable(t => t.HasCheckConstraint("CK_Book_PageCount", "[PageCount]>0"));
 
                 builder.HasIndex(b => new { b.TenantId, b.IsDeleted });
+
+                builder.HasQueryFilter(b => !b.IsDeleted);
             });
 
             modelBuilder.Entity<BookTranslation>(builder =>
             {
                 builder.HasKey(bt => new { bt.BookId, bt.LanguageId });
             });
+
+            modelBuilder.Entity<Author>(builder =>
+            {
+                builder.HasQueryFilter(a => !a.IsDeleted && a.TenantId == _currentTenantId);
+            })
+
+
         }
     }
 }
