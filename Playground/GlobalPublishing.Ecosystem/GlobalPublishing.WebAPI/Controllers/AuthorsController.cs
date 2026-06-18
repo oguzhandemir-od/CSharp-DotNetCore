@@ -1,4 +1,5 @@
-﻿using GlobalPublishing.Application.Interfaces;
+﻿using GlobalPublishing.Application.DTOs;
+using GlobalPublishing.Application.Interfaces;
 using GlobalPublishing.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,21 +11,19 @@ namespace GlobalPublishing.WebAPI.Controllers
     [ApiController]
     public class AuthorsController : ControllerBase
     {
-        private readonly IGenericRepository<Author> _authorRepository;
+        private readonly IAuthorService _authorService;
 
-        public AuthorsController(IGenericRepository<Author> authorRepository)
+        public AuthorsController(IGenericRepository<Author> authorRepository, IAuthorService authorService)
         {
-            _authorRepository = authorRepository;
+            _authorService = authorService;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAuthors()
         {
-            var query = _authorRepository.GetAll(false);
+            var result = _authorService.GetAllAuthorsWithCountAsync();
 
-            var authors = await query.ToListAsync();
-
-            return Ok(authors);
+            return Ok(result);
         }
     }
 }
