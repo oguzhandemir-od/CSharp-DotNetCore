@@ -13,7 +13,7 @@ namespace GlobalPublishing.WebAPI.Controllers
     {
         private readonly IAuthorService _authorService;
 
-        public AuthorsController(IGenericRepository<Author> authorRepository, IAuthorService authorService)
+        public AuthorsController(IAuthorService authorService)
         {
             _authorService = authorService;
         }
