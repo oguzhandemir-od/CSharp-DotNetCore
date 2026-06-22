@@ -1,4 +1,5 @@
-﻿using GlobalPublishing.Domain.Entities;
+﻿using GlobalPublishing.Application.Interfaces;
+using GlobalPublishing.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,9 +10,10 @@ namespace GlobalPublishing.Infrastructure.Context
     public class AppDbContext:DbContext
     {
         private readonly int _currentTenantId;
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) 
+        private readonly ITenantService _tenantService;
+        public AppDbContext(DbContextOptions<AppDbContext> options,ITenantService tenantService) : base(options) 
         {
-            _currentTenantId = 1;
+            _currentTenantId = tenantService.GetTenantId();
         }
 
         public DbSet<Tenant> Tenants { get; set; }
